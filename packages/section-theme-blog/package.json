@@ -1,0 +1,79 @@
+{
+  "name": "section-theme-blog",
+  "version": "0.5.11",
+  "license": "MIT",
+  "author": {
+    "name": "Rajdeep Singh",
+    "email": "officilrajdeepsingh@gmail.com"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/index.d.ts"
+      ],
+      "Tag": [
+        "./dist/Tag.d.ts"
+      ]
+    }
+  },
+  "homepage": "https://github.com/frontendweb3/section-theme-blog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frontendweb3/section-theme-blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frontendweb3/section-theme-blog/issues"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./Tag": {
+      "import": "./dist/Tag.js",
+      "types": "./dist/Tag.d.ts"
+    }
+  },
+  "scripts": {
+    "clean": "rm  -R dist && tsup",
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/server": "^11.11.0",
+    "@mantine/core": "^6.0.11",
+    "@mantine/hooks": "^6.0.11",
+    "@mantine/next": "^6.0.11",
+    "@mdx-js/react": "^2.3.0",
+    "@orama/orama": "1.0.0-beta.16",
+    "@orama/plugin-match-highlight": "1.0.0-beta.16",
+    "@orama/plugin-nextra": "1.0.0-beta.16",
+    "@tabler/icons-react": "^2.19.0",
+    "@types/node": "20.2.0",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "dayjs": "^1.11.7",
+    "eslint-config-next": "13.4.2",
+    "next": "13.4.2",
+    "nextra": "^2.5.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "slugify": "^1.6.6",
+    "tsup": "^6.7.0",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint": "8.40.0",
+    "eslint-config-mantine": "^2.0.0",
+    "eslint-plugin-react": "^7.32.2"
+  }
+}
