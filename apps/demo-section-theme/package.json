@@ -1,0 +1,25 @@
+{
+  "name": "demo-section-theme",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }, 
+  "dependencies": {
+    "@tabler/icons-react": "^2.20.0",
+    "@types/node": "20.2.0",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.2",
+    "next": "13.4.2",
+    "nextra": "^2.5.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "section-theme-blog": "workspace:*",
+    "typescript": "5.0.4"
+  }
+}
