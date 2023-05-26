@@ -2,7 +2,6 @@ Section-theme-blog is a lightweight nextra based blog theme.
 
 > Currently, the Section theme blog is in beta version.
 
-
 ```bash
 npm run dev
 # or
