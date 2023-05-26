@@ -25,11 +25,19 @@ export type LayoutTypes =
   | 404
   | 500;
 
+export interface MetaImage {
+  url: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+  caption?: string;
+  type?: string;
+}
 export type BlogFrontMatter = {
   author?: string;
   date?: string;
-  description: string;
-  image?: string;
+  except: string;
+  image?: string | MetaImage[];
   tags?: string[];
   title: string;
   type: "post";
@@ -53,11 +61,12 @@ export type iconsType =
 
 export type AuthorFrontMatter = {
   name: string;
-  description?: string;
+  except?: string;
   date?: string;
-  image?: string;
+  image?: string | MetaImage[];
   tags?: string[];
   title: string;
   type: "author";
+  job?: string;
   social?: { name: iconsType; svg?: React.ReactNode; url: string }[];
 };
