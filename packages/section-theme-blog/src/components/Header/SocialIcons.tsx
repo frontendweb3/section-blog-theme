@@ -3,7 +3,7 @@ import { ThemeContext } from "../../Provider/config";
 import { useStyles } from "./Header-style";
 import Link from "next/link";
 import type { PageOpts, ThemeConfig } from "nextra";
-import { Group, ActionIcon } from "@mantine/core";
+import { Group, ActionIcon, ThemeIcon } from "@mantine/core";
 import { useMantineColorScheme } from "@mantine/core";
 import {
   IconBrandTwitter,
@@ -46,8 +46,13 @@ export function SocialIcons() {
         {themeConfig.social_links.map(
           (link: { name: iconsType; svg?: React.ReactNode; url: string }) => {
             return (
-              <Link key={link.name} target="_blank" href={link.url}>
-                <ActionIcon size="lg">
+              <Link
+                aria-label={link.name}
+                key={link.name}
+                target="_blank"
+                href={link.url}
+              >
+                <ActionIcon aria-label={link.name} size="lg">
                   {link.svg ? link.svg : Icons[link.name]}
                 </ActionIcon>
               </Link>
@@ -60,14 +65,9 @@ export function SocialIcons() {
         <SearchBar />
 
         <ActionIcon
+          aria-label="theme toggle"
           onClick={() => toggleColorScheme()}
           size="lg"
-          sx={(theme) => ({
-            color:
-              theme.colorScheme === "dark"
-                ? theme.colors.yellow[4]
-                : theme.colors.blue[6],
-          })}
         >
           {colorScheme === "dark" ? (
             <IconSun size="1.2rem" />
