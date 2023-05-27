@@ -30,6 +30,9 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  link: {
+    textDecoration: "none",
+  },
   body: {
     paddingLeft: `calc(${theme.spacing.xl} * 4)`,
 
@@ -67,7 +70,7 @@ const useStyles = createStyles((theme) => ({
     borderBottomLeftRadius: 0,
   },
 }));
-
+// https://www.figma.com/community/file/1098318123644326386/3-Author-Bio-Box-Template-%7C-BRIX-Templates
 export function AuthorCard({ subItem }: { subItem: MdxFileAuthorCard }) {
   const { classes } = useStyles();
 
@@ -92,7 +95,14 @@ export function AuthorCard({ subItem }: { subItem: MdxFileAuthorCard }) {
       )}
 
       <div className={classes.body}>
-        <Title className={classes.title}>{subItem.frontMatter.name}</Title>
+        <Link
+          key={subItem.frontMatter.name}
+          target="_blank"
+          href={subItem.route}
+          className={classes.link}
+        >
+          <Title className={classes.title}>{subItem.frontMatter.name}</Title>
+        </Link>
 
         <Text fw={500} fz="lg" mb={5}>
           {subItem.frontMatter.job}
