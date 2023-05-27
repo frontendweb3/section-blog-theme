@@ -7,6 +7,7 @@ import {
   Group,
   rem,
 } from "@mantine/core";
+import { NextSeo } from "next-seo";
 import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
@@ -57,22 +58,27 @@ export function ServerError() {
   const { classes } = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Container>
-        <div className={classes.label}>500</div>
-        <Title className={classes.title}>Something bad just happened...</Title>
-        <Text size="lg" align="center" className={classes.description}>
-          Our servers could not handle your request. Don&apos;t worry, our
-          development team was already notified. Try refreshing the page.
-        </Text>
-        <Group position="center">
-          <Link href={"/"}>
-            <Button variant="white" size="md">
-              Refresh the page
-            </Button>
-          </Link>
-        </Group>
-      </Container>
-    </div>
+    <>
+      <NextSeo noindex={true} />
+      <div className={classes.root}>
+        <Container>
+          <div className={classes.label}>500</div>
+          <Title className={classes.title}>
+            Something bad just happened...
+          </Title>
+          <Text size="lg" align="center" className={classes.description}>
+            Our servers could not handle your request. Don&apos;t worry, our
+            development team was already notified. Try refreshing the page.
+          </Text>
+          <Group position="center">
+            <Link href={"/"}>
+              <Button variant="white" size="md">
+                Refresh the page
+              </Button>
+            </Link>
+          </Group>
+        </Container>
+      </div>
+    </>
   );
 }
