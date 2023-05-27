@@ -37,12 +37,20 @@ export function ArticleCard({ subItem }: { subItem: MdxFileCard }) {
       component="div"
       className={classes.card}
     >
-      <AspectRatio ratio={1920 / 1080}>
-        <Image
-          src={subItem?.frontMatter.image}
-          alt={subItem?.frontMatter.title}
-        />
-      </AspectRatio>
+      {subItem?.frontMatter?.image !== undefined ? (
+        <AspectRatio ratio={1920 / 1080}>
+          <Image
+            src={
+              typeof subItem?.frontMatter?.image === "string"
+                ? subItem?.frontMatter?.image
+                : subItem?.frontMatter?.image[0].url
+            }
+            alt={subItem?.frontMatter.title}
+          />
+        </AspectRatio>
+      ) : (
+        ""
+      )}
 
       <Text
         color="dimmed"
