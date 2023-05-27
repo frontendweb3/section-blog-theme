@@ -62,13 +62,11 @@ export const useStyles = createStyles((theme) => ({
 
   linkActive: {
     "&, &:hover": {
-      backgroundColor: theme.fn.variant({
-        variant: "dark",
-        color: theme.colors.gray[0],
-      }).background,
-
-      color: theme.fn.variant({ variant: "dark", color: theme.colors.blue[0] })
-        .color,
+      color: theme.colors.dark[9],
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.blue[2]
+          : theme.colors.blue[2],
     },
   },
 }));
