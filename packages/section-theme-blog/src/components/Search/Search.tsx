@@ -17,7 +17,11 @@ export function SearchBar() {
         limitResults={10}
       />
 
-      <ActionIcon size="lg" onClick={() => setSlowTransitionOpened(true)}>
+      <ActionIcon
+        aria-label="Search bar"
+        size="lg"
+        onClick={() => setSlowTransitionOpened(true)}
+      >
         <IconSearch size={"1.2rem"} />
       </ActionIcon>
     </>
