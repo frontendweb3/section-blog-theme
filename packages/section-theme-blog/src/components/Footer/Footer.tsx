@@ -1,4 +1,4 @@
-import { Container, Group, Text } from "@mantine/core";
+import { Button, Container, Group } from "@mantine/core";
 import { useStyles } from "./footer-style";
 import Link from "next/link";
 import { useContext } from "react";
@@ -34,15 +34,14 @@ export function Footer() {
       <Container className={classes.inner}>
         <Link className={classes.logo} href={"/"}>
           {logo.text !== undefined ? (
-            <Text className={classes.link} size={"lg"}>
+            <Button leftIcon={logo?.svg} variant="transprent">
               {" "}
-              {logo.text}{" "}
-            </Text>
+              {logo?.text}{" "}
+            </Button>
           ) : (
-            logo.svg
+            <div>{logo.svg} </div>
           )}
         </Link>
-
         <Group className={classes.links}>{items}</Group>
       </Container>
     </div>
