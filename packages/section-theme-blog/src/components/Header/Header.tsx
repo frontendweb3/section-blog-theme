@@ -1,4 +1,4 @@
-import { Header, Group, Container, Burger, Text, Menu } from "@mantine/core";
+import { Header, Group, Container, Burger, Menu, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useStyles } from "./Header-style";
 import { MenuItems } from "./MenuItems";
@@ -42,11 +42,12 @@ export function HeaderMenu() {
 
           <Link className={classes.logo} href={"/"}>
             {logo.text !== undefined ? (
-              <Text className={classes.link} size={"lg"}>
-                {logo.text}{" "}
-              </Text>
+              <Button leftIcon={logo?.svg} variant="transprent">
+                {" "}
+                {logo?.text}{" "}
+              </Button>
             ) : (
-              logo.svg
+              <div>{logo.svg} </div>
             )}
           </Link>
         </Group>
