@@ -17,7 +17,7 @@ export const useStyles = createStyles((theme) => ({
       display: "none",
     },
   },
-  logo: { textDecoration: "none" },
+  logo: { textDecoration: "none", alignItems: "center" },
   social: {
     width: rem(260),
     [theme.fn.smallerThan("sm")]: {
