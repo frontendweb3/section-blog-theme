@@ -87,7 +87,7 @@ export function AuthorCard({ subItem }: { subItem: MdxFileAuthorCard }) {
               ? subItem?.frontMatter?.image
               : subItem?.frontMatter?.image[0].url
           }
-          alt={subItem?.frontMatter.title}
+          alt={subItem?.frontMatter.name}
           className={classes.image}
         />
       ) : (
@@ -118,7 +118,7 @@ export function AuthorCard({ subItem }: { subItem: MdxFileAuthorCard }) {
               (item: { name: string; url: string }) => {
                 return (
                   <Link key={item.name} target="_blank" href={item.url}>
-                    <ActionIcon size="lg">
+                    <ActionIcon aria-label={item.name} size="lg">
                       {item.name === "github" ? (
                         <IconBrandGithub size={"1.1rem"} stroke={"1.5"} />
                       ) : (
