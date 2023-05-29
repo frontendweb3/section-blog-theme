@@ -1,7 +1,6 @@
 const themeConfig = {
   siteURL: "http://localhost:3000",
   defaultSeo: {
-    canonical: "https://www.canonical.ie/",
     openGraph: {
       type: "website",
       locale: "en_IE",
@@ -17,8 +16,20 @@ const themeConfig = {
   logo: {
     text: "Section",
     svg: (
-      <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" fill="#f2aff3" />
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V12"
+          stroke="black"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
     ),
   },
