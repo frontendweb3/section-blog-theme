@@ -37,7 +37,7 @@ export type BlogFrontMatter = {
   author?: string;
   date?: string;
   except: string;
-  image?: string | MetaImage[];
+  image?: string | string[] | MetaImage[];
   tags?: string[];
   title: string;
   type: "post";
@@ -63,10 +63,16 @@ export type AuthorFrontMatter = {
   name: string;
   except?: string;
   date?: string;
-  image?: string | MetaImage[];
+  image?: string | string[] | MetaImage[];
   tags?: string[];
   title: string;
   type: "author";
   job?: string;
   social?: { name: iconsType; svg?: React.ReactNode; url: string }[];
 };
+
+export type GetMetaData = MdxFileCard | MdxFileAuthorCard;
+
+export interface GetImage {
+  image?: MetaImage[] | string | string[];
+}
