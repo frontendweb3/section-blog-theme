@@ -1,8 +1,9 @@
 import { createStyles, Text, Title, Image, rem } from "@mantine/core";
 import { ActionIcon } from "@mantine/core";
-import { MdxFileAuthorCard } from "../../../types";
+import { GetImage, MdxFileAuthorCard } from "../../../types";
 import { IconBrandTwitter, IconBrandGithub } from "@tabler/icons-react";
 import Link from "next/link";
+import { getImage } from "@/utlis/getImage";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -78,15 +79,12 @@ export function AuthorCard({ subItem }: { subItem: MdxFileAuthorCard }) {
     throw new Error("frontMatter is missing");
   }
 
+  let imageType: GetImage = subItem.frontMatter.image as GetImage;
   return (
     <div className={classes.wrapper}>
       {subItem?.frontMatter?.image !== undefined ? (
         <Image
-          src={
-            typeof subItem?.frontMatter?.image === "string"
-              ? subItem?.frontMatter?.image
-              : subItem?.frontMatter?.image[0].url
-          }
+          src={getImage(imageType)}
           alt={subItem?.frontMatter.name}
           className={classes.image}
         />
