@@ -6,22 +6,39 @@ import {
   Box,
   TypographyStylesProvider,
 } from "@mantine/core";
-import type { PageOpts, PageMapItem } from "nextra";
+import type { PageOpts, PageMapItem, ThemeConfig } from "nextra";
 import { useRouter } from "next/router";
 import type { MdxFileCard } from "../../../types";
 import slugify from "slugify";
+import { NextSeo } from "next-seo";
+import { getMetaImage } from "@/utlis/meta-images";
 
 export function Tag({
   children,
   pageOpts,
+  themeConfig,
 }: {
   children: React.ReactNode;
-  pageOpts: PageOpts;
+  pageOpts?: PageOpts;
+  themeConfig?: ThemeConfig;
 }) {
+  const { siteURL } = themeConfig;
   const { query } = useRouter();
 
   return (
     <>
+      <NextSeo
+        title={pageOpts?.frontMatter.title}
+        description={pageOpts?.frontMatter.except}
+        canonical={`${siteURL}${pageOpts?.route}`}
+        openGraph={{
+          url: pageOpts?.route,
+          title: pageOpts?.frontMatter.name,
+          description: pageOpts?.frontMatter.except,
+          images: getMetaImage(pageOpts?.frontMatter.image),
+        }}
+      />
+
       <Box my={"md"} maw={724} mx="auto">
         <TypographyStylesProvider> {children}</TypographyStylesProvider>
       </Box>
