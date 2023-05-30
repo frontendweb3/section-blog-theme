@@ -9,22 +9,37 @@ import {
   Container,
   SimpleGrid,
 } from "@mantine/core";
-import type { PageMapItem, PageOpts } from "nextra";
+import type { PageMapItem, PageOpts, ThemeConfig } from "nextra";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { IconBrandTwitter, IconBrandGithub } from "@tabler/icons-react";
-import { ArticleCard } from "../Cards/ArticleCard";
+import { ArticleCard } from "@/components/Cards/ArticleCard";
 import { MdxFileCard } from "../../../types";
-
+import { NextSeo } from "next-seo";
+import { getMetaImage } from "@/utlis/meta-images";
 export function Author({
   children,
   pageOpts,
+  themeConfig,
 }: {
   children: React.ReactNode;
   pageOpts?: PageOpts;
+  themeConfig?: ThemeConfig;
 }) {
+  const { siteURL } = themeConfig;
   return (
     <>
+      <NextSeo
+        title={pageOpts?.frontMatter.name}
+        description={pageOpts?.frontMatter.except}
+        canonical={`${siteURL}${pageOpts?.route}`}
+        openGraph={{
+          url: pageOpts?.route,
+          title: pageOpts?.frontMatter.name,
+          description: pageOpts?.frontMatter.except,
+          images: getMetaImage(pageOpts?.frontMatter.image),
+        }}
+      />
       <Box maw={724} mx="auto">
         <Box py={"lg"} mt={"lg"}>
           <Title order={1}>{pageOpts?.frontMatter.name}</Title>
