@@ -8,73 +8,115 @@ import {
   Group,
   Text,
 } from "@mantine/core";
-import type { PageOpts } from "nextra";
+import type { PageOpts, ThemeConfig } from "nextra";
 import { Toc } from "../Toc/Toc";
 import Link from "next/link";
 import dayjs from "dayjs";
 import slugify from "slugify";
+import { ArticleJsonLd, NextSeo } from "next-seo";
+import { getImage } from "@/utlis/getImage";
+import { GetImage } from "../../../types";
+import { getMetaImage } from "@/utlis/meta-images";
 
 export function Post({
   children,
   pageOpts,
+  themeConfig,
 }: {
   children: React.ReactNode;
   pageOpts?: PageOpts;
+  themeConfig?: ThemeConfig;
 }) {
+  const { siteURL } = themeConfig;
+
+  let imageType: GetImage = pageOpts?.frontMatter.image as GetImage;
   return (
-    <Box maw={724} mx="auto">
-      
-      <Box py={"lg"}>
-        
-        <AspectRatio my={"lg"} ratio={1920 / 1080}>
-          <Image
-            mb={"xl"}
-            src={pageOpts?.frontMatter.image}
-            alt={pageOpts?.frontMatter.title}
-            caption={pageOpts?.frontMatter.imageAlt}
+    <>
+      {pageOpts?.frontMatter ? (
+        <>
+          <NextSeo
+            title={pageOpts?.frontMatter.title}
+            description={pageOpts?.frontMatter.except}
+            canonical={`${siteURL}${pageOpts?.route}`}
+            openGraph={{
+              url: pageOpts?.route,
+              title: pageOpts?.frontMatter.name,
+              description: pageOpts?.frontMatter.except,
+              images: getMetaImage(pageOpts?.frontMatter.image),
+            }}
           />
-        </AspectRatio>
+          <ArticleJsonLd
+            type="BlogPosting"
+            url={pageOpts.route}
+            title={pageOpts?.frontMatter.title}
+            description={pageOpts?.frontMatter.except}
+            canonical={`${siteURL}${pageOpts?.route}`}
+            images={pageOpts.frontMatter.image}
+            datePublished={pageOpts?.frontMatter.date}
+            keywords={pageOpts?.frontMatter.tags}
+            dateModified={
+              pageOpts.frontMatter.dateModified
+                ? pageOpts?.frontMatter.publish
+                : pageOpts?.frontMatter.date
+            }
+            authorName={pageOpts?.frontMatter.author}
+          />
+        </>
+      ) : (
+        ""
+      )}
+      <Box maw={724} mx="auto">
+        <Box py={"lg"}>
+          <AspectRatio my={"lg"} ratio={1920 / 1080}>
+            <Image
+              src={getImage(imageType) as string}
+              alt={pageOpts?.frontMatter.title}
+              mb={"xl"}
+              caption={pageOpts?.frontMatter.imageAlt}
+            />
+          </AspectRatio>
 
-        <Title order={1}>{pageOpts?.frontMatter.title}</Title>
-        
-        <Group>
-          
-          <Text> Published By </Text>
+          <Title order={1}>{pageOpts?.frontMatter.title}</Title>
 
-          <Link
-            href={`/authors/${slugify(pageOpts?.frontMatter.author, {
-              lower: true,
-              trim: true,
-            })}`}
-          >
-            {pageOpts?.frontMatter.author}
-          </Link>
+          <Group>
+            <Text> Published By </Text>
 
-          <time dateTime={dayjs(pageOpts?.frontMatter.date).format("MMM DD, YYYY")}>{dayjs(pageOpts?.frontMatter.date).format("MMM DD, YYYY")}</time>
+            <Link
+              href={`/authors/${slugify(pageOpts?.frontMatter.author, {
+                lower: true,
+                trim: true,
+              })}`}
+            >
+              {pageOpts?.frontMatter.author}
+            </Link>
 
-          {
-              pageOpts?.frontMatter.tags[0] ? (
-                <Link
-                  href={`/tags/${slugify(pageOpts?.frontMatter.tags[0], {
-                    lower: true,
-                    trim: true,
-                  })}`}
-                >
-                  {pageOpts?.frontMatter.tags[0]}{" "}
-                </Link>
-              ) : (
-                ""
-              )
-          }
+            <time
+              dateTime={dayjs(pageOpts?.frontMatter.date).format(
+                "MMM DD, YYYY"
+              )}
+            >
+              {dayjs(pageOpts?.frontMatter.date).format("MMM DD, YYYY")}
+            </time>
 
-        </Group>
+            {pageOpts?.frontMatter.tags[0] ? (
+              <Link
+                href={`/tags/${slugify(pageOpts?.frontMatter.tags[0], {
+                  lower: true,
+                  trim: true,
+                })}`}
+              >
+                {pageOpts?.frontMatter.tags[0]}{" "}
+              </Link>
+            ) : (
+              ""
+            )}
+          </Group>
+        </Box>
 
+        <Toc />
+
+        <TypographyStylesProvider> {children}</TypographyStylesProvider>
       </Box>
-
-      <Toc />
-
-      <TypographyStylesProvider> {children}</TypographyStylesProvider>
-
-    </Box>
+    </>
   );
 }
