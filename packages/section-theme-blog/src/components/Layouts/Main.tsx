@@ -10,8 +10,9 @@ import { Posts } from "./Posts";
 import { HomePage } from "./HomePage";
 import { Tag } from "./Tag";
 import { LayoutTypes } from "../../../types";
-import { NotFound } from "./404"; 
+import { NotFound } from "./404";
 import { ServerError } from "./500";
+import { DefaultSeo } from "next-seo";
 
 const Layouts = {
   post: Post,
@@ -26,24 +27,38 @@ const Layouts = {
 };
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
-  const { pageOpts } = useContext<{
+  const { pageOpts, themeConfig } = useContext<{
     pageOpts?: PageOpts;
     themeConfig?: ThemeConfig;
   }>(ThemeContext);
 
+  const { defaultSeo } = themeConfig;
+
   let LayoutType: LayoutTypes =
-    pageOpts?.frontMatter.type || ("home" as string );
+    pageOpts?.frontMatter.type || ("home" as string);
 
   let Layout = Layouts[LayoutType];
 
   if (!Layout) {
     throw new Error(
       `nextra theme does not support the layout type "${LayoutType}" It only supports "post","Posts", "page", "home","author","authors","404","500", and "tag"`
-    ); 
+    );
   }
 
   if (pageOpts === undefined) {
     throw new Error(`Not found pageOpts`);
   }
-  return <Layout pageOpts={pageOpts}> {children} </Layout>;
+
+  if (LayoutType === 404 || LayoutType === 500) {
+    return <Layout pageOpts={pageOpts}> {children} </Layout>;
+  }
+
+  return (
+    <>
+      <DefaultSeo {...defaultSeo} />{" "}
+      <Layout themeConfig={themeConfig} pageOpts={pageOpts}>
+        {children}{" "}
+      </Layout>{" "}
+    </>
+  );
 }
