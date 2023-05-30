@@ -41,13 +41,12 @@ export function HeaderMenu() {
           </Menu>
 
           <Link className={classes.logo} href={"/"}>
-            {logo.text !== undefined ? (
-              <Button leftIcon={logo?.svg} variant="transprent">
-                {" "}
+            {logo !== undefined ? (
+              <Button leftIcon={logo?.svg} color="dark" variant="transprent">
                 {logo?.text}{" "}
               </Button>
             ) : (
-              <div>{logo.svg} </div>
+              ""
             )}
           </Link>
         </Group>
