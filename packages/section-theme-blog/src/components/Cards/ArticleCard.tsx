@@ -1,7 +1,9 @@
 import { createStyles, Card, Image, Text, AspectRatio } from "@mantine/core";
 import Link from "next/link";
 import dayjs from "dayjs";
-import { MdxFileCard } from "../../../types";
+import { GetImage, MdxFileCard } from "../../../types";
+import { getImage } from "@/utlis/getImage";
+import { getMetaImage } from "@/utlis/meta-images";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -29,6 +31,8 @@ export function ArticleCard({ subItem }: { subItem: MdxFileCard }) {
   if (subItem.frontMatter === undefined) {
     throw new Error("frontMatter is missing");
   }
+  let imageType: GetImage = subItem.frontMatter.image as GetImage;
+
   return (
     <Card
       key={subItem?.frontMatter.title}
@@ -39,14 +43,7 @@ export function ArticleCard({ subItem }: { subItem: MdxFileCard }) {
     >
       {subItem?.frontMatter?.image !== undefined ? (
         <AspectRatio ratio={1920 / 1080}>
-          <Image
-            src={
-              typeof subItem?.frontMatter?.image === "string"
-                ? subItem?.frontMatter?.image
-                : subItem?.frontMatter?.image[0].url
-            }
-            alt={subItem?.frontMatter.title}
-          />
+          <Image src={getImage(imageType)} alt={subItem?.frontMatter.title} />
         </AspectRatio>
       ) : (
         ""
