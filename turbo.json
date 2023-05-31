@@ -10,10 +10,6 @@
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "docs": {
-      "cache": false,
-      "persistent": true
     }
   }
 }
