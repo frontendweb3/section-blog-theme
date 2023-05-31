@@ -112,14 +112,16 @@ export function Hero() {
 
         <Container p={0} size={600}>
           <Text size="lg" color="dimmed" className={classes.description}>
-            Build more reliable software with AI companion. AI is also trained
-            to detect lazy developers who do nothing and just complain on
-            Twitter.
+            The section is nextra and MDX-based blog theme. You can start your
+            blog within just one minute. It has an inbuilt dark mode, a Search
+            bar, Customize Navigation, and SEO Support.
           </Text>
         </Container>
 
         <div className={classes.controls}>
           <Button
+            component="a"
+            href="/docs/installation"
             className={classes.control}
             size="xl"
             variant="default"
