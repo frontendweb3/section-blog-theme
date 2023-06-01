@@ -27,7 +27,7 @@ export function Post({
   pageOpts?: PageOpts;
   themeConfig?: ThemeConfig;
 }) {
-  const { siteURL } = themeConfig;
+  const { siteURL, dateFormat } = themeConfig;
 
   let imageType: GetImage = pageOpts?.frontMatter.image as GetImage;
   return (
@@ -91,11 +91,9 @@ export function Post({
             </Link>
 
             <time
-              dateTime={dayjs(pageOpts?.frontMatter.date).format(
-                "MMM DD, YYYY"
-              )}
+              dateTime={dayjs(pageOpts?.frontMatter.date).format(dateFormat)}
             >
-              {dayjs(pageOpts?.frontMatter.date).format("MMM DD, YYYY")}
+              {dayjs(pageOpts?.frontMatter.date).format(dateFormat)}
             </time>
 
             {pageOpts?.frontMatter.tags[0] ? (
