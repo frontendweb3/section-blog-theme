@@ -40,6 +40,7 @@ export function Author({
           images: getMetaImage(pageOpts?.frontMatter.image),
         }}
       />
+
       <Box maw={724} mx="auto">
         <Box py={"lg"} mt={"lg"}>
           <Title order={1}>{pageOpts?.frontMatter.name}</Title>
