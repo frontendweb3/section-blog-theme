@@ -1,4 +1,5 @@
 const themeConfig = {
+  dateFormat: "MMM DD, YYYY",
   siteURL: "http://localhost:3000",
   defaultSeo: {
     openGraph: {
