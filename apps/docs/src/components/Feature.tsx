@@ -42,7 +42,7 @@ export const MOCKDATA = [
     icon: IconLayout,
     title: "Mutiple Layout Support",
     description:
-      "In-built multiple layout support for the home page, regular page, author, author, post, post, tag, etc.",
+      "In-built multiple layout support for the home page, regular page, author, author, posts, post, tag, etc.",
   },
 ];
 
