@@ -8,8 +8,8 @@ import {
   Box,
   TypographyStylesProvider,
 } from "@mantine/core";
-import { useRouter } from "next/router.js";
-import { MdxFileAuthorCard } from "../../../types";
+import { useRouter } from "next/router";
+import { MdxFileAuthorCard } from "../../types";
 import { NextSeo } from "next-seo";
 import { getMetaImage } from "@/utlis/meta-images";
 
