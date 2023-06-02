@@ -1,5 +1,4 @@
-import { Container, Button, Text, rem, createStyles } from "@mantine/core";
-import Link from "next/link";
+import { Container, Button, Text, createStyles } from "@mantine/core";
 const useStyles = createStyles((theme) => ({
   control: {
     marginLeft: "10px",
