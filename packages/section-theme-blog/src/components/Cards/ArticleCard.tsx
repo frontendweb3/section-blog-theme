@@ -1,9 +1,11 @@
 import { createStyles, Card, Image, Text, AspectRatio } from "@mantine/core";
 import Link from "next/link";
 import dayjs from "dayjs";
-import { GetImage, MdxFileCard } from "../../../types";
+import { GetImage, MdxFileCard } from "../../types";
 import { getImage } from "@/utlis/getImage";
-import { getMetaImage } from "@/utlis/meta-images";
+import { PageOpts, ThemeConfig } from "nextra";
+import { ThemeContext } from "@/Provider/config";
+import { useContext } from "react";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -28,9 +30,17 @@ const useStyles = createStyles((theme) => ({
 export function ArticleCard({ subItem }: { subItem: MdxFileCard }) {
   const { classes } = useStyles();
 
+  const { themeConfig } = useContext<{
+    pageOpts?: PageOpts;
+    themeConfig?: ThemeConfig;
+  }>(ThemeContext);
+
+  const { dateFormat } = themeConfig;
+
   if (subItem.frontMatter === undefined) {
     throw new Error("frontMatter is missing");
   }
+
   let imageType: GetImage = subItem.frontMatter.image as GetImage;
 
   return (
@@ -57,7 +67,11 @@ export function ArticleCard({ subItem }: { subItem: MdxFileCard }) {
         weight={700}
         mt="md"
       >
-        {dayjs(subItem.frontMatter.date).format("MMM DD, YYYY")}
+        <time dateTime={dayjs(subItem?.frontMatter.date).format(dateFormat)}>
+          {dayjs(subItem?.frontMatter.date).format(
+            dateFormat ? dateFormat : "MMM DD, YYYY"
+          )}
+        </time>
       </Text>
       <Link href={subItem.route} className={classes.link}>
         <Text component="div" className={classes.title} mt={5}>
