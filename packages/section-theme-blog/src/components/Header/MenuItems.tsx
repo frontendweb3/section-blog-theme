@@ -2,7 +2,7 @@ import { Group } from "@mantine/core";
 import { useContext } from "react";
 import { ThemeContext } from "../../Provider/config";
 import { useStyles } from "./Header-style";
-import Link from "next/link.js";
+import Link from "next/link";
 import type { PageOpts, ThemeConfig } from "nextra";
 import { useRouter } from "next/router";
 
