@@ -129,7 +129,7 @@ export function Hero() {
         <div className={classes.controls}>
           <Button
             component="a"
-            href="/docs/installation"
+            href="/docs"
             className={classes.control}
             size="xl"
             variant="default"
