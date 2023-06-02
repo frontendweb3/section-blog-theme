@@ -14,7 +14,7 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { IconBrandTwitter, IconBrandGithub } from "@tabler/icons-react";
 import { ArticleCard } from "@/components/Cards/ArticleCard";
-import { MdxFileCard } from "../../../types";
+import { MdxFileCard } from "../../types";
 import { NextSeo } from "next-seo";
 import { getMetaImage } from "@/utlis/meta-images";
 export function Author({
