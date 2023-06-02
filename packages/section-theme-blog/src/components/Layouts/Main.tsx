@@ -9,7 +9,7 @@ import { Post } from "./Post";
 import { Posts } from "./Posts";
 import { HomePage } from "./HomePage";
 import { Tag } from "./Tag";
-import { LayoutTypes } from "../../../types";
+import { LayoutTypes } from "../../types";
 import { NotFound } from "./404";
 import { ServerError } from "./500";
 import { DefaultSeo } from "next-seo";
@@ -41,7 +41,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
 
   if (!Layout) {
     throw new Error(
-      `nextra theme does not support the layout type "${LayoutType}" It only supports "post","Posts", "page", "home","author","authors","404","500", and "tag"`
+      `nextra theme does not support the layout type "${LayoutType}" It only supports "Post","Posts", "Page", "Home","Author","Authors","404","500", and "Tag"`
     );
   }
 
