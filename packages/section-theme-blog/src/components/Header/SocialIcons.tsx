@@ -3,7 +3,7 @@ import { ThemeContext } from "../../Provider/config";
 import { useStyles } from "./Header-style";
 import Link from "next/link";
 import type { PageOpts, ThemeConfig } from "nextra";
-import { Group, ActionIcon, ThemeIcon } from "@mantine/core";
+import { Group, ActionIcon } from "@mantine/core";
 import { useMantineColorScheme } from "@mantine/core";
 import {
   IconBrandTwitter,
@@ -16,7 +16,7 @@ import {
   IconBrandLinkedin,
 } from "@tabler/icons-react";
 import { SearchBar } from "../Search/Search";
-import { iconsType } from "../../../types";
+import { iconsType } from "../../types";
 
 let Icons = {
   Facebook: <IconBrandFacebook size={"1.1rem"} stroke={"1.5"} />,
