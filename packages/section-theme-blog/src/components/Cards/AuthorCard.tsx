@@ -1,6 +1,6 @@
 import { createStyles, Text, Title, Image, rem } from "@mantine/core";
 import { ActionIcon } from "@mantine/core";
-import { GetImage, MdxFileAuthorCard } from "../../../types";
+import { GetImage, MdxFileAuthorCard } from "../../types";
 import { IconBrandTwitter, IconBrandGithub } from "@tabler/icons-react";
 import Link from "next/link";
 import { getImage } from "@/utlis/getImage";
@@ -71,7 +71,7 @@ const useStyles = createStyles((theme) => ({
     borderBottomLeftRadius: 0,
   },
 }));
-// https://www.figma.com/community/file/1098318123644326386/3-Author-Bio-Box-Template-%7C-BRIX-Templates
+
 export function AuthorCard({ subItem }: { subItem: MdxFileAuthorCard }) {
   const { classes } = useStyles();
 
@@ -79,7 +79,8 @@ export function AuthorCard({ subItem }: { subItem: MdxFileAuthorCard }) {
     throw new Error("frontMatter is missing");
   }
 
-  let imageType: GetImage = subItem.frontMatter.image as GetImage;
+  let imageType = subItem.frontMatter.image;
+
   return (
     <div className={classes.wrapper}>
       {subItem?.frontMatter?.image !== undefined ? (
