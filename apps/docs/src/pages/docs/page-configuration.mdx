@@ -1,0 +1,118 @@
+---
+title : Page Configuration
+---
+
+The section theme inbuilt support multiple layouts for the blog. You can handle it with front matter. 
+
+
+Section theme supports the common front matter for your blog that helps you with SEO.
+
+```markdown copy filename="front matter"
+---
+type: page
+title : my title
+expect: my description
+image:
+  - https://cdn.pixabay.com/photo/2016/05/31/10/52/contact-us-1426589_1280.png
+  - https://cdn.pixabay.com/photo/2014/08/05/10/27/iphone-410311_1280.jpg
+---
+```
+
+## Home Page
+You can setup Home page with 
+
+```markdown copy filename="index.mdx"
+---
+type: home
+title: Home Page - Rajdeep Singh
+except : Home page 
+image:
+  - url : https://cdn.pixabay.com/photo/2023/05/21/19/45/rose-8009275_1280.jpg
+    alt : Pixabay image
+---
+```
+
+## Basic Page
+```markdown copy  filename="about.mdx"
+---
+type: page
+title: About us - Rajdeep Singh
+except : About page
+image:
+  - url : https://cdn.pixabay.com/photo/2023/05/21/19/45/rose-8009275_1280.jpg
+    alt : Pixabay image
+---
+
+```
+
+## Authos Page
+
+```markdown copy filename="index.mdx"
+---
+type: authors
+title: Authors List
+except: Sit culpa elit excepteur ea Lorem ullamco eiusmod ex ut ea incididunt minim. Cillum eiusmod fugiat cupidatat.
+---
+
+```
+
+
+
+## Author Page
+```markdown copy filename="author-name.mdx"
+---
+type: author
+name: Annie Dean
+except: Sit culpa elit excepteur ea Lorem ullamco eiusmod ex ut ea incididunt minim. Cillum eiusmod fugiat cupidatat.
+date: 2022-01-09T09:01:55.077Z
+job : JavaScript 
+tags: 
+   - Annie Dean
+image: https://cdn.pixabay.com/photo/2023/04/30/09/43/flower-7960192_1280.jpg
+social:
+  - name: github
+    url: https://github.com/frontendweb3
+  - name : twitter
+    url: https://twitter.com/Official_R_deep 
+---
+```
+
+
+## Posts Page
+
+```markdown copy filename="index.mdx"
+---
+type: posts
+title: Posts List
+expect: Our blog posts
+---
+```
+
+
+## Post Page
+
+```markdown copy filename="my-new-post.mdx"
+---
+type: post
+title: Markdown Example
+except: my unque Markdown example.
+date: 2022-11-01T08:40:19.051Z
+tags:
+  - Markdown
+  - Theme
+image: /images/MDX.png
+imageAlt: My Image Alt.
+imageCaption: My unique capation
+author: Rajdeep Singh
+---
+```
+
+## Tag
+```markdown copy filename="tags/[slug].mdx"
+---
+type : tag
+---
+```
+
+
+
