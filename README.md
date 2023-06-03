@@ -1,7 +1,3 @@
----
-title: Installation
----
-
 ### Installation
 
 The Installation of the section theme blog is a lot easier. You can install the section theme blog with the following command.
@@ -20,10 +16,10 @@ npm install nextra section-theme-blog
 
 ### Configure the section theme with nextra
 
-Create the following `next.config.js` or `next.config.tsx` file in your project’s root directory:
+Create the following `next.config.js` file in your project’s root directory:
 
 ```javascript
-// next.config.js or next.config.tsx
+// next.config.js
 
 const withNextra = require("nextra")({
   theme: "section-theme-blog",
