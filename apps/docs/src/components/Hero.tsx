@@ -139,7 +139,7 @@ export function Hero() {
           </Button>
           <Button
             component="a"
-            href="https://github.com/mantinedev/mantine"
+            href="https://github.com/frontendweb3/section-theme-blog"
             size="xl"
             variant="default"
             className={classes.control}
