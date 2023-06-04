@@ -1,6 +1,7 @@
-## theme configuration
 
-The theme configuration
+## Theme configuration
+
+The theme configuration look like this. You can easily edit and config it.
 
 ```jsx filename="theme.config.tsx"
 const themeConfig = {
@@ -23,7 +24,7 @@ const themeConfig = {
     text: "Section",
     svg: (
       <svg
-        width="24"
+    width="24"
         height="24"
         viewBox="0 0 24 24"
         fill="none"
@@ -104,13 +105,54 @@ export default themeConfig;
 ```
 
 ## dateFormat
+Change the date dateFormat in your blog site. By default date type is `MMM DD, YYYY`, and it built the use of the day.js library. Check out all the [date format lists](https://day.js.org/docs/en/display/format).
+
+ Option       | TYPE          | Require|  Description 
+------------- | ------------- | ------- | -------------
+dateFormat  | `string`  |  `false` | change the date fromat 
+
 
 ## defaultSeo
+defaultSeo is part of the [next-SEO]((https://github.com/garmeeh/next-seo)) package. You can add a default Seo Meta tag for your blog.
+
+Option       | TYPE          | Require |  Description 
+------------- | ------------- | ------- | ------
+defaultSeo | [`DefaultSeo`](https://github.com/garmeeh/next-seo#default-seo-configuration)  | `true` | Config SEO Meta Tag
+
 
 ## logo
+You can change the logo on your blog. You can change and edit text and SVG.
+
+Option       | TYPE          | Require |  Description
+------------- | ------------- | ------ | -------------
+logo.text  | `string`  | `false` | Name of logo
+logo.svg   |  `reactNode` | `false` | svg logo
+
 
 ##  primary_navigation
+Primary Navigation is used on your header; you can edit and change it. 
+
+
+Option       | TYPE          | Require |  Description
+------------- | ------------- | ------ | -------------
+ route | `string`  | `true` | path or url 
+ name | `string`   |  `true` | name of url
+
 
 ##  secondary_navigation
+Primary Navigation is used on your footer; you can edit and change it. 
+
+Option       | TYPE          | Require |  Description
+------------- | ------------- | ------ | -------------
+ route | `string`  | `true` | path or url 
+ name | `string`   |  `true` | name of url
+
 
 ## social_links
+Social media icon show on your website header.
+
+Option       | TYPE          | Require |  Description
+------------- | ------------- | ------ | -------------
+ url | `string`  | `true` | full link of social media  
+ name | `Facebook Twitter Youtube Linkedin Github Instagram` |  `false` | name of url 
+svg |  `reactNode` | `false` | social media icon
