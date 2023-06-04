@@ -1,0 +1,40 @@
+# Divider
+
+You can add Divider component inside your MDX file. The Divider component is built based mantine UI [Divider component](https://mantine.dev/core/divider).
+
+## Example
+```javascript
+<Divider />
+```
+
+
+## Size
+You can change the size of Divider.
+
+```javascript
+<Divider size="lg" />
+<Divider size="xs" />
+<Divider size="sm" />
+<Divider size="md" />
+<Divider size="lg" />
+<Divider size="xl" />
+<Divider size={10} />
+```
+## Variant
+You can change the variant of Divider.
+
+```javascript
+<Divider variant="dashed" />
+<Divider variant="dotted" />
+```
+
+## Label
+You can add a label in the Divider component.
+
+```javascript
+  <Divider my="xs" label="Label on the left" />
+  <Divider my="xs" label="Label in the center" labelPosition="center" />
+  <Divider my="xs" label="Label on the right" labelPosition="right" />
+  <Divider my="xs" variant="dashed" labelPosition="center" label={ <> <IconSearch size={12} /> <Box ml={5}>Search results</Box></>} />
+  <Divider my="xs" label="Link label" labelProps={{ component: 'a', href: 'https://mantine.dev', variant: 'link', color: 'blue' }} />
+```
