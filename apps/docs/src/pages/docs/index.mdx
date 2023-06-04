@@ -3,6 +3,7 @@ title : Installation
 ---
 import { Tab, Tabs } from 'nextra-theme-docs'
 import { Steps } from 'nextra-theme-docs'
+import { Callout } from 'nextra/components'
 
 <Steps>
 
@@ -11,26 +12,29 @@ The Installation of the section theme blog is a lot easier. You can install the 
  
 <Tabs items={['pnpm', 'npm', 'yarn']}>
   <Tab>
-  ```bash copy
+  ```bash
 pnpm add nextra section-theme-blog
   ```
   </Tab>
     <Tab>
-  ```bash copy
+  ```bash
 yarn add nextra section-theme-blog
   ```
   </Tab>
     <Tab>
-  ```bash copy
+  ```bash
 npm install nextra section-theme-blog
   ```
   </Tab>
 </Tabs>
 
+#### Note
+
+> Section theme built on top of mantine UI, That way using the Tailwind CSS, you face some style issues. I strongly recommendation is used [Mantine UI](https://mantine.dev/pages/getting-started/).
 
 ### Configure the section theme with nextra
 
-Create the following `next.config.js` or `next.config.tsx` file in your project’s root directory:
+Create the following `next.config.js` file in your project’s root directory:
 
 ```bash {2-3} copy filename="next.config.js"
 const withNextra = require("nextra")({
@@ -125,5 +129,15 @@ const themeConfig = {
 export default themeConfig;
 ```
 
+### Rename the `_app.tsx` to `_app.mdx`
+
+```javascript
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+```
+
+
+Lastly run your local devlpment server with `pnpm dev or npm run dev ` command.
 </Steps>
 
