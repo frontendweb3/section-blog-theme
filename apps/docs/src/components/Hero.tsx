@@ -25,23 +25,6 @@ const useStyles = createStyles((theme) => ({
     zIndex: 1,
   },
 
-  dots: {
-    position: "absolute",
-    color:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[5]
-        : theme.colors.gray[1],
-
-    [theme.fn.smallerThan("sm")]: {
-      display: "none",
-    },
-  },
-
-  dotsLeft: {
-    left: 0,
-    top: 0,
-  },
-
   title: {
     textAlign: "center",
     fontWeight: 800,
