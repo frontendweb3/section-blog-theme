@@ -23,7 +23,7 @@ Create the following `next.config.js` file in your project’s root directory:
 
 const withNextra = require("nextra")({
   theme: "section-theme-blog",
-  themeConfig: "./theme.config.jsx",
+  themeConfig: "./theme.config.tsx",
 });
 
 module.exports = withNextra();
@@ -34,11 +34,12 @@ module.exports = withNextra();
 The lastly create a `theme.config.tsx` or `theme.config.jsx` file in your root level.
 
 ```javascript
-// theme.config.jsx
+// theme.config.tsx
 
-const themeConfig = {
+import type { SectionBlogTheme } from "section-theme-blog";
+
+const themeConfig: SectionBlogTheme = {
   siteURL: "http://localhost:3000",
-
   logo: {
     text: "Section",
     svg: (
@@ -89,19 +90,7 @@ const themeConfig = {
   ],
   social_links: [
     {
-      name: "Facebook",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
-    {
       name: "Twitter",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
-    {
-      name: "Linkedin",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
-    {
-      name: "Instagram",
       url: "https://facebook.com/officialrajdeepsingh",
     },
     {
