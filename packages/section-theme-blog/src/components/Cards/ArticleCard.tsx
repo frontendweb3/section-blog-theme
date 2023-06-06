@@ -22,7 +22,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 600,
   },
 }));
@@ -44,13 +43,7 @@ export function ArticleCard({ subItem }: { subItem: MdxFileCard }) {
   let imageType: GetImage = subItem.frontMatter.image as GetImage;
 
   return (
-    <Card
-      key={subItem?.frontMatter.title}
-      p="md"
-      radius="md"
-      component="div"
-      className={classes.card}
-    >
+    <Card p="md" radius="md" component="div" className={classes.card}>
       {subItem?.frontMatter?.image !== undefined ? (
         <AspectRatio ratio={1920 / 1080}>
           <Image src={getImage(imageType)} alt={subItem?.frontMatter.title} />
