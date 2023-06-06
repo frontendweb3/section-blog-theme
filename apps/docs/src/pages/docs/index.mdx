@@ -28,6 +28,8 @@ npm install nextra section-theme-blog
   </Tab>
 </Tabs>
 
+Section theme work with [Nextra](https://nextra.site/) and [MDX](https://mdxjs.com/). Currently Nextra does not work with the nextjs app directory.
+
 #### Note
 
 > Section theme built on top of mantine UI, That way using the Tailwind CSS, you face some style issues. I strongly recommendation is used [Mantine UI](https://mantine.dev/pages/getting-started/).
@@ -39,7 +41,7 @@ Create the following `next.config.js` file in your project’s root directory:
 ```bash {2-3} copy filename="next.config.js"
 const withNextra = require("nextra")({
   theme: "section-theme-blog",
-  themeConfig: "./theme.config.jsx",
+  themeConfig: "./theme.config.tsx",
 });
 
 module.exports = withNextra(); 
@@ -49,11 +51,12 @@ module.exports = withNextra();
 
 The lastly create a `theme.config.tsx` or `theme.config.jsx` file in your root level.
 
-```bash copy filename="theme.config.jsx"
+```bash copy filename="theme.config.tsx"
 
-const themeConfig = {
+import type { SectionBlogTheme } from "section-theme-blog";
+
+const themeConfig:SectionBlogTheme = {
   siteURL: "http://localhost:3000",
-
   logo: {
     text: "Section",
     svg: (
@@ -103,20 +106,9 @@ const themeConfig = {
     }
   ],
   social_links: [
-    {
-      name: "Facebook",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
+
     {
       name: "Twitter",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
-    {
-      name: "Linkedin",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
-    {
-      name: "Instagram",
       url: "https://facebook.com/officialrajdeepsingh",
     },
     {
@@ -136,8 +128,17 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 ```
+### Rename your `index.tsx` to `index.mdx`
 
+```markdown
+---
+type: home
+title : Welcome to Home Page
+---
+## Welcome to Home Page.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+```
 
-Lastly run your local devlpment server with `pnpm dev or npm run dev ` command.
+Lastly run your local devlpment server with `pnpm dev or npm run dev ` command and learn more about [page and layout](/docs/page-configuration).
 </Steps>
 
