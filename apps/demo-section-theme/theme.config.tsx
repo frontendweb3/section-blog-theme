@@ -1,6 +1,4 @@
-import type { SectionBlogTheme } from "section-theme-blog";
-
-const themeConfig: SectionBlogTheme = {
+const themeConfig = {
   dateFormat: "MMM DD, YYYY",
   siteURL: "http://localhost:3000",
   defaultSeo: {
@@ -95,4 +93,4 @@ const themeConfig: SectionBlogTheme = {
     },
   ],
 };
-export default themeConfig
+export default themeConfig;
