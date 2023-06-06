@@ -15,7 +15,7 @@ import dayjs from "dayjs";
 import slugify from "slugify";
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import { getImage } from "@/utlis/getImage";
-import { GetImage } from "../../../types";
+import { GetImage } from "../../types";
 import { getMetaImage } from "@/utlis/meta-images";
 
 export function Post({
@@ -28,7 +28,10 @@ export function Post({
   themeConfig?: ThemeConfig;
 }) {
   const { siteURL, dateFormat } = themeConfig;
-
+  const getURL =
+    process.env.NODE_ENV !== "development"
+      ? `${siteURL}${pageOpts?.route}`
+      : `http://localhost:3000${pageOpts?.route}`;
   let imageType: GetImage = pageOpts?.frontMatter.image as GetImage;
   return (
     <>
@@ -37,7 +40,7 @@ export function Post({
           <NextSeo
             title={pageOpts?.frontMatter.title}
             description={pageOpts?.frontMatter.except}
-            canonical={`${siteURL}${pageOpts?.route}`}
+            canonical={getURL}
             openGraph={{
               url: pageOpts?.route,
               title: pageOpts?.frontMatter.name,
@@ -93,7 +96,9 @@ export function Post({
             <time
               dateTime={dayjs(pageOpts?.frontMatter.date).format(dateFormat)}
             >
-              {dayjs(pageOpts?.frontMatter.date).format(dateFormat)}
+              {dayjs(pageOpts?.frontMatter.date).format(
+                dateFormat ? dateFormat : "MMM DD, YYYY"
+              )}
             </time>
 
             {pageOpts?.frontMatter.tags[0] ? (
