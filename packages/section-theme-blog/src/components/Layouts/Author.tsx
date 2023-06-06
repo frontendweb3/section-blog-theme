@@ -17,6 +17,9 @@ import { ArticleCard } from "@/components/Cards/ArticleCard";
 import { MdxFileCard } from "../../types";
 import { NextSeo } from "next-seo";
 import { getMetaImage } from "@/utlis/meta-images";
+import slugify from "slugify";
+// import { MetaImage } from "../../types";
+
 export function Author({
   children,
   pageOpts,
@@ -27,12 +30,18 @@ export function Author({
   themeConfig?: ThemeConfig;
 }) {
   const { siteURL } = themeConfig;
+
+  const getURL =
+    process.env.NODE_ENV !== "development"
+      ? `${siteURL}${pageOpts?.route}`
+      : `http://localhost:3000${pageOpts?.route}`;
+
   return (
     <>
       <NextSeo
         title={pageOpts?.frontMatter.name}
         description={pageOpts?.frontMatter.except}
-        canonical={`${siteURL}${pageOpts?.route}`}
+        canonical={getURL}
         openGraph={{
           url: pageOpts?.route,
           title: pageOpts?.frontMatter.name,
@@ -81,15 +90,21 @@ export function Author({
             ) {
               return item?.children.map((subItem) => {
                 if (
-                  subItem !== undefined &&
+                  subItem?.name !== "index" &&
                   subItem?.kind === "MdxPage" &&
                   subItem?.frontMatter !== undefined &&
                   subItem?.frontMatter.author === pageOpts.frontMatter.name
                 ) {
                   let subItemCard: MdxFileCard = subItem as MdxFileCard;
+
+                  console.log(subItem);
+
                   return (
                     <ArticleCard
-                      key={pageOpts.frontMatter.name}
+                      key={slugify(pageOpts.frontMatter.name, {
+                        lower: true,
+                        trim: true,
+                      })}
                       subItem={subItemCard}
                     />
                   );
