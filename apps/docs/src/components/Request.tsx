@@ -39,7 +39,7 @@ export function Request() {
         variant="default"
         color="blue"
         className={classes.control}
-        href="https://github.com/mantinedev/mantine"
+        href="https://github.com/frontendweb3/section-theme-blog/issues/new"
       >
         GitHub
       </Button>
