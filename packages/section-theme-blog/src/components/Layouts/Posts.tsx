@@ -8,7 +8,7 @@ import {
 } from "@mantine/core";
 import { useRouter } from "next/router";
 import type { PageOpts, PageMapItem, ThemeConfig } from "nextra";
-import { MdxFileCard } from "../../../types";
+import { MdxFileCard } from "../../types";
 import { NextSeo } from "next-seo";
 import { getMetaImage } from "@/utlis/meta-images";
 
@@ -23,13 +23,16 @@ export function Posts({
 }) {
   const { siteURL } = themeConfig;
   const router = useRouter();
-
+  const getURL =
+    process.env.NODE_ENV !== "development"
+      ? `${siteURL}${pageOpts?.route}`
+      : `http://localhost:3000${pageOpts?.route}`;
   return (
     <>
       <NextSeo
         title={pageOpts?.frontMatter.title}
         description={pageOpts?.frontMatter.except}
-        canonical={`${siteURL}${pageOpts?.route}`}
+        canonical={getURL}
         openGraph={{
           url: pageOpts?.route,
           title: pageOpts?.frontMatter.name,
