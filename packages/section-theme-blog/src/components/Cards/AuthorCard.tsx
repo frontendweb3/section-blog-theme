@@ -96,7 +96,6 @@ export function AuthorCard({ subItem }: { subItem: MdxFileAuthorCard }) {
       <div className={classes.body}>
         <Link
           key={subItem.frontMatter.name}
-          target="_blank"
           href={subItem.route}
           className={classes.link}
         >
