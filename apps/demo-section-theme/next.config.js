@@ -2,12 +2,11 @@
 
 const withNextra = require("nextra")({
   theme: "section-theme-blog",
-  themeConfig: "./theme.config.jsx",
+  themeConfig: "./theme.config.tsx",
   readingTime: true,
-  codeHighlight: true
+  codeHighlight: true,
 });
 
 module.exports = withNextra({
   reactStrictMode: true,
-  transpilePackages: ["section-theme-blog"],
 });
