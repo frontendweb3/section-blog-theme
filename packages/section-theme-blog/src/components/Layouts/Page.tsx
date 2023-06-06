@@ -15,12 +15,17 @@ export const Page = ({
   themeConfig?: ThemeConfig;
 }) => {
   const { siteURL } = themeConfig;
+
+  const getURL =
+    process.env.NODE_ENV !== "development"
+      ? `${siteURL}${pageOpts?.route}`
+      : `http://localhost:3000${pageOpts?.route}`;
   return (
     <>
       <NextSeo
         title={pageOpts?.frontMatter.title}
         description={pageOpts?.frontMatter.except}
-        canonical={`${siteURL}${pageOpts?.route}`}
+        canonical={getURL}
         openGraph={{
           url: pageOpts?.route,
           title: pageOpts?.frontMatter.name,
