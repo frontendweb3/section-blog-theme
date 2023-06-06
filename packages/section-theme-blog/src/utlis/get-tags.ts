@@ -1,5 +1,5 @@
 import type { MdxFile } from "nextra";
-import type { BlogFrontMatter } from "../../types";
+import type { BlogFrontMatter } from "../types";
 
 export function getStaticTags(page: MdxFile<BlogFrontMatter>) {
   if (!page.frontMatter) {
