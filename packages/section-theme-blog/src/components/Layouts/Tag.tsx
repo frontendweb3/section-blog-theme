@@ -8,7 +8,7 @@ import {
 } from "@mantine/core";
 import type { PageOpts, PageMapItem, ThemeConfig } from "nextra";
 import { useRouter } from "next/router";
-import type { MdxFileCard } from "../../../types";
+import type { MdxFileCard } from "../../types";
 import slugify from "slugify";
 import { NextSeo } from "next-seo";
 import { getMetaImage } from "@/utlis/meta-images";
@@ -25,16 +25,20 @@ export function Tag({
   const { siteURL } = themeConfig;
   const { query } = useRouter();
 
+  const getURL =
+    process.env.NODE_ENV !== "development"
+      ? `${siteURL}/tags/${pageOpts?.route}`
+      : `http://localhost:3000/tags/${pageOpts?.route}`;
   return (
     <>
       <NextSeo
-        title={pageOpts?.frontMatter.title}
+        title={query?.slug ? query.slug : pageOpts?.frontMatter.title}
         description={pageOpts?.frontMatter.except}
-        canonical={`${siteURL}${pageOpts?.route}`}
+        canonical={getURL}
         openGraph={{
           url: pageOpts?.route,
-          title: pageOpts?.frontMatter.name,
-          description: pageOpts?.frontMatter.except,
+          title: query?.slug ? query.slug : pageOpts?.frontMatter.title,
+          description: query?.slug ? query.slug : pageOpts?.frontMatter.except,
           images: getMetaImage(pageOpts?.frontMatter.image),
         }}
       />
