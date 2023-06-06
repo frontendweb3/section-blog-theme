@@ -1,4 +1,6 @@
-export function getMetaImage(image: string | string[] | object[]) {
+import { GetImage, MetaImage } from "../types";
+
+export function getMetaImage(image: GetImage) {
   if (typeof image === "string") {
     if (image?.trim().split(" ")) {
       let imageSplit = image?.trim().split(" ");
@@ -7,12 +9,14 @@ export function getMetaImage(image: string | string[] | object[]) {
       return [{ url: image }];
     }
   }
+
   if (typeof image === "object") {
-    return image?.map((item) => {
-      if (item.url !== undefined) {
-        return item;
-      } else {
+    return image?.map((item: string | MetaImage) => {
+      if (item === "string") {
         return { url: item };
+      }
+      if (item !== "object") {
+        return item;
       }
     });
   }
