@@ -1,7 +1,18 @@
 {
   "name": "section-theme-blog",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "license": "MIT",
+  "keywords": [
+    "blogging",
+    "mdx",
+    "nextra",
+    "mdx-nextjs",
+    "nextra-blog",
+    "nextra-markdown-blog",
+    "nextra-theme",
+    "nextra-markdown",
+    "mdx-nextjs"
+  ],
   "author": {
     "name": "Rajdeep Singh",
     "email": "officilrajdeepsingh@gmail.com"
@@ -42,7 +53,9 @@
   "scripts": {
     "clean": "rm  -R dist && tsup",
     "dev": "tsup --watch",
-    "build": "tsup"
+    "build": "tsup",
+    "types": "tsup --dts-only",
+    "types:check": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
