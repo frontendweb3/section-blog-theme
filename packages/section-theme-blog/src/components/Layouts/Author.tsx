@@ -90,14 +90,13 @@ export function Author({
             ) {
               return item?.children.map((subItem) => {
                 if (
+                  //  @ts-ignore
                   subItem?.name !== "index" &&
                   subItem?.kind === "MdxPage" &&
                   subItem?.frontMatter !== undefined &&
                   subItem?.frontMatter.author === pageOpts.frontMatter.name
                 ) {
                   let subItemCard: MdxFileCard = subItem as MdxFileCard;
-
-                  console.log(subItem);
 
                   return (
                     <ArticleCard
