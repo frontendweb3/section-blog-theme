@@ -1,0 +1,95 @@
+---
+type: post
+title: MDX Markdown
+except: MDX Markdown example.
+date: 2022-11-02T08:40:19.051Z
+tags:
+  - Markdown
+  - Theme
+  - MDX
+image: 
+  - /images/MDX.png
+imageAlt : My Image Alt.
+imageCaption : Copy Right By Frontend Web
+author: Section Theme
+---
+
+import { IconAlertCircle, IconBellRinging , IconBrandTinder , IconPhoto , IconMessageCircle, IconSettings } from '@tabler/icons-react';
+import { IconFlame } from '@tabler/icons-react';
+
+## Mark
+
+Lorem ipsum <Mark p={2} >dolor sit amet </Mark> consectetur adipisicing elit. <Mark p={1.2} color="orange">Alias aliquam  </Mark> atque beatae dolorum est in incidunt inventore ipsam iste magni molestiae molestias non placeat quaerat, quam rem unde veniam voluptate.
+
+## Alert
+
+
+<Alert icon={<IconAlertCircle size="1rem" />} title="Bummer!" color="grape">
+  Something terrible happened! You made a mistake and there is no going back, your data was lost forever!
+</Alert>
+
+<br />
+
+<Alert icon={<IconBellRinging size="1rem" />} title="Bummer!" color="red" variant="filled">
+  Something terrible happened! You made a mistake and there is no going back, your data was lost forever!
+</Alert>
+
+<br />
+
+<Alert icon={<IconBrandTinder size="1rem" />} title="Bummer!" color="red" variant="filled">
+  Something terrible happened! You made a mistake and there is no going back, your data was lost forever!
+</Alert>
+
+## Blockquote
+
+<Blockquote color="violet" cite="– Lorem">
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+</Blockquote>
+
+<Blockquote cite="Lorem Ipsum" icon={<IconFlame size="1.5rem" />}>
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+</Blockquote>
+
+## Divider
+<Divider mt={25} size="lg"  variant="dotted" color="grape" />
+<Divider mt={25} size="lg" color="pink" />
+
+## Tabs
+
+<Tabs defaultValue="npm">
+    
+    <Tabs.List>
+
+        <Tabs.Tab value="npm" >
+            NPM
+        </Tabs.Tab>
+
+        <Tabs.Tab value="yarn" >
+            Yarn
+        </Tabs.Tab>
+
+        <Tabs.Tab value="pnpm">
+            PNPM
+        </Tabs.Tab>
+
+      </Tabs.List>
+
+      <Tabs.Panel value="npm">
+        ```bash
+         npm i section-theme-blog
+        ```
+      </Tabs.Panel>
+
+      <Tabs.Panel value="yarn">
+        ```bash
+        yarn add section-theme-blog
+        ```
+      </Tabs.Panel>
+
+      <Tabs.Panel value="pnpm">
+        ```bash
+        pnpm add section-theme-blog
+        ```
+      </Tabs.Panel>
+</Tabs>
+
