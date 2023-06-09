@@ -1,20 +1,17 @@
 ---
 type: post
-title: Markdown Example 2
-except: my unque Markdown example.
+title: Markdown Example
+except: Markdown Example
 date: 2022-11-01T08:40:19.051Z
 tags:
   - Markdown
-  - Theme
+  - Markdown Example
+
 image: /images/MDX.png /images/MDX.png
 imageAlt: My Image Alt.
-imageCaption: My unique capation
-author: Annie Dean
+imageCaption: My unique capation.
+author: Section Theme
 ---
-
-import { IconAlertCircle, IconBellRinging , IconBrandTinder , IconPhoto , IconMessageCircle, IconSettings } from '@tabler/icons-react';
-import { IconFlame } from '@tabler/icons-react';
-
 
 ## Italic
 An example of *italic* text
@@ -28,81 +25,23 @@ An example of __bold text__
 An example of ***bold and italic text***
 An example of ___bold and italic text___
 
-## Mark
-
-Lorem ipsum <Mark p={2} >dolor sit amet </Mark> consectetur adipisicing elit. <Mark p={1.2} color="orange">Alias aliquam  </Mark> atque beatae dolorum est in incidunt inventore ipsam iste magni molestiae molestias non placeat quaerat, quam rem unde veniam voluptate.
-
-## Alert
-
-First Alert
-
-<Alert icon={<IconAlertCircle size="1rem" />} title="Bummer!" color="grape">
-  Something terrible happened! You made a mistake and there is no going back, your data was lost forever!
-</Alert>
-
-Second Alert
-
-<Alert icon={<IconBellRinging size="1rem" />} title="Bummer!" color="red" variant="filled">
-  Something terrible happened! You made a mistake and there is no going back, your data was lost forever!
-</Alert>
-
-Third Alert
-
-<Alert icon={<IconBrandTinder size="1rem" />} title="Bummer!" color="red" variant="filled">
-  Something terrible happened! You made a mistake and there is no going back, your data was lost forever!
-</Alert>
+## Strike through
+An example of ~~ Strike Through ~~
 
 
 ## Blockquote
 
-<Blockquote color="violet" cite="– Forrest Gump">
-  Life is like an npm install – you never know what you are going to get.
-</Blockquote>
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 
-<Blockquote cite="– Your poor i3 from 2012 struggling its best" icon={<IconFlame size="1.5rem" />}>
-      webpack built caa9bf3d1a0a0914ed84 in 28259ms
-</Blockquote>
+
+> > Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+
 
 ## Divider
-<Divider size="lg"  variant="dotted" />
 
-## Tabs
-<Tabs defaultValue="npm">
-    
-    <Tabs.List>
+---
 
-        <Tabs.Tab value="npm" >
-            NPM
-        </Tabs.Tab>
-
-        <Tabs.Tab value="yarn" >
-            Yarn
-        </Tabs.Tab>
-
-        <Tabs.Tab value="pnpm">
-            PNPM
-        </Tabs.Tab>
-
-      </Tabs.List>
-
-      <Tabs.Panel value="npm">
-        ```bash hascopycode 
-            npm i section-theme-blog
-        ```
-      </Tabs.Panel>
-
-      <Tabs.Panel value="yarn">
-        ```bash  hascopycode 
-            yarn add section-theme-blog
-        ```
-      </Tabs.Panel>
-
-      <Tabs.Panel value="pnpm">
-        ```bash hascopycode 
-            pnpm add section-theme-blog
-        ```
-      </Tabs.Panel>
-</Tabs>
+***
 
 
 ## Super script
@@ -195,6 +134,28 @@ Four table
     - [ ] GFM task 4-1
     - [ ] GFM task 4-2
 
+## Links
 
-<Divider size="lg" variant="dotted" />
+[Google](https://google.com)
+[Facebook](https://facebook.com)
 
+
+## Inline code
+Use `code` in your Markdown file.
+
+## code
+```javascript filename="JavaScript"
+import React from 'react';
+import ReactDOM from 'react-dom';
+ 
+// This is a functional component
+const Welcome = () => {
+    return <h1>Hello World!</h1>
+}
+```
+```js filename="example.js"
+console.log('hello, world')
+```
+## Images
+
+![The San Juan Mountains are beautiful!](https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539_1280.jpg "San Juan Mountains")
