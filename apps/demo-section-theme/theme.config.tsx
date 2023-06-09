@@ -72,19 +72,11 @@ const themeConfig = {
   ],
   social_links: [
     {
-      name: "Facebook",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
-    {
       name: "Twitter",
       url: "https://facebook.com/officialrajdeepsingh",
     },
     {
       name: "Linkedin",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
-    {
-      name: "Instagram",
       url: "https://facebook.com/officialrajdeepsingh",
     },
     {
