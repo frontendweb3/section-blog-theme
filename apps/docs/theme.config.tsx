@@ -1,7 +1,7 @@
 import type { DocsThemeConfig } from "nextra-theme-docs";
 
 const themeConfig: DocsThemeConfig = {
-  logo: <span>Section Theme</span>,
+  logo: <span> Section Theme </span>,
   project: {
     link: "https://github.com/frontendweb3/section-theme-blog",
   },
