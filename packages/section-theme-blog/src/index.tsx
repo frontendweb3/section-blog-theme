@@ -7,6 +7,7 @@ import {
   Highlight,
   MantineProvider,
   Mark,
+  Space,
   Tabs,
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
@@ -16,6 +17,7 @@ import { ThemeContext } from "./Provider/config";
 import { Footer } from "./components/Footer/Footer";
 import { HeaderMenu } from "./components/Header/Header";
 import { MainLayout } from "./components/Layouts/Main";
+import { Code } from "nextra/components";
 
 export default function Layout(props: NextraThemeLayoutProps) {
   const { children, pageOpts, themeConfig } = props;
@@ -33,6 +35,8 @@ export default function Layout(props: NextraThemeLayoutProps) {
     Blockquote: Blockquote,
     Tabs: Tabs,
     Divider: Divider,
+    Space: Space,
+    code: Code,
   };
 
   const toggleColorScheme = (value?: ColorScheme) =>
