@@ -94,9 +94,9 @@ export function Hero() {
         <Title className={classes.title}>
           Installation of the{" "}
           <Text component="span" className={classes.highlight} inherit>
-            section theme blog
+            Section theme blog
           </Text>{" "}
-          with nextra
+          with Nextra.js
         </Title>
 
         <Container p={0} size={600}>
