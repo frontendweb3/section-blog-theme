@@ -18,7 +18,6 @@ import { MdxFileCard } from "../../types";
 import { NextSeo } from "next-seo";
 import { getMetaImage } from "@/utlis/meta-images";
 import slugify from "slugify";
-// import { MetaImage } from "../../types";
 
 export function Author({
   children,
