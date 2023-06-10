@@ -73,9 +73,17 @@ export function Post({
           <AspectRatio my={"lg"} ratio={1920 / 1080}>
             <Image
               src={getImage(imageType) as string}
-              alt={pageOpts?.frontMatter.title}
+              alt={
+                pageOpts?.frontMatter.imageAlt
+                  ? pageOpts.frontMatter.imageAlt
+                  : pageOpts?.frontMatter.title
+              }
               mb={"xl"}
-              caption={pageOpts?.frontMatter.imageAlt}
+              caption={
+                pageOpts?.frontMatter.imageCaption
+                  ? pageOpts.frontMatter.imageCaption
+                  : pageOpts?.frontMatter.imageAlt
+              }
             />
           </AspectRatio>
 
