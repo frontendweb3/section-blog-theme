@@ -65,13 +65,12 @@ const useStyles = createStyles((theme) => ({
 
   control: {
     marginLeft: "10px",
+    color: "black",
+    backgroundColor: "white",
+
     "&: hover": {
-      color:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[0]
-          : theme.colors.dark[6],
-      backgroundColor:
-        theme.colorScheme === "dark" ? "white" : theme.colors.dark[2],
+      color: "white",
+      backgroundColor: "black",
     },
 
     [theme.fn.smallerThan("xs")]: {
