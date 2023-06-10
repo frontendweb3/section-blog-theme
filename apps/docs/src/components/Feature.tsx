@@ -28,9 +28,9 @@ export const MOCKDATA = [
   },
   {
     icon: IconSearch,
-    title: "In buit Search Support",
+    title: "Inbuilt Search Support",
     description:
-      "Inbuild rich Search support to search a blog post based on text.",
+      "Inbuilt rich Search support to search a blog post based on text.",
   },
   {
     icon: IconLayoutNavbar,
