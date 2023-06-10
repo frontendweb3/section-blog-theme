@@ -1,15 +1,15 @@
 const themeConfig = {
   dateFormat: "MMM DD, YYYY",
-  siteURL: "http://localhost:3000",
+  siteURL: "https://section-theme-blog-docs.vercel.app",
   defaultSeo: {
     openGraph: {
       type: "website",
       locale: "en_IE",
-      url: "https://www.url.ie/",
-      siteName: "SiteName",
+      url: "https://section-theme-blog-docs.vercel.app/",
+      siteName: "Section theme blog",
     },
     twitter: {
-      handle: "@handle",
+      handle: "@Official_R_deep",
       site: "@site",
       cardType: "summary_large_image",
     },
@@ -73,15 +73,15 @@ const themeConfig = {
   social_links: [
     {
       name: "Twitter",
-      url: "https://facebook.com/officialrajdeepsingh",
+      url: "https://twitter.com/Official_R_deep",
     },
     {
       name: "Linkedin",
-      url: "https://facebook.com/officialrajdeepsingh",
+      url: "https://www.linkedin.com/in/officalrajdeepsingh/",
     },
     {
       name: "Github",
-      url: "https://facebook.com/officialrajdeepsingh",
+      url: "https://github.com/officialrajdeepsingh",
     },
   ],
 };
