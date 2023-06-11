@@ -1,5 +1,9 @@
 Start your blog journey with Next.js, Nextra, and MDX using section themes. You can start your blog in less than two minutes, and you need only one command and zero configuration. Section theme comes with an inbuilt dark mode, a search bar, Customize Navigation, and SEO Support.
 
+## Buy a Coffee
+
+[![Buy a Coffee](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K2E87F0)
+
 ### Installation
 
 The Installation of the section theme blog is a lot easier. You can install the section theme blog with the following command.
