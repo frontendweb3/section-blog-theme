@@ -67,6 +67,7 @@ export type BlogFrontMatter = {
   tags?: string[];
   title: string;
   type: "post";
+  draft?: boolean;
 };
 
 // define Author frontmatter for author card
@@ -94,6 +95,7 @@ export type AuthorFrontMatter = {
   title: string;
   type: "author";
   job?: string;
+  draft?: boolean;
   social?: { name: iconsType; svg?: React.ReactNode; url: string }[];
 };
 
