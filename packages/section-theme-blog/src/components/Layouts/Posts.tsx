@@ -54,10 +54,16 @@ export function Posts({
               if (item.route === router.route) {
                 return item.children.map((subItem) => {
                   let subItemCard: MdxFileCard = subItem as MdxFileCard;
+
+                  let getDraft = subItemCard.frontMatter?.draft
+                    ? subItemCard.frontMatter.draft
+                    : false;
+
                   if (
                     subItemCard.name !== "index" &&
                     subItem !== undefined &&
                     subItem?.kind === "MdxPage" &&
+                    getDraft === false &&
                     subItem?.frontMatter !== undefined &&
                     subItem !== null
                   ) {
