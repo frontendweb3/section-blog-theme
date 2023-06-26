@@ -61,9 +61,15 @@ export function Authors({
                 return item.children.map((subItem) => {
                   let subItemCard: MdxFileAuthorCard =
                     subItem as MdxFileAuthorCard;
+
+                  let getDraft = subItemCard.frontMatter?.draft
+                    ? subItemCard.frontMatter.draft
+                    : false;
+
                   if (
                     subItemCard.name !== "index" &&
                     subItem?.kind === "MdxPage" &&
+                    getDraft === false &&
                     subItem !== null &&
                     subItem !== undefined
                   ) {
