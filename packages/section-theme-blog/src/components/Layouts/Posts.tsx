@@ -46,11 +46,7 @@ export function Posts({
       <Container py="xl">
         <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
           {pageOpts?.pageMap.map((item: PageMapItem) => {
-            if (
-              item !== undefined &&
-              item?.kind === "Folder" &&
-              item?.name === "posts"
-            ) {
+            if (item !== undefined && item?.kind === "Folder") {
               if (item.route === router.route) {
                 return item.children.map((subItem) => {
                   let subItemCard: MdxFileCard = subItem as MdxFileCard;
