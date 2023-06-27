@@ -53,8 +53,7 @@ export function Tag({
             if (
               item !== undefined &&
               item?.kind !== "Meta" &&
-              item?.kind === "Folder" &&
-              item?.name === "posts"
+              item?.kind === "Folder"
             ) {
               if (item?.name === "posts" && item.kind === "Folder") {
                 return (
@@ -65,8 +64,11 @@ export function Tag({
                       subItem?.kind === "MdxPage" &&
                       subItem?.frontMatter !== undefined
                     ) {
-                      if (subItem.frontMatter.tags !== undefined) {
-                        return subItem.frontMatter.tags.map(
+                      if (
+                        typeof subItem.frontMatter?.tags !== "string" &&
+                        subItem.frontMatter?.tags !== undefined
+                      ) {
+                        return subItem.frontMatter?.tags.map(
                           (itemSlug: string) => {
                             if (
                               slugify(itemSlug, { lower: true, trim: true }) ===
