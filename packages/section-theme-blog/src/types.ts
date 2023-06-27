@@ -14,10 +14,10 @@ interface SocialLink {
 export interface SectionBlogTheme {
   dateFormat?: string;
   siteURL: string;
-  defaultSeo: DefaultSeoProps;
+  defaultSeo?: DefaultSeoProps;
   logo: {
-    text: string;
-    svg: ReactNode;
+    text?: string;
+    svg?: ReactNode;
   };
   primary_navigation: Navigation[];
   secondary_navigation: Navigation[];
