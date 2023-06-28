@@ -18,6 +18,7 @@ import { Footer } from "./components/Footer/Footer";
 import { HeaderMenu } from "./components/Header/Header";
 import { MainLayout } from "./components/Layouts/Main";
 import { Code } from "nextra/components";
+import Iframe from "react-iframe";
 
 export default function Layout(props: NextraThemeLayoutProps) {
   const { children, pageOpts, themeConfig } = props;
@@ -36,6 +37,7 @@ export default function Layout(props: NextraThemeLayoutProps) {
     Tabs: Tabs,
     Divider: Divider,
     Space: Space,
+    Iframe: Iframe,
     code: Code,
   };
 
@@ -57,7 +59,6 @@ export default function Layout(props: NextraThemeLayoutProps) {
             theme={{ colorScheme }}
           >
             <HeaderMenu />
-
             <MainLayout>{children}</MainLayout>
 
             <Footer />
