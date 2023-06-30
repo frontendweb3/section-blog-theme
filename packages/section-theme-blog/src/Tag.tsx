@@ -1,7 +1,9 @@
 import type { GetStaticProps } from "next";
 import { useSSG } from "nextra/ssg";
-import { getStaticTags } from "./utlis/get-tags";
 import slugify from "slugify";
+
+import { MdxFileCard } from "./types";
+
 
 const NEXTRA_INTERNAL = Symbol.for("__nextra_internal__");
 
@@ -11,6 +13,7 @@ export const TagName = () => {
 };
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
+
   return {
     props: {
       ssg: {
@@ -21,22 +24,55 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
 };
 
 export function getStaticPaths() {
-  const tags = getStaticTags((globalThis as any)[NEXTRA_INTERNAL].pageMap);
+  const globalData = (globalThis as any)[NEXTRA_INTERNAL].pageMap;
 
   let paths: { params: { slug: string } }[] = [];
 
-  if (tags !== undefined) {
-    for (var i = 0; i < tags?.length; i++) {
-      let getSlugify = slugify(tags[i], { lower: true, trim: true });
+  for (var i = 0; i < globalData.length; i++) {
+    let item = globalData[i];
 
-      paths.push({
-        params: { slug: getSlugify },
-      });
+    if (
+      item !== undefined &&
+      item?.kind !== "Meta" &&
+      item?.kind === "Folder"
+    ) {
+
+      item?.children &&
+        item?.children.map((subItem) => {
+          let subItemCard: MdxFileCard = subItem as MdxFileCard;
+          let getDraft = subItemCard.frontMatter?.draft
+            ? subItemCard.frontMatter.draft
+            : false;
+
+          if (
+            subItem !== undefined &&
+            subItem?.kind === "MdxPage" &&
+            getDraft === false &&
+            subItem?.frontMatter !== undefined
+          ) {
+            if (
+              typeof subItem.frontMatter?.tags !== "string" &&
+              subItem.frontMatter?.tags !== undefined
+            ) {
+              
+              let tagsList=subItem.frontMatter?.tags
+              
+              for (var i = 0; i < tagsList.length; i++) {
+
+                 let getSlugify = slugify(tagsList[i], { lower: true, trim: true });
+                
+                 paths.push({
+                          params: { slug: getSlugify },
+                      });
+        
+             }
+            }
+          }
+        });
     }
   }
-
   return {
     paths: paths,
-    fallback: false,
+    fallback: true,
   };
 }
