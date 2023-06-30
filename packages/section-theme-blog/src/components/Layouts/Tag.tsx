@@ -12,7 +12,6 @@ import type { MdxFileCard } from "../../types";
 import slugify from "slugify";
 import { NextSeo } from "next-seo";
 import { getMetaImage } from "@/utlis/meta-images";
-
 export function Tag({
   children,
   pageOpts,
@@ -49,49 +48,55 @@ export function Tag({
 
       <Container py="xl">
         <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
-          {pageOpts?.pageMap.map((item: PageMapItem) => {
+          {
+          pageOpts?.pageMap.map((item: PageMapItem) => {
             if (
               item !== undefined &&
               item?.kind !== "Meta" &&
               item?.kind === "Folder"
             ) {
-              if (item?.name === "posts" && item.kind === "Folder") {
-                return (
-                  item?.children &&
-                  item?.children.map((subItem) => {
+              return (
+                item?.children &&
+                item?.children.map((subItem) => {
+                  let subItemCard: MdxFileCard = subItem as MdxFileCard;
+                  let getDraft = subItemCard.frontMatter?.draft
+                    ? subItemCard.frontMatter.draft
+                    : false;
+
+                  if (
+                    subItem !== undefined &&
+                    subItem?.kind === "MdxPage" &&
+                    getDraft === false &&
+                    subItem?.frontMatter !== undefined
+                  ) {
                     if (
-                      subItem !== undefined &&
-                      subItem?.kind === "MdxPage" &&
-                      subItem?.frontMatter !== undefined
+                      typeof subItem.frontMatter?.tags !== "string" &&
+                      subItem.frontMatter?.tags !== undefined
                     ) {
-                      if (
-                        typeof subItem.frontMatter?.tags !== "string" &&
-                        subItem.frontMatter?.tags !== undefined
-                      ) {
-                        return subItem.frontMatter?.tags.map(
-                          (itemSlug: string) => {
-                            if (
-                              slugify(itemSlug, { lower: true, trim: true }) ===
-                              query.slug
-                            ) {
-                              let subItemCard: MdxFileCard =
-                                subItem as MdxFileCard;
-                              return (
-                                <ArticleCard
-                                  key={query.slug}
-                                  subItem={subItemCard}
-                                />
-                              );
-                            }
+                      return subItem.frontMatter?.tags.map(
+                        (itemSlug: string) => {
+                          if (
+                            slugify(itemSlug, { lower: true, trim: true }) ===
+                            query.slug
+                          ) {
+                            let subItemCard: MdxFileCard =
+                              subItem as MdxFileCard;
+                            return (
+                              <ArticleCard
+                                key={query.slug}
+                                subItem={subItemCard}
+                              />
+                            );
                           }
-                        );
-                      }
+                        }
+                      );
                     }
-                  })
-                );
-              }
+                  }
+                })
+              );
             }
-          })}
+          })
+          }
         </SimpleGrid>
       </Container>
     </>
