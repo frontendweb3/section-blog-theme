@@ -129,8 +129,11 @@ export function Post({
         <Toc />
       </Box>
 
-      <Box maw={1024} mx="auto">
-        <TypographyStylesProvider> {children}</TypographyStylesProvider>
+      <Box maw={1024} my={20} mx="auto">
+        <TypographyStylesProvider fz={"20"}>
+          {" "}
+          {children}
+        </TypographyStylesProvider>
       </Box>
     </>
   );
