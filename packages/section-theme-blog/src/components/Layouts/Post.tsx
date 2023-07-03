@@ -48,6 +48,7 @@ export function Post({
               images: getMetaImage(pageOpts?.frontMatter.image),
             }}
           />
+
           <ArticleJsonLd
             type="BlogPosting"
             url={pageOpts.route}
@@ -68,6 +69,7 @@ export function Post({
       ) : (
         ""
       )}
+
       <Box maw={724} mx="auto">
         <Box py={"lg"}>
           <AspectRatio my={"lg"} ratio={1920 / 1080}>
@@ -125,7 +127,9 @@ export function Post({
         </Box>
 
         <Toc />
+      </Box>
 
+      <Box maw={1024} mx="auto">
         <TypographyStylesProvider> {children}</TypographyStylesProvider>
       </Box>
     </>
