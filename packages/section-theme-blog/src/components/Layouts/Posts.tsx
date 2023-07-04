@@ -11,6 +11,7 @@ import type { PageOpts, PageMapItem, ThemeConfig } from "nextra";
 import { MdxFileCard } from "../../types";
 import { NextSeo } from "next-seo";
 import { getMetaImage } from "@/utlis/meta-images";
+import { sortDate } from "@/utlis/sortArray";
 
 export function Posts({
   children,
@@ -27,6 +28,7 @@ export function Posts({
     process.env.NODE_ENV !== "development"
       ? `${siteURL}${pageOpts?.route}`
       : `http://localhost:3000${pageOpts?.route}`;
+
   return (
     <>
       <NextSeo
@@ -48,9 +50,8 @@ export function Posts({
           {pageOpts?.pageMap.map((item: PageMapItem) => {
             if (item !== undefined && item?.kind === "Folder") {
               if (item.route === router.route) {
-                return item.children.map((subItem) => {
+                return item.children.sort(sortDate).map((subItem) => {
                   let subItemCard: MdxFileCard = subItem as MdxFileCard;
-
                   let getDraft = subItemCard.frontMatter?.draft
                     ? subItemCard.frontMatter.draft
                     : false;
