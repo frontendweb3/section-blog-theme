@@ -1,4 +1,6 @@
 import { Container, Button, Text, createStyles } from "@mantine/core";
+import React from "react";
+
 const useStyles = createStyles((theme) => ({
   control: {
     marginLeft: "10px",

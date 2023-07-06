@@ -6,7 +6,10 @@ import {
   Container,
   rem,
 } from "@mantine/core";
-import { GithubIcon } from "@mantine/ds";
+import React from "react";
+import {
+  IconBrandGithub
+} from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -124,7 +127,7 @@ export function Hero() {
             size="xl"
             variant="default"
             className={classes.control}
-            leftIcon={<GithubIcon size={20} />}
+            leftIcon={<IconBrandGithub size={20} />}
           >
             GitHub
           </Button>

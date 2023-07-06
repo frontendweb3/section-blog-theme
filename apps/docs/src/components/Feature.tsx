@@ -14,6 +14,7 @@ import {
   IconLayoutNavbar,
   IconLayout,
 } from "@tabler/icons-react";
+import React from "react";
 
 export const MOCKDATA = [
   {
