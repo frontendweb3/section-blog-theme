@@ -48,8 +48,7 @@ export function Tag({
 
       <Container py="xl">
         <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
-          {
-          pageOpts?.pageMap.map((item: PageMapItem) => {
+          {pageOpts?.pageMap.map((item: PageMapItem) => {
             if (
               item !== undefined &&
               item?.kind !== "Meta" &&
@@ -95,8 +94,7 @@ export function Tag({
                 })
               );
             }
-          })
-          }
+          })}
         </SimpleGrid>
       </Container>
     </>
