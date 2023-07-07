@@ -3,8 +3,7 @@ import {
   Box,
   TypographyStylesProvider,
   Title,
-  Image,
-  AspectRatio,
+  Image as MImage,
   Group,
   Text,
 } from "@mantine/core";
@@ -32,7 +31,9 @@ export function Post({
     process.env.NODE_ENV !== "development"
       ? `${siteURL}${pageOpts?.route}`
       : `http://localhost:3000${pageOpts?.route}`;
+  
   let imageType: GetImage = pageOpts?.frontMatter.image as GetImage;
+ 
   return (
     <>
       {pageOpts?.frontMatter ? (
@@ -70,24 +71,22 @@ export function Post({
         ""
       )}
 
-      <Box maw={724} mx="auto">
-        <Box py={"lg"}>
-          <AspectRatio my={"lg"} ratio={1920 / 1080}>
-            <Image
-              src={getImage(imageType) as string}
-              alt={
+          <MImage maw={1024} mah={724} mx="auto" radius="md" 
+            alt={
                 pageOpts?.frontMatter.imageAlt
                   ? pageOpts.frontMatter.imageAlt
                   : pageOpts?.frontMatter.title
               }
-              mb={"xl"}
+            src={getImage(imageType) as string}
               caption={
                 pageOpts?.frontMatter.imageCaption
                   ? pageOpts.frontMatter.imageCaption
                   : pageOpts?.frontMatter.imageAlt
               }
             />
-          </AspectRatio>
+
+
+      <Box maw={964} mt={"xl"} mx="auto">
 
           <Title order={1}>{pageOpts?.frontMatter.title}</Title>
 
@@ -106,10 +105,14 @@ export function Post({
             <time
               dateTime={dayjs(pageOpts?.frontMatter.date).format(dateFormat)}
             >
-              {dayjs(pageOpts?.frontMatter.date).format(
+               
+                {dayjs(pageOpts?.frontMatter.date).format(
                 dateFormat ? dateFormat : "MMM DD, YYYY"
               )}
+            
             </time>
+
+<Text>{  pageOpts?.readingTime?.text} </Text>
 
             {pageOpts?.frontMatter.tags[0] ? (
               <Link
@@ -118,13 +121,15 @@ export function Post({
                   trim: true,
                 })}`}
               >
+                <Text transform={"capitalize"}>
                 {pageOpts?.frontMatter.tags[0]}{" "}
+                </Text>
               </Link>
             ) : (
               ""
             )}
           </Group>
-        </Box>
+ 
 
         <Toc />
       </Box>
