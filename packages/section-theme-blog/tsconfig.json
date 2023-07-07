@@ -1,7 +1,17 @@
 {
-  "extends": "tsconfig/section-theme.json",
   "compilerOptions": {
-      "target": "es2016",
+    "module": "ESNext",
+    "declaration": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noImplicitAny": false,
+    "target": "es2016",
       "paths": {
         "@/*": ["./src/*"]
       }
