@@ -16,7 +16,7 @@ export function Toc() {
   const [opened, { toggle }] = useDisclosure(false);
 
   return (
-    <Box my={"lg"}>
+    <Box my={"xl"}>
       {pageOpts?.headings && pageOpts?.headings.length >= 1 ? (
         <>
           <Button
