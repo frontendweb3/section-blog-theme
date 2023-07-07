@@ -1,6 +1,6 @@
 import { createStyles, Text, Title, Image, rem } from "@mantine/core";
 import { ActionIcon } from "@mantine/core";
-import { GetImage, MdxFileAuthorCard } from "../../types";
+import { MdxFileAuthorCard } from "../../types";
 import { IconBrandTwitter, IconBrandGithub } from "@tabler/icons-react";
 import Link from "next/link";
 import { getImage } from "@/utlis/getImage";
