@@ -32,12 +32,12 @@ export function Tag({
     <>
       <NextSeo
         title={query?.slug ? query.slug : pageOpts?.frontMatter.title}
-        description={pageOpts?.frontMatter.except}
+        description={pageOpts?.frontMatter.description}
         canonical={getURL}
         openGraph={{
           url: pageOpts?.route,
           title: query?.slug ? query.slug : pageOpts?.frontMatter.title,
-          description: query?.slug ? query.slug : pageOpts?.frontMatter.except,
+          description: query?.slug ? query.slug : pageOpts?.frontMatter.description,
           images: getMetaImage(pageOpts?.frontMatter.image),
         }}
       />

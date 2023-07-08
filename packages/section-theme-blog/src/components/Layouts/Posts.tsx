@@ -33,12 +33,12 @@ export function Posts({
     <>
       <NextSeo
         title={pageOpts?.frontMatter.title}
-        description={pageOpts?.frontMatter.except}
+        description={pageOpts?.frontMatter.description}
         canonical={getURL}
         openGraph={{
           url: pageOpts?.route,
           title: pageOpts?.frontMatter.name,
-          description: pageOpts?.frontMatter.except,
+          description: pageOpts?.frontMatter.description,
           images: getMetaImage(pageOpts?.frontMatter.image),
         }}
       />
