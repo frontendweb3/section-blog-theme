@@ -62,7 +62,7 @@ export interface MetaImage {
 export type BlogFrontMatter = {
   author?: string;
   date?: string;
-  except: string;
+  description: string;
   image?: string | string[] | MetaImage[];
   tags?: string[];
   title: string;
@@ -88,7 +88,7 @@ export type iconsType =
 
 export type AuthorFrontMatter = {
   name: string;
-  except?: string;
+  description?: string;
   date?: string;
   image?: string | string[] | MetaImage[];
   tags?: string[];
