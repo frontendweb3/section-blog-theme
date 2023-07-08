@@ -11,7 +11,7 @@ import type { PageOpts, PageMapItem, ThemeConfig } from "nextra";
 import { MdxFileCard } from "../../types";
 import { NextSeo } from "next-seo";
 import { getMetaImage } from "@/utlis/meta-images";
-import { sortDate } from "@/utlis/sortArray";
+import { sortDate } from "@/utlis/sortPosts";
 
 export function Posts({
   children,
@@ -76,7 +76,7 @@ export function Posts({
             }
           })}
         </SimpleGrid>
-      </Container>{" "}
+      </Container>
     </>
   );
 }
