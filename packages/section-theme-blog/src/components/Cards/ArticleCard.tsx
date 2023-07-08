@@ -1,11 +1,12 @@
-import { createStyles, Card, Image, Text, AspectRatio } from "@mantine/core";
+import { createStyles, Card, Text, AspectRatio } from "@mantine/core";
 import Link from "next/link";
-import dayjs from "dayjs";
+import dayjs from "dayjs"
 import { GetImage, MdxFileCard } from "../../types";
 import { getImage } from "@/utlis/getImage";
 import { PageOpts, ThemeConfig } from "nextra";
 import { ThemeContext } from "@/Provider/config";
 import { useContext } from "react";
+import Image from "next/image";
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -24,6 +25,7 @@ const useStyles = createStyles((theme) => ({
   title: {
     fontWeight: 600,
   },
+
 }));
 
 export function ArticleCard({ subItem }: { subItem: MdxFileCard }) {
@@ -42,11 +44,13 @@ export function ArticleCard({ subItem }: { subItem: MdxFileCard }) {
 
   let imageType: GetImage = subItem.frontMatter.image as GetImage;
 
+  let  imageUrl = getImage(imageType)
+
   return (
     <Card p="md" radius="md" component="div" className={classes.card}>
       {subItem?.frontMatter?.image !== undefined ? (
         <AspectRatio ratio={1920 / 1080}>
-          <Image src={getImage(imageType)} alt={subItem?.frontMatter.title} />
+          <Image width={340} height={300} src={imageUrl} alt={subItem?.frontMatter.title} />
         </AspectRatio>
       ) : (
         ""
