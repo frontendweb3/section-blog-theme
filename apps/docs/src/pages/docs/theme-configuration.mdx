@@ -5,6 +5,7 @@ The theme configuration look like this. You can easily edit and config it.
 
 ```jsx filename="theme.config.tsx"
 const themeConfig = {
+  homePageAsAuthor: false,
   dateFormat: "MMM DD, YYYY",
   siteURL: "https://section-theme-blog-docs.vercel.app",
   defaultSeo: {
@@ -103,6 +104,12 @@ const themeConfig = {
 export default themeConfig;
 
 ```
+## homePageAsAuthor
+You can convert the home page into your Author page. It is helpful when somebody creates their own portfolio blog. If you have the home and author pages both different, then you can use `homePageAsAuthor=false`. You can also add a custom URL for the author. 
+
+OptionOption       | TYPE          | Require|  Description 
+------------- | ------------- | ------- | -------------
+homePageAsAuthor  | `string<URL> | boolean` |  `true` | Convert the home page into author page and default vale is `true`
 
 ## dateFormat
 Change the date dateFormat in your blog site. By default date type is `MMM DD, YYYY`, and it built the use of the day.js library. Check out all the [date format lists](https://day.js.org/docs/en/display/format).
