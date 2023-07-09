@@ -2,26 +2,33 @@ import React from "react";
 import {
   Box,
   Group,
-  Image as MImage,
+Image as MImage,
   Text,
   Title,
   TypographyStylesProvider,
 } from "@mantine/core";
 import type { PageOpts, ThemeConfig } from "nextra";
 import { Toc } from "../Toc/Toc";
-import Link from "next/link";
 import dayjs from "dayjs";
-import slugify from "slugify";
 import { ArticleJsonLd, NextSeo } from "next-seo";
 import { getImage } from "@/utlis/getImage";
 import { GetImage } from "../../types";
 import { getMetaImage } from "@/utlis/meta-images";
+import slugify from "slugify";
+import { AuthorURL } from "../Other/AuthorURL";
+import Link from "next/link";
+export function Post(
+  { children, pageOpts, themeConfig }: {
+    children: React.ReactNode;
+    pageOpts?: PageOpts;
+    themeConfig?: ThemeConfig;
+  },
+) {
+  const { siteURL, dateFormat, homePageAsAuthor } = themeConfig;
 
-export function Post({ children, pageOpts, themeConfig }: { children: React.ReactNode; pageOpts?: PageOpts; themeConfig?: ThemeConfig; }) {
-  
-  const { siteURL, dateFormat } = themeConfig;
-  
-  const getURL = process.env.NODE_ENV !== "development" ? `${siteURL}${pageOpts?.route}` : `http://localhost:3000${pageOpts?.route}`;
+  const getURL = process.env.NODE_ENV !== "development"
+    ? `${siteURL}${pageOpts?.route}`
+    : `http://localhost:3000${pageOpts?.route}`;
 
   let imageType: GetImage = pageOpts?.frontMatter.image as GetImage;
   return (
@@ -80,18 +87,7 @@ export function Post({ children, pageOpts, themeConfig }: { children: React.Reac
 
         <Group>
           <Text>Published By</Text>
-
-          <Link
-            href={`/authors/${
-              slugify(pageOpts?.frontMatter.author, {
-                lower: true,
-                trim: true,
-              })
-            }`}
-          >
-            {pageOpts?.frontMatter.author}
-          </Link>
-
+           
           <time dateTime={dayjs(pageOpts?.frontMatter.date).format(dateFormat)}>
             {dayjs(pageOpts?.frontMatter.date).format(
               dateFormat ? dateFormat : "MMM DD, YYYY",
@@ -99,7 +95,8 @@ export function Post({ children, pageOpts, themeConfig }: { children: React.Reac
           </time>
 
           <Text>{pageOpts?.readingTime?.text}</Text>
-
+           <AuthorURL siteURL={siteURL} homePageAsAuthor={homePageAsAuthor} author={pageOpts?.frontMatter.author} />
+          
           {pageOpts?.frontMatter.tags[0]
             ? (
               <Link
@@ -122,7 +119,6 @@ export function Post({ children, pageOpts, themeConfig }: { children: React.Reac
         </Group>
 
         <Toc />
-
       </Box>
 
       <Box maw={1024} my={20} mx="auto">
@@ -131,7 +127,6 @@ export function Post({ children, pageOpts, themeConfig }: { children: React.Reac
           {children}
         </TypographyStylesProvider>
       </Box>
-
     </>
   );
 }
