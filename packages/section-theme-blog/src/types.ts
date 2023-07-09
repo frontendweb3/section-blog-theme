@@ -1,5 +1,6 @@
 import type { DefaultSeoProps } from "next-seo";
 import type { ReactNode } from "react";
+
 interface Navigation {
   route: string;
   name: string;
@@ -11,9 +12,11 @@ interface SocialLink {
   url: string;
   svg?: ReactNode;
 }
+
+export type homePageAsAuthor = boolean | string
+
 export interface SectionBlogTheme {
-  dateFormat?: string;
-  siteURL: string;
+  homePageAsAuthor: homePageAsAuthor;
   defaultSeo?: DefaultSeoProps;
   logo: {
     text?: string;
