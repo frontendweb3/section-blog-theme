@@ -43,14 +43,14 @@ export default function Layout(props: NextraThemeLayoutProps) {
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 
   return (
-    <ThemeContext.Provider
-      value={{ pageOpts: pageOpts, themeConfig: themeConfig }}
-    >
+    <ThemeContext.Provider value={{ pageOpts: pageOpts, themeConfig: themeConfig }}>
+      
       <ColorSchemeProvider
         colorScheme={colorScheme}
         toggleColorScheme={toggleColorScheme}
       >
         <MDXProvider components={components}>
+          
           <MantineProvider
             withGlobalStyles
             withNormalizeCSS
@@ -61,11 +61,14 @@ export default function Layout(props: NextraThemeLayoutProps) {
             <MainLayout>{children}</MainLayout>
 
             <Footer />
+            
           </MantineProvider>
         </MDXProvider>
+      
       </ColorSchemeProvider>
     </ThemeContext.Provider>
   );
 }
 
+// export the types 
 export * from "./types";
