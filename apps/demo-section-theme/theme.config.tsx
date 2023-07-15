@@ -1,4 +1,5 @@
 const themeConfig = {
+  homePageAsAuthor: false,
   dateFormat: "MMM DD, YYYY",
   siteURL: "https://section-theme-blog-docs.vercel.app",
   defaultSeo: {
