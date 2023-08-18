@@ -1,0 +1,14 @@
+{
+  "index": {
+    "type": "page",
+    "title": "Section theme blog --- Nextra",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "docs": {
+    "type": "page",
+    "title": "Documentation"
+  }
+}
