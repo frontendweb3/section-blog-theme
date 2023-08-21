@@ -1,74 +1,68 @@
 const themeConfig = {
-  homePageAsAuthor: false,
-  dateFormat: "MMM DD, YYYY",
-  siteURL: "https://section-theme-blog-docs.vercel.app",
-  defaultSeo: {
-    openGraph: {
-      type: "website",
-      locale: "en_IE",
-      url: "https://section-theme-blog-docs.vercel.app/",
-      siteName: "Section theme blog",
-    },
-    twitter: {
-      handle: "@Official_R_deep",
-      site: "@site",
-      cardType: "summary_large_image",
-    },
+  HomePageAsAuthor: false,
+  DateFormat: "MMM DD, YYYY",
+  SiteURL: "https://section-theme-blog-docs.vercel.app",
+  
+  Logo: {
+    TextLogo: "Section",
+    ImageLightPath: "/logo.svg",
+    ImageDrakPath: "/next.png"
   },
-  logo: {
-    text: "Section",
-    svg: (
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V12"
-          stroke="black"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  primary_navigation: [
+  
+  PrimaryNavigation: [
     {
-      route: "/",
-      name: "Home",
+      href: "/",
+      title: "Home",
     },
     {
-      route: "/posts",
-      name: "Blog",
+      href: "/posts",
+      title: "Blog",
     },
     {
-      route: "/authors",
-      name: "Authors",
+      title: "Components",
+      subNav: true,
+      subNavigation: [
+        {
+          title: "Alert Dialog",
+          href: "/docs/primitives/alert-dialog",
+          description:
+            "A modal dialog that interrupts the user with important content and expects a response.",
+        },
+        {
+          title: "Hover Card",
+          href: "/docs/primitives/hover-card",
+          description:
+            "For sighted users to preview content available behind a link.",
+        },
+        {
+          title: "Progress",
+          href: "/docs/primitives/progress",
+          description:
+            "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+        },
+      ],
     },
     {
-      route: "/about",
-      name: "About",
+      href: "/about",
+      title: "About",
     },
     {
-      route: "/contact",
-      name: "Contact",
+      href: "/contact",
+      title: "Contact",
     },
   ],
-  secondary_navigation: [
+  SecondaryNavigation: [
     {
-      route: "/disclaimer",
-      name: "Disclaimer",
+      href: "/disclaimer",
+      title: "Disclaimer",
     },
     {
-      route: "/privacy-policy",
-      name: "Privacy policy",
+      href: "/privacy-policy",
+      title: "Privacy policy",
     },
     {
-      route: "/contact",
-      name: "Contact",
+      href: "/contact",
+      title: "Contact",
     },
   ],
   social_links: [

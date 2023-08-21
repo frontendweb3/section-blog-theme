@@ -28,7 +28,7 @@ export function Header(
         <NavigationMenu>
           <NavigationMenuList className="flex-wrap">
             {PrimaryNavigation.map((navigation: Navigation) => {
-              if (navigation.subNav === true && navigation.href !== undefined) {
+              if (navigation.subNav === true) {
                 return (
                   <NavigationItems
                     key={navigation.title}
@@ -36,7 +36,7 @@ export function Header(
                   />
                 );
               }
-              if (!navigation.href) {
+              if (navigation.href !== undefined) {
                 return (
                   <NavigationItem
                     key={navigation.title}
