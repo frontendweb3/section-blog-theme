@@ -2,11 +2,8 @@
   "name": "section-blog-theme",
   "version": "0.1.0",
   "private": false,
-  "files": [
-    "dist/*"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "typesVersions": {
     "*": {
       ".": [
@@ -27,19 +24,22 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/src/index.esm.js",
+      "types": "./dist/src/index.d.ts"
     },
     "./Tag": {
-      "import": "./dist/Tag.js",
+      "import": "./dist/Tag.esm.js",
       "types": "./dist/Tag.d.ts"
+    },
+    "./styles.css": {
+      "import": "./dist/styles/globals.css",
+      "require": "./dist/styles/globals.css"
     }
   },
   "scripts": {
-    "style": "pnpm tailwindcss -i ./styles/globals.css -o ./dist/output.css --watch",
-    "clean": "rm  -R dist && tsup",
-    "dev": "tsup --watch && talwind",
-    "build": "tsup",
+    "clean": "rm  -R dist",
+    "dev": "pnpm run clean && tsup --watch",
+    "build": " pnpm run clean && tsup --minify",
     "types": "tsup --dts-only",
     "types:check": "tsc --noEmit",
     "lint": "next lint"
@@ -49,6 +49,7 @@
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-navigation-menu": "^1.1.3",
     "@radix-ui/react-slot": "^1.0.2",
+    "@tailwindcss/container-queries": "^0.1.1",
     "@types/node": "20.2.0",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
@@ -73,5 +74,8 @@
     "tsup": "^6.7.0",
     "typescript": "5.0.4",
     "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9"
   }
 }
