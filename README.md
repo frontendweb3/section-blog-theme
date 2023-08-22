@@ -28,7 +28,7 @@ Create the following `next.config.js` file in your project’s root directory:
 // next.config.js
 
 const withNextra = require("nextra")({
-  theme: "section-theme-blog",
+  theme: "section-blog-theme",
   themeConfig: "./theme.config.tsx",
 });
 
