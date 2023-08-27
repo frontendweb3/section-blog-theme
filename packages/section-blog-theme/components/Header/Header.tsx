@@ -10,7 +10,7 @@ export function Header(
   { Logo, PrimaryNavigation }: { Logo: Logo; PrimaryNavigation: Navigation[] },
 ) {
   return (
-    <header className="px-4 lg:px-6 py-4 flex justify-center flex-wrap flex-row md:justify-between items-center mx-auto max-w-screen-xl">
+    <header className="px-4 bg-blue-300 lg:px-6 py-8 flex justify-center flex-wrap flex-row md:justify-between items-center mx-auto max-w-screen-xl">
       <Link href="/" className="flex items-center">
         {Logo.ImageLightPath
           ? (
