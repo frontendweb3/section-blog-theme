@@ -5,12 +5,13 @@ import Link from "next/link";
 import NavigationItems from "@/components/Navigation/NavigationItems";
 import NavigationItem from "@/components/Navigation/NavgationItem";
 import Image from "next/image";
+import {CommandDialogDemo} from "@/components/Command/Command"
 
 export function Header(
   { Logo, PrimaryNavigation }: { Logo: Logo; PrimaryNavigation: Navigation[] },
 ) {
   return (
-    <header className="px-4 bg-blue-300 lg:px-6 py-8 flex justify-center flex-wrap flex-row md:justify-between items-center mx-auto max-w-screen-xl">
+    <header className="container mt-3 px-4 lg:px-6 py-8 flex justify-center flex-wrap flex-row md:justify-between items-center mx-auto max-w-screen-xl">
       <Link href="/" className="flex items-center">
         {Logo.ImageLightPath
           ? (
@@ -59,7 +60,8 @@ export function Header(
         </NavigationMenu>
       </nav>
 
-      <div className="flex items-center">
+      <div className="flex justify-between items-center">
+        <CommandDialogDemo />
         <ThemeToggle />
       </div>
     </header>
