@@ -5,7 +5,7 @@ import Link from "next/link";
 import NavigationItems from "@/components/Navigation/NavigationItems";
 import NavigationItem from "@/components/Navigation/NavgationItem";
 import Image from "next/image";
-import {CommandDialogDemo} from "@/components/Command/Command"
+import { OramaSearch } from "@/plugins/Orama";
 
 export function Header(
   { Logo, PrimaryNavigation }: { Logo: Logo; PrimaryNavigation: Navigation[] },
@@ -61,7 +61,10 @@ export function Header(
       </nav>
 
       <div className="flex justify-between items-center">
-        <CommandDialogDemo />
+        <OramaSearch
+          boost={{ title: 30, description: 15, content: 10 }}
+          limitResults={10}
+        />
         <ThemeToggle />
       </div>
     </header>
