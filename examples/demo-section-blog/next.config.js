@@ -5,6 +5,7 @@ const withNextra = require("nextra")({
   themeConfig: "./theme.config.tsx",
   readingTime: true,
   codeHighlight: true,
+  readingTime: true
 });
 
 module.exports = withNextra({
