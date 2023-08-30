@@ -71,9 +71,11 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+  
   :root {
   --shiki-color-text: oklch(37.53% 0 0);
   --shiki-color-background: transparent;
