@@ -2,7 +2,20 @@ const themeConfig = {
   HomePageAsAuthor: false,
   DateFormat: "MMM DD, YYYY",
   SiteURL: "https://section-theme-blog-docs.vercel.app",
-  
+  SocialLinks: [
+    {
+      name: "twitter",
+      url: "https://twitter.com/Official_R_deep",
+    },
+    {
+      name: "linkedin",
+      url: "https://www.linkedin.com/in/officalrajdeepsingh/",
+    },
+    {
+      name: "github",
+      url: "https://github.com/officialrajdeepsingh",
+    },
+  ],
   Logo: {
     TextLogo: "Section",
     ImageLightPath: "/logo.svg",
