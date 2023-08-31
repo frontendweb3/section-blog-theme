@@ -13,7 +13,8 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { SearchIcon } from 'lucide-react';
+// import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import {
   Tooltip,
   TooltipContent,
@@ -129,7 +130,7 @@ export function OramaSearch(props: OramaSearchProps) {
                 variant="secondary"
                 size={"icon"}
               >
-                <MagnifyingGlassIcon className="h-5 w-5" />
+                <SearchIcon className="h-5 w-5" />
               </Button>
             </DialogTrigger>
           </TooltipTrigger>
@@ -149,7 +150,7 @@ export function OramaSearch(props: OramaSearchProps) {
               onChange={(e) => setSearchTerm(e.target?.value)}
               value={searchTerm}
               id="search"
-              placeholder="type here"
+              placeholder="Type Here ..."
               className="col-span-3"
             />
           </div>
