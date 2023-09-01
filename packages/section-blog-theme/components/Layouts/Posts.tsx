@@ -17,16 +17,16 @@ export function Posts(
     <>
       <Article>{children}</Article>
       {posts?.map(
-        (post, i) => {
+        (post) => {
           return post.kind !== "Meta"
             ? (
               <ArticleCard
-                key={post.frontMatter.date + i}
+                key={post.frontMatter.date + post.frontMatter.title}
                 title={post.frontMatter.title}
                 description={post.frontMatter.description}
                 tag={post.frontMatter.tags}
                 date={dayjs(post.frontMatter.date).format("DD MMM YYYY")}
-                URL={"/"}
+                URL={post.route}
                 authorName={post.frontMatter.author}
                 authorURL="/"
               />
