@@ -9,7 +9,7 @@ const NavigationItem = ({ navigation }: { navigation: Navigation }) => {
       <NavigationMenuItem className="my-2 md:my-0">
         <Link href={navigation.href as string} legacyBehavior passHref>
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            {navigation.title}
+           {navigation.title}
           </NavigationMenuLink>
         </Link>
       </NavigationMenuItem>
