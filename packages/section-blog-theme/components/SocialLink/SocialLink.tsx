@@ -3,14 +3,13 @@ import type { SocialLinks } from "@/src/types";
 import Link from "next/link";
 import Icon from "./DynmicIcon"; 
 
-export function SocialLink({ socialLink }: { socialLink: SocialLinks[] }) {
-  return socialLink &&  socialLink.map((item: SocialLinks) => {
+export function SocialLink({ socialLink }: { socialLink: SocialLinks }) {
+
     return (
-      <Link key={item?.name} target="_blank" href={item.url}>
+      <Link className={"self-center"} key={socialLink.name} target="_blank" href={socialLink.url}>
         <Button aria-label="Search article" variant={"ghost"} size={"icon"}>
-          <Icon name={item?.name} className="h-4 w-4" />
+          <Icon name={socialLink.name} className="h-4 w-4" />
         </Button>
       </Link>
     );
-  });
 }
