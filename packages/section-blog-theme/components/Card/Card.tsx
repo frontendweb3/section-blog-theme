@@ -40,11 +40,12 @@ export function ArticleCard(
           href={URL}
           className="text-lg hover:underline dark:text-violet-400"
         >
-          Read more
+          Read More
         </Link>
         <Link href={authorURL}>
-          <span className=" text-lg hover:underline dark:text-gray-400">
-            Publish By {authorName}
+          Publish By
+          <span className="ml-1 text-lg">
+            {authorName}
           </span>
         </Link>
       </CardFooter>
