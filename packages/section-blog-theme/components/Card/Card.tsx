@@ -1,6 +1,12 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import Link from "next/link";
-
 
 export function ArticleCard(
   { title, description, date, tag, URL, authorName, authorURL }: {
@@ -20,9 +26,13 @@ export function ArticleCard(
     >
       <CardHeader className="flex flex-row items-center justify-between">
         <span className="text-xl">{date}</span>
-       {tag && tag.length > 0? <span className="text-xl px-2 py-1 font-bold rounded-md dark:bg-violet-400">
-          {tag[0]}
-        </span> : ""}
+        {tag && tag.length > 0
+          ? (
+            <span className="text-xl px-2 py-1 font-bold rounded-md dark:bg-violet-400">
+              {tag[0]}
+            </span>
+          )
+          : ""}
       </CardHeader>
 
       <CardContent className="mt-3">
