@@ -15,7 +15,7 @@ export function Footer(
   },
 ) {
   return (
-    <footer className="container flex flex-row item-center justify-between my-5 p-5 mx-auto md:p-10 lg:flex-row divide-gray-400">
+    <footer className="print:hidden container flex flex-row item-center justify-between my-5 p-5 mx-auto md:p-10 lg:flex-row divide-gray-400">
 
       <Link href="/" className="flex items-center">
         {
@@ -33,7 +33,7 @@ export function Footer(
         {
           Logo.TextLogo
             ? (
-              <span className="ml-2 self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="ml-2 self-center text-xl font-semibold whitespace-nowrap text-foreground ">
                 {Logo.TextLogo}
               </span>
             )
@@ -58,7 +58,7 @@ export function Footer(
 
       <div className="flex flex-row item-center justify-between pt-6 lg:pt-0">
 
-        {socialLinks && socialLinks?.map(link=> <SocialLink socialLink={link} />)}
+        {socialLinks && socialLinks?.map(link=> <SocialLink key={link.name} socialLink={link} />)}
  
       </div>
 
