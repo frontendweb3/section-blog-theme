@@ -1,5 +1,5 @@
 import { NavigationMenuContent, NavigationMenuItem, NavigationMenuTrigger} from "@/components/ui/navigation-menu";
-import {ListItem} from "@/components/Navigation/ListItem"
+import { ListItem } from "@/components/Navigation/ListItem"
 import type { Navigation, SubNavigation } from "@/src/types"
 
 const NavigationItems = ({ navigation }:{ navigation:Navigation}) => {
