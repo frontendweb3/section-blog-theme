@@ -294,9 +294,6 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.9
         version: 0.5.9(tailwindcss@3.3.3)
-      postcss-import:
-        specifier: ^15.1.0
-        version: 15.1.0(postcss@8.4.28)
 
   packages/section-theme-blog:
     dependencies:
