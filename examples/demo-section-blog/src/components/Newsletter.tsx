@@ -2,15 +2,15 @@ import React from "react";
 
 export function Newsletter() {
   return (
-    <section className="bg-blue-400 dark:!bg-white py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <section className="!bg-blue-400 my-16 py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
       
       <div className="mx-auto max-w-screen-md sm:text-center">
         
-        <h2 className="mb-4 text-3xl font-extrabold text-white sm:text-4xl dark:!text-black">
+        <h2 className="mb-4 text-3xl font-extrabold sm:text-4xl !text-black">
           Sign up for Our Newsletter
         </h2>
         
-        <p className="mx-auto mb-8 max-w-2xl font-light text-blue-50 md:mb-12 sm:text-xl dark:!text-black">
+        <p className="mx-auto mb-8 max-w-2xl font-light  md:mb-12 sm:text-xl !text-black">
           Stay up to date with the roadmap progress, announcements and exclusive
           discounts feel free to sign up with your email.
         </p>
