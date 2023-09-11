@@ -28,8 +28,7 @@ export function BlogLayout(
     pageOpts?: PageOpts;
     themeConfig?: ThemeConfig;
     children: React.ReactNode;
-  },
-) {
+  }) {
   let LayoutType: LayoutTypes = pageOpts?.frontMatter.type ||
     ("home" as string);
 
