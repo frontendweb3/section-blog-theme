@@ -1,4 +1,4 @@
-import { AuthorCard } from "@/components/AuthorCard/AuthorCard";
+import { AuthorsCard } from "@/components/AuthorsCard/AuthorsCard";
 import { Article } from "@/components/Article/Article";
 import * as React from "react";
 import type { PageOpts, ThemeConfig } from "nextra";
@@ -17,7 +17,7 @@ export function Authors({ children, themeConfig, pageOpts }: { pageOpts: PageOpt
           {authors?.map(
             (post) => {
               return (
-                <AuthorCard
+                <AuthorsCard
                   key={post.frontMatter?.name}
                   name={post.frontMatter?.name}
                   description={post.frontMatter.description}
