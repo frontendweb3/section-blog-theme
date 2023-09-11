@@ -72,7 +72,6 @@
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "dayjs": "^1.11.9",
-    "eslint-config-custom": "workspace:*",
     "next": "13.4.2",
     "next-seo": "^6.1.0",
     "nextra": "^2.8.0",
