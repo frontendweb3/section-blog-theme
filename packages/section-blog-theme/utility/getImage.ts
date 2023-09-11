@@ -1,6 +1,7 @@
 import { GetImage } from "@/src/types";
 
 export function getImage(image: GetImage) {
+  
   if (typeof image === "string") {
     if (image?.trim().split(" ")) {
       let imageSplit = image?.trim().split(" ");
@@ -10,9 +11,12 @@ export function getImage(image: GetImage) {
     }
   }
 
+  console.log( "typeof image === object : ",typeof image === "object")
+   
   if (typeof image === "object" && image?.src !== undefined) {
-    return image?.src;
+      return image?.src;
   } else if (typeof image === "object") {
-    return image;
+      return image;
   }
+
 }
