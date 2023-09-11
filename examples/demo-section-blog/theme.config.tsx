@@ -19,9 +19,9 @@ const themeConfig = {
   Logo: {
     TextLogo: "Section",
     ImageLightPath: "/logo.svg",
-    ImageDrakPath: "/next.png"
+    ImageDarkPath: "/next.svg",
   },
-  
+
   PrimaryNavigation: [
     {
       href: "/",
@@ -32,26 +32,25 @@ const themeConfig = {
       title: "Blog",
     },
     {
-      title: "Components",
+      title: "Projects",
       subNav: true,
       subNavigation: [
         {
-          title: "Alert Dialog",
-          href: "/docs/primitives/alert-dialog",
+          title: "Personal Blog",
+          href: "https://officialrajdeepsingh.dev/",
           description:
-            "A modal dialog that interrupts the user with important content and expects a response.",
+            "Check out my personal portfolio blog website.",
         },
         {
-          title: "Hover Card",
-          href: "/docs/primitives/hover-card",
-          description:
-            "For sighted users to preview content available behind a link.",
+          title: "Section Blog Theme",
+          href: "https://github.com/frontendweb3/section-blog-theme",
+          description: "Section blog theme is nextra based theme.",
         },
         {
-          title: "Progress",
-          href: "/docs/primitives/progress",
+          title: "Awesome Nextjs",
+          href: "https://github.com/officialrajdeepsingh/awesome-nextjs",
           description:
-            "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+            "A curated list of awesome Nextjs-based libraries that help build small and large-scale applications with next.js.",
         },
       ],
     },
