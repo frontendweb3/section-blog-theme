@@ -8,10 +8,10 @@ export default defineConfig({
   },
   format: ["esm","cjs"],
   name: "section-blog-theme",
-  outExtension: ({format}) => {
-     return ({ 
+  outExtension({ format }) {
+    return {
       js: `.${format}.js`,
-     })
+    }
   },
   target: tsconfig.compilerOptions.target as "es2016",
   external: ["nextra"],
