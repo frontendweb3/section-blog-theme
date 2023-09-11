@@ -22,6 +22,9 @@
       ],
        "@/utility/*": [
         "./utility/*"
+      ],
+      "@/plugins/*":[
+        "./plugins/*"
       ]
     },
     "isolatedModules": true,
