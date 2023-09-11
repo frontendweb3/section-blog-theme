@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('tailwindcss/colors')
-
-
 module.exports = {
+  important: true,
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -76,5 +74,5 @@ module.exports = {
       } 
     },
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography'), require('@tailwindcss/container-queries')],
+  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
 }
