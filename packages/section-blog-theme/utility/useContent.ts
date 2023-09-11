@@ -11,6 +11,7 @@ export function useContent({ pageMap, frontMatter }: PageOpts) {
       tempPosts?.push(...page?.children);
     }
   }
+
   let posts = tempPosts.filter((temp:MdxFileCard) => temp?.name !== "index" && temp?.kind !== "Meta");
 
   // Authors
@@ -23,6 +24,6 @@ export function useContent({ pageMap, frontMatter }: PageOpts) {
   }
 
   let authors = tempAuthors.filter((temp) => temp?.name !== "index" && temp?.kind !== "Meta");  
+  
   return { posts: posts, authors:authors, frontMatter:frontMatter };
-
 }
