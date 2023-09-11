@@ -1,29 +1,10 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
-export function ArticleCard(
-  { title, description, date, tag, URL, authorName, authorURL }: {
-    title: string;
-    description: string;
-    date: string;
-    tag: string[] | undefined;
-    URL: string;
-    authorName: string;
-    authorURL: string;
-  },
-) {
+export function ArticleCard({ title, description, date, tag, URL, authorName, authorURL }: { title: string; description: string; date: string; tag: string[] | undefined; URL: string; authorName?: string; authorURL?: string; }) {
+  
   return (
-    <Card
-      spellCheck={"true"}
-      className="my-16 container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm"
-    >
+    <Card className="my-16 p-8 container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm">
       <CardHeader className="flex flex-row items-center justify-between">
         <span className="text-xl">{date}</span>
         {tag && tag.length > 0
@@ -52,12 +33,16 @@ export function ArticleCard(
         >
           Read More
         </Link>
-        <Link href={authorURL}>
-          Publish By
-          <span className="ml-1 text-lg">
-            {authorName}
-          </span>
-        </Link>
+        {authorURL !== undefined && authorURL !== undefined
+          ? (
+            <Link href={authorURL}>
+              Publish by
+              <span className="ml-1 text-lg ">
+                {authorName}
+              </span>
+            </Link>
+          )
+          : ""}
       </CardFooter>
     </Card>
   );
