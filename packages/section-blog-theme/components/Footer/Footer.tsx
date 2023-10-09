@@ -9,39 +9,44 @@ import Image from "next/image";
 import { SocialLink } from "@/components/SocialLink/SocialLink";
 
 export function Footer(
-  { Logo, SecondaryNavigation,socialLinks }: {
+  { Logo, SecondaryNavigation, socialLinks }: {
     Logo: Logo;
     SecondaryNavigation: Navigation[]; socialLinks: SocialLinks[]
   },
 ) {
   return (
-    <footer className="print:hidden container flex flex-row item-center justify-between my-5 p-5 mx-auto md:p-10 lg:flex-row divide-gray-400">
-
-      <Link href="/" className="flex items-center">
-        {
-          Logo.ImageLightPath
-            ? (
+    <footer className="print:hidden container flex flex-wrap flex-row item-center justify-center my-5 p-5 mx-auto md:p-10 lg:flex-row divide-gray-400">
+      <Link href="/" className="flex justify-center items-center">
+        {Logo.ImageLightPath
+          ? (
+            <picture>
+              <source
+                srcSet={Logo.ImageDarkPath}
+                media="(prefers-color-scheme:dark)"
+              />
+              <source
+                srcSet={Logo.ImageLightPath}
+                media="(prefers-color-scheme:dark)"
+              />
               <Image
                 width="34"
                 height="34"
                 src={Logo.ImageLightPath}
                 alt="logo"
               />
-            )
-            : ""
-        }
-        {
-          Logo.TextLogo
-            ? (
-              <span className="ml-2 self-center text-xl font-semibold whitespace-nowrap text-foreground ">
-                {Logo.TextLogo}
-              </span>
-            )
-            : ""
-        }
+            </picture>
+          )
+          : ""}
+        {Logo.TextLogo
+          ? (
+            <span className="ml-2 self-center text-xl font-semibold whitespace-nowrap !text-foreground dark:text-white">
+              {Logo.TextLogo}
+            </span>
+          )
+          : ""}
       </Link>
 
-      <div className="self-center py-6 space-y-4 text-center mx-auto sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-center" id="mobile-menu-2" >
+      <div className="my-3 flex justify-between items-center mx-auto md:my-0" >
         <NavigationMenu>
           <NavigationMenuList className="flex-wrap">
             {SecondaryNavigation.map((navigation: Navigation) => {
@@ -56,10 +61,10 @@ export function Footer(
         </NavigationMenu>
       </div>
 
-      <div className="flex flex-row item-center justify-between pt-6 lg:pt-0">
+      <div className="flex flex-row justify-between gap-2 items-center">
 
-        {socialLinks && socialLinks?.map(link=> <SocialLink key={link.name} socialLink={link} />)}
- 
+        {socialLinks && socialLinks?.map(link => <SocialLink key={link.name} socialLink={link} />)}
+
       </div>
 
     </footer>
