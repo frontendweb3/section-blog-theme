@@ -2,6 +2,7 @@ const themeConfig = {
   HomePageAsAuthor: false,
   DateFormat: "MMM DD, YYYY",
   SiteURL: "https://section-theme-blog-docs.vercel.app",
+  bannerMessage: "How are your <a style='margin: 0px 10px;' target='_blank' href='https://google.com'> learn more </a>",
   SocialLinks: [
     {
       name: "twitter",
