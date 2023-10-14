@@ -96,7 +96,7 @@ export function OramaSearch(props: OramaSearchProps) {
   // command
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e?.key === "j" && (e?.metaKey || e?.ctrlKey)) {
+      if (e?.key === "k" && (e?.metaKey || e?.ctrlKey)) {
         e?.preventDefault();
         setOpen((open) => !open);
       }
@@ -107,7 +107,7 @@ export function OramaSearch(props: OramaSearchProps) {
   }, []);
 
   return (
-    <Dialog open={open} onOpenChange={() => setOpen(!open)}> 
+    <Dialog open={open} onOpenChange={() => setOpen(!open)}>
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
@@ -124,7 +124,7 @@ export function OramaSearch(props: OramaSearchProps) {
           </TooltipTrigger>
 
           <TooltipContent>
-              <p>Press ⌘ + J</p>
+            <p>Press ⌘ + k</p>
           </TooltipContent>
 
         </Tooltip>
@@ -149,22 +149,20 @@ export function OramaSearch(props: OramaSearchProps) {
             {results.count === 0 && <h1>No results found.</h1>}
 
             {results.count > 0 && (
-              <>
-                <ul className="max-w-xs flex flex-col">
-                  {Object.keys(groupedResults).map((title) => {
-                    return groupedResults[title].map(({ document }, i) => {
-                      return (
-                        <Link key={document.url + i} href={document.url}>
-                          <li className="items-center gap-x-2 py-3 px-4 text-sm font-medium odd:bg-gray-100 bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:odd:bg-slate-800 dark:bg-gray-800 dark:border-gray-700 dark:text-white">
-                            <h2>{document.title}</h2>
-                            <p>{document.content}</p>
-                          </li>
-                        </Link>
-                      );
-                    });
-                  })}
-                </ul>
-              </>
+              <ul className="max-w-xs flex flex-col">
+                {Object.keys(groupedResults).map((title) => {
+                  return groupedResults[title].map(({ document }, i) => {
+                    return (
+                      <Link key={document.url + i} href={document.url}>
+                        <li className="items-center gap-x-2 py-3 px-4 text-sm font-medium odd:bg-gray-100 border -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg dark:odd:bg-slate-800 dark:bg-gray-800 dark:border-gray-700">
+                          <h2>{document.title}</h2>
+                          <p>{document.content}</p>
+                        </li>
+                      </Link>
+                    );
+                  });
+                })}
+              </ul>
             )}
           </div>
         )}
