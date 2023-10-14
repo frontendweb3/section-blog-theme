@@ -1,10 +1,8 @@
 import { NextSeo } from "next-seo";
-import { AuthorFrontMatter, BlogFrontMatter } from "@/src/types";
-import { FrontMatter } from "nextra"
+import { BlogFrontMatter } from "@/src/types";
+import { FrontMatter } from "nextra";
 
 export function Seo({ frontMatter }: { frontMatter: BlogFrontMatter }) {
-
-  console.log(frontMatter)
 
   return (
     <NextSeo
