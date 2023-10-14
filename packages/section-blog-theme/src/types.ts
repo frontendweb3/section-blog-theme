@@ -1,20 +1,19 @@
 import type { ReactNode } from "react";
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 
-export interface SubNavigation  {
+export interface SubNavigation {
   title: string;
   href: string;
-  target:string;
+  target: string;
   description: string;
 }
-
 
 export interface Navigation {
   href?: string;
   title: string;
   svg?: ReactNode;
   subNav?: boolean;
-  target:string;
+  target: string;
   subNavigation?: SubNavigation[];
 }
 
@@ -30,24 +29,17 @@ export interface Logo {
 }
 export type homePageAsAuthor = boolean | string
 
-export  interface TypeSectionBlogTheme {
+export interface TypeSectionBlogTheme {
   homePageAsAuthor: homePageAsAuthor;
   Logo: Logo;
   PrimaryNavigation: Navigation[];
   SecondaryNavigation: Navigation[];
   SocialLinks: SocialLinks[];
   titleSuffix?: string;
+  bannerMessage?: string;
 }
 
 export type MdxFileCard<FrontMatterType = BlogFrontMatter> = {
-  kind: "MdxPage";
-  name: string;
-  route: string;
-  locale: string;
-  frontMatter: FrontMatterType;
-};
-
-export type MdxFileAuthorCard<FrontMatterType = AuthorFrontMatter> = {
   kind: "MdxPage";
   name: string;
   route: string;
@@ -61,8 +53,6 @@ export type LayoutTypes =
   | "page"
   | "posts"
   | "tag"
-  | "author"
-  | "authors"
   | 404
   | 500;
 
@@ -72,10 +62,16 @@ export interface MetaImage {
   height?: number;
   alt?: string;
   type?: string;
-  caption?:string
+  caption?: string
 }
+
+export interface authorType {
+  name: string;
+  authorUrl?: string;
+}
+
 export type BlogFrontMatter = {
-  author?: string;
+  author?: authorType | string;
   date?: string;
   description: string;
   image?: string | string[] | MetaImage;
@@ -83,15 +79,6 @@ export type BlogFrontMatter = {
   title: string;
   type: "post";
   draft?: boolean;
-};
-
-// define Author frontmatter for author card
-export type MdxFileAuthor<FrontMatterType = AuthorFrontMatter> = {
-  kind: "MdxPage";
-  name: string;
-  route: string;
-  locale?: string;
-  frontMatter: FrontMatterType;
 };
 export type iconsType =
   | "facebook"
@@ -101,19 +88,6 @@ export type iconsType =
   | "github"
   | "instagram";
 
-export type AuthorFrontMatter = {
-  name: string;
-  description?: string;
-  date?: string;
-  image?: string | string[] | MetaImage;
-  tags?: string[];
-  title: string;
-  type: "author";
-  job?: string;
-  draft?: boolean;
-  social?: { name: iconsType; svg?: React.ReactNode; url: string }[];
-};
-
-export type GetMetaData = MdxFileCard | MdxFileAuthorCard;
+export type GetMetaData = MdxFileCard
 
 export type GetImage = MetaImage | string | string[];
