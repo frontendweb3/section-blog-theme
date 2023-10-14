@@ -1,12 +1,11 @@
 import {
-  Author,
-  Authors,
   Error404,
   Error500,
   HomePage,
   Page,
   Posts,
   Read,
+  Tag
 } from "@/components/Layouts";
 import * as React from "react";
 import type { PageOpts, ThemeConfig } from "nextra";
@@ -15,11 +14,10 @@ import type { LayoutTypes } from "@/src/types";
 const Layouts = {
   home: HomePage,
   posts: Posts,
-  authors: Authors,
-  author: Author,
   page: Page,
   post: Read,
   404: Error404,
+  tag: Tag,
   500: Error500,
 };
 
