@@ -1,11 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { X } from 'lucide-react';
-import { useBannerCookies } from "@/utility/useCookies";
 import { Card, CardTitle } from "@/components/ui/card";
-export function Banner({ message }: { message: string; }) {
 
-    const { banner, hideBanner } = useBannerCookies();
-
+export function Banner({ message, hideBanner }: { message: string; hideBanner: () => void }) {
     return (
         <Card className="flex w-full sm:h-16 rounded-none b-0 bg-primary text-primary-foreground justify-center py-4">
             <div className="relative flex w-[90%] max-w-[960px] justify-center items-center text-primary-foreground rounded-xl">
