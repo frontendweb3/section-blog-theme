@@ -19,7 +19,7 @@ export function Posts({ children, themeConfig, pageOpts }: { pageOpts: PageOpts;
 
       <Article>{children}</Article>
 
-      <div className="mx-auto my-24 divide-y divide-slate-700 grid-cols-1 grid max-w-[724px] gap-4">
+      <div className="mx-auto my-24 divide-y divide-slate-700 grid-cols-1 grid max-w-[724px] lg:max-w-[1024px] gap-4">
         {posts?.map(
           (post) => {
             return (
