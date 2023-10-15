@@ -1,34 +1,60 @@
-import type { NextraThemeLayoutProps } from "nextra";
+import type { PageOpts } from "nextra";
 import { Header } from "@/components/Header/Header";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Footer } from "@/components/Footer/Footer"
 import { BlogLayout } from "@/components/Layouts/BlogLayout"
 import { Banner } from "@/components/banner/banner";
 import { useBannerCookies } from "@/utility/useCookies";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import { DefaultSeo } from "next-seo";
+import { TypeSectionBlogTheme } from "./types";
+import { ErrorBoundary } from "react-error-boundary";
 
-export default function Layout(props: NextraThemeLayoutProps) {
+function fallbackRender({ error, resetErrorBoundary }) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{ color: "red" }}>{error.message}</pre>
+    </div>
+  );
+}
+
+export default function Layout({ pageOpts, themeConfig, children }: {
+  pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme;
+  children: ReactNode;
+}) {
   const { banner, hideBanner } = useBannerCookies();
   const [showBanner, setBanner] = useState<string>("hide")
-  const { children, themeConfig, pageOpts } = props;
-  const { Logo, PrimaryNavigation, SecondaryNavigation, SocialLinks, bannerMessage } = themeConfig;
+
+  const { Logo, PrimaryNavigation, SecondaryNavigation, SocialLinks, bannerMessage, settings } = themeConfig;
+
 
   useEffect(function() {
     setBanner(banner)
   }, [banner])
 
   return (
-    <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
 
-      {showBanner === "show" && bannerMessage !== undefined ? <Banner hideBanner={hideBanner} message={bannerMessage} /> : ""}
+    <ErrorBoundary
+      fallbackRender={fallbackRender}
+      onReset={(details) => {
+        // Reset the state of your app so the error doesn't happen again
+      }}
+    >
+      <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
 
-      <Header socialLinks={SocialLinks} Logo={Logo} PrimaryNavigation={PrimaryNavigation} />
+        {settings && settings?.defaultSEO && <DefaultSeo {...settings.defaultSEO} />}
 
-      <BlogLayout pageOpts={pageOpts} themeConfig={themeConfig}>{children}</BlogLayout>
+        {showBanner === "show" && bannerMessage !== undefined ? <Banner hideBanner={hideBanner} message={bannerMessage} /> : ""}
 
-      <Footer socialLinks={SocialLinks} Logo={Logo} SecondaryNavigation={SecondaryNavigation} />
+        <Header socialLinks={SocialLinks} Logo={Logo} PrimaryNavigation={PrimaryNavigation} />
 
-    </NextThemesProvider>
+        <BlogLayout pageOpts={pageOpts} themeConfig={themeConfig}>{children}</BlogLayout>
+
+        <Footer socialLinks={SocialLinks} Logo={Logo} SecondaryNavigation={SecondaryNavigation} />
+
+      </NextThemesProvider>
+    </ErrorBoundary>
   );
 }
 
