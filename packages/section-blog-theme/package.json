@@ -26,12 +26,12 @@
     ".": {
       "import": "./dist/src/index.esm.js",
       "types": "./dist/index.d.ts",
-      "require":"./dist/src/tag.cjs.js"
+      "require": "./dist/src/tag.cjs.js"
     },
     "./Tag": {
       "import": "./dist/src/tag.esm.js",
       "types": "./dist/tag.d.ts",
-      "require":"./dist/src/tag.cjs.js"
+      "require": "./dist/src/tag.cjs.js"
     },
     "./styles.css": {
       "import": "./dist/styles/globals.css",
@@ -77,6 +77,7 @@
     "postcss": "8.4.28",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-error-boundary": "^4.0.11",
     "react-use-cookie": "^1.4.0",
     "react-web-share": "^2.0.2",
     "slugify": "^1.6.6",
