@@ -22,6 +22,9 @@ export function Posts({ children, themeConfig, pageOpts }: { pageOpts: PageOpts;
       <div className="mx-auto my-24 divide-y divide-slate-700 grid-cols-1 grid max-w-[724px] lg:max-w-[1024px] gap-4">
         {posts?.map(
           (post) => {
+            if (post.frontMatter.title === undefined && post.frontMatter.description === undefined) {
+              throw new Error(`we coud not find litile and description on follwing router: ${post.route} `)
+            }
             return (
               <ArticleCard
                 key={post.frontMatter.date + post.frontMatter.title}
