@@ -9,6 +9,7 @@ import { Next_URL } from "@/utility/NextURL";
 import Link from "next/link";
 import { Seo } from "../Seo/Seo";
 import { slugify } from "@/utility/slugify";
+import { TypeSectionBlogTheme } from "@/src/types";
 
 export function Read(
   {
@@ -17,13 +18,13 @@ export function Read(
     children,
   }: {
     pageOpts: PageOpts;
-    themeConfig: ThemeConfig;
+    themeConfig: TypeSectionBlogTheme;
     children: React.ReactNode;
   }
 ) {
   const { frontMatter } = pageOpts;
 
-  let { SiteURL, HomePageAsAuthor, DateFormat } = themeConfig;
+  let { DateFormat, settings } = themeConfig;
 
   let postTime = dayjs(frontMatter.date).format(DateFormat);
 
@@ -39,33 +40,39 @@ export function Read(
 
           <div className="flex flex-row items-center text-sm text-gray-500 dark:text-gray-400">
 
-            <span> By {typeof frontMatter.author === 'string' ? <Link
-              href={HomePageAsAuthor === true ? "/" : Next_URL(SiteURL)}
-              rel="author"
-              className="mr-2 hover:text-gray-600"
-            >
-              {frontMatter?.author}
-            </Link> : typeof frontMatter.author === 'object' ? <Link
-              href={HomePageAsAuthor === true ? "/" : Next_URL(SiteURL)}
-              rel="author"
-              className="mr-2 hover:text-gray-600 "
-            >
-              {frontMatter?.author.name}
-            </Link> : ""} </span>
+            <span> By {
+
+              typeof frontMatter.author === 'string' ?
+                <Link
+                  href={Next_URL(settings?.SiteURL)}
+                  rel="author"
+                  className="mr-2 hover:text-gray-600"
+                >
+                  {frontMatter?.author}
+                </Link> : typeof frontMatter.author === 'object' ? <Link
+                  href={frontMatter?.author?.url}
+                  target="_blank"
+                  rel="author"
+                  className="mr-2 hover:text-gray-600 "
+                >
+                  {frontMatter?.author.name}
+                </Link> : ""
+
+            } </span>
             • <time
               className="mx-2"
               dateTime={frontMatter.date}
               title={postTime}
             >
               {postTime}
-            </time> • <Link href={`${Next_URL(SiteURL)}/tags/${slugify(frontMatter.tags[0])}`} className="ml-2 hover:text-gray-600"> {frontMatter.tags[0]} </Link>
+            </time> • <Link href={`${Next_URL(settings?.SiteURL)}/tags/${slugify(frontMatter.tags[0])}`} className="ml-2 hover:text-gray-600"> {frontMatter.tags[0]} </Link>
           </div>
 
           <div className="hidden sm:flex flex-row print:block">
             <RWebShare
               data={{
                 text: frontMatter.description,
-                url: `${Next_URL(SiteURL)}${pageOpts.route}`,
+                url: `${Next_URL(settings?.SiteURL)}${pageOpts.route}`,
                 title: frontMatter.title,
               }}
               onClick={() => console.log("shared successfully!")}
@@ -81,7 +88,7 @@ export function Read(
         </section>
 
         <h1 className="mb-2">{frontMatter.title}</h1>
-        <p className="mb-4 mt-0">{frontMatter.description}</p>
+        <p className="mb-4 mt-0 font-bold">{frontMatter.description}</p>
 
       </div>
 
