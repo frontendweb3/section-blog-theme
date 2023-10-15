@@ -8,9 +8,9 @@ export function HomePage({ pageOpts, themeConfig, children }: { pageOpts: PageOp
   const { frontMatter } = useContent(pageOpts);
 
   return (
-    <>
-      <Seo frontMatter={frontMatter} />
+    <>   
+      <Seo frontMatter={frontMatter} themeConfig={themeConfig} />
       <Article>{children}</Article>
-    </>
+    </>  
   );
 }
