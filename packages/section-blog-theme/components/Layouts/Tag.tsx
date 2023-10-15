@@ -1,25 +1,32 @@
-import type { PageOpts, PageMapItem, ThemeConfig } from "nextra";
+import type { PageOpts, ThemeConfig } from "nextra";
 import { useRouter } from "next/router";
 import { useTagContent } from "@/utility/useTagContent"
-import { ArticleCard } from "../Card/Card";
+import { ArticleCard } from "@/components/Card/Card";
 import dayjs from "dayjs";
+// import type { TypeSectionBlogTheme } from "@/src/types";
+// import { Seo } from "@/components/Seo/Seo";
+// import { useData } from 'nextra/data'
+import { Article } from "@/components/Article/Article";
+// import { useSSG } from 'nextra/ssg'
 
-export function Tag({ pageOpts, themeConfig }: { pageOpts?: PageOpts; themeConfig?: ThemeConfig; }) {
+
+export function Tag({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: ThemeConfig; children: React.ReactNode; }) {
 
   const { DateFormat } = themeConfig;
+  // const data = useData()
+  const router = useRouter()
 
-  const { query } = useRouter();
+  let tagSlug = router.query && router.query.tag && typeof router.query.tag === "string" ? router.query.tag : router?.query?.tag as string
 
-  const { posts } = useTagContent(pageOpts, query.slug)
+  const { posts } = useTagContent(pageOpts, "health")
 
-  let slugToTitle = query.slug as string
+  console.log("My query :", tagSlug)
+
   return (
     <>
-      {query?.slug ? (
-        <div className="my-24 container mx-auto capitalize">
-          <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">{query?.slug?.replaceAll("-", " ")}</h1>
-        </div>) : " "}
-      <div className="mx-auto my-24 grid-cols-1 grid max-w-[724px] gap-4">
+
+      <Article>{children}</Article>
+      <div className="mx-auto my-24 divide-y divide-slate-700 grid-cols-1 grid max-w-[724px] lg:max-w-[1024px] gap-4">
         {posts?.map(
           (post) => {
             return (
