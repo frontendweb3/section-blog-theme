@@ -1,7 +1,20 @@
+// import type { TypeSectionBlogTheme } from "section-blog-theme";
+
 const themeConfig = {
-  HomePageAsAuthor: false,
+  settings: {
+    title: "My title",
+    description: "my descript is here ",
+    defaultSEO: {
+      title: "default SEO  title is here",
+      titleTemplate: '%s | Section Blog Theme',
+      twitter: {
+        handle: "@handle",
+        site: "@site",
+        cardType: "summary_large_image",
+      }
+    }
+  },
   DateFormat: "MMM DD, YYYY",
-  SiteURL: "https://section-theme-blog-docs.vercel.app",
   bannerMessage: "How are your <a style='margin: 0px 10px;' target='_blank' href='https://google.com'> learn more </a>",
   SocialLinks: [
     {
@@ -77,20 +90,6 @@ const themeConfig = {
       href: "/contact",
       title: "Contact",
     },
-  ],
-  social_links: [
-    {
-      name: "Twitter",
-      url: "https://twitter.com/Official_R_deep",
-    },
-    {
-      name: "Linkedin",
-      url: "https://www.linkedin.com/in/officalrajdeepsingh/",
-    },
-    {
-      name: "Github",
-      url: "https://github.com/officialrajdeepsingh",
-    },
-  ],
+  ]
 };
 export default themeConfig;
