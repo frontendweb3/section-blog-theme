@@ -15,11 +15,9 @@ export function useTagContent(pageOpts: PageOpts, slug: string) {
       for (let post of page.children) {
 
         if (post.kind !== "Meta" && post?.frontMatter?.type === 'post') {
-
           let tags = post?.frontMatter?.tags
 
           for (const tagPosts of tags) {
-            // console.log(slug, "slug === slugify(tagPosts)", tagPosts, "It is here ", slug === slugify(tagPosts))
             if (slug === slugify(tagPosts.trim())) {
               tempPosts.push(post)
             }
