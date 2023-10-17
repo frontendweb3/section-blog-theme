@@ -1,14 +1,14 @@
 import { useTags } from "@/utility/useTags";
 import type { GetStaticProps } from "next";
-// import { useData } from "nextra/data";
+import { useData } from "nextra/data";
 import Head from 'next/head'
 import { useSSG } from 'nextra/ssg'
 
 const NEXTRA_INTERNAL = Symbol.for("__nextra_internal__");
 
 export const TagTitle = ({ prefix = 'Posts tagged with ' }: { prefix: string }) => {
-  const { tag } = useSSG()
-  const title = `${prefix}${tag}`
+  const dataTag = useData()
+  const title = `${prefix}${dataTag?.tag}`
   return (
     <Head>
       <title>{title}</title>
@@ -17,8 +17,8 @@ export const TagTitle = ({ prefix = 'Posts tagged with ' }: { prefix: string }) 
 }
 
 export const TagName = () => {
-  const { tag } = useSSG()
-  return tag || null
+  const dataTag = useData()
+  return dataTag?.tag || null
 }
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
