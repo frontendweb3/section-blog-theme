@@ -5,8 +5,8 @@ import Link from "next/link";
 import NavigationItems from "@/components/Navigation/NavigationItems";
 import NavigationItem from "@/components/Navigation/NavgationItem";
 import Image from "next/image";
-import { OramaSearch } from "@/plugins/Orama";
 import { SocialLink } from "@/components/SocialLink/SocialLink";
+import { SearchCommandDialog } from "@/components/command/command";
 
 export function Header({ Logo, PrimaryNavigation, socialLinks }: { Logo: Logo; PrimaryNavigation: Navigation[]; socialLinks: SocialLinks[]; }) {
 
@@ -80,10 +80,7 @@ export function Header({ Logo, PrimaryNavigation, socialLinks }: { Logo: Logo; P
 
       <div className="flex flex-row justify-between gap-2 items-center">
 
-        <OramaSearch
-          boost={{ title: 30, description: 15, content: 10 }}
-          limitResults={10}
-        />
+        <SearchCommandDialog />
 
         <ThemeToggle />
 
