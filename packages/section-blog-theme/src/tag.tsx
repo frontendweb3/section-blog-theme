@@ -2,7 +2,6 @@ import { useTags } from "@/utility/useTags";
 import type { GetStaticProps } from "next";
 import { useData } from "nextra/data";
 import Head from 'next/head'
-import { useSSG } from 'nextra/ssg'
 
 const NEXTRA_INTERNAL = Symbol.for("__nextra_internal__");
 
