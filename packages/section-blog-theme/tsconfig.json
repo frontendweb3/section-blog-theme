@@ -42,7 +42,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "__test__/index.js"  ],
   "exclude": [
     "node_modules"
   ]
