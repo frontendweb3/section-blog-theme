@@ -8,8 +8,8 @@ const themeConfig = {
       title: "default SEO  title is here",
       titleTemplate: '%s | Section Blog Theme',
       twitter: {
-        handle: "@handle",
-        site: "@site",
+        handle: "@FrontendWeb3",
+        site: "FrontendWeb3",
         cardType: "summary_large_image",
       }
     }
