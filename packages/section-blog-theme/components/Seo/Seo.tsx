@@ -3,31 +3,43 @@ import { BlogFrontMatter, TypeSectionBlogTheme } from "@/src/types";
 import { Next_URL } from "@/utility/NextURL";
 
 export function Seo({ frontMatter, themeConfig }: { frontMatter: BlogFrontMatter, themeConfig?: TypeSectionBlogTheme }) {
+  const imageURL = typeof frontMatter.image === "string" ? frontMatter?.image : undefined
+  const keyword = frontMatter.tags !== undefined ? frontMatter?.tags : undefined
+  const author = typeof frontMatter.author === "string" ? frontMatter?.author : frontMatter.author
+  const twitterCardType = imageURL !== undefined ? {
+    cardType: "summary_large_image",
+  }
+    : {
+      cardType: "summary",
+    }
 
-  // const { settings } = themeConfig
 
   return (
-    <>
-      <NextSeo
-        title={frontMatter.title}
-        description={frontMatter.description}
-        openGraph={{
-          url: "https://www.url.ie/a",
-          title: frontMatter.title,
-          description: frontMatter.description,
-          images: [
-            {
-              url: "https://www.example.ie/og-image-01.jpg",
-              width: 800,
-              height: 600,
-              alt: "Og Image Alt",
-              type: "image/jpeg",
-            },
-            { url: "https://www.example.ie/og-image-02.jpg" }
-          ],
-          siteName: "SiteName",
-        }}
-      />
-    </>
+    <NextSeo
+      title={frontMatter.title}
+      description={frontMatter.description}
+      openGraph={
+
+        imageURL !== undefined || keyword !== undefined ?
+          {
+            url: Next_URL(themeConfig?.settings?.SiteURL),
+            title: frontMatter.title,
+            description: frontMatter.description,
+            images: [
+              {
+                url: imageURL,
+              }
+            ],
+            keywords: keyword,
+            authors: author,
+            twitter: twitterCardType
+          } : {
+            url: Next_URL(themeConfig?.settings?.SiteURL),
+            title: frontMatter.title,
+            description: frontMatter.description,
+          }
+
+      }
+    />
   );
 }
