@@ -18,7 +18,7 @@ export function useTagContent(pageOpts: PageOpts, slug: string) {
           let tags = post?.frontMatter?.tags
 
           for (const tagPosts of tags) {
-            if (slug === slugify(tagPosts.trim())) {
+            if (slug === slugify(tagPosts)) {
               tempPosts.push(post)
             }
           }
