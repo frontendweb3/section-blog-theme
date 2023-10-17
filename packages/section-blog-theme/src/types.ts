@@ -7,7 +7,6 @@ export interface SubNavigation {
   target: string;
   description: string;
 }
-
 export interface Navigation {
   href?: string;
   title: string;
@@ -27,7 +26,6 @@ export interface Logo {
   ImageLightPath: string;
   ImageDarkPath: string;
 }
-export type homePageAsAuthor = boolean | string
 
 export interface settingsTypes {
   SiteURL?: string;
@@ -40,7 +38,6 @@ export interface settingsTypes {
 export interface TypeSectionBlogTheme {
   DateFormat?: string;
   settings?: settingsTypes;
-  homePageAsAuthor: homePageAsAuthor;
   Logo: Logo;
   PrimaryNavigation: Navigation[];
   SecondaryNavigation: Navigation[];
@@ -66,14 +63,14 @@ export type LayoutTypes =
   | 404
   | 500;
 
-export interface MetaImage {
-  src: string;
-  width?: number;
-  height?: number;
-  alt?: string;
-  type?: string;
-  caption?: string
-}
+// export interface MetaImage {
+//   src: string;
+//   width?: number;
+//   height?: number;
+//   alt?: string;
+//   type?: string;
+//   caption?: string
+// }
 
 export interface authorType {
   name: string;
@@ -84,7 +81,7 @@ export type BlogFrontMatter = {
   author?: authorType | string;
   date?: string;
   description: string;
-  image?: string | string[] | MetaImage;
+  image?: string;
   tags?: string[];
   title: string;
   type: "post";
@@ -98,5 +95,3 @@ export type iconsType =
   | "instagram";
 
 export type GetMetaData = MdxFileCard
-
-export type GetImage = MetaImage | string | string[];
