@@ -38,8 +38,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-, "__test__/index.js"  ],
+    ".next/types/**/*.ts",
+    "__test__"  ],
   "exclude": [
     "node_modules"
   ]
