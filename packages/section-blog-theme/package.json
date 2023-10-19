@@ -2,17 +2,22 @@
   "name": "section-blog-theme",
   "version": "0.1.0",
   "private": false,
-  "main": "dist/index.cjs.js",
+  "main": "dist/index.js",
+  "license": "MIT",
   "typesVersions": {
     "*": {
       ".": [
         "./dist/index.d.ts"
       ],
-      "tag": [
+      "./Tag": [
         "./dist/tag.d.ts"
       ]
     }
   },
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/types.d.ts",
   "homepage": "https://section-theme-blog-docs.vercel.app",
   "repository": {
     "type": "git",
@@ -23,21 +28,15 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/src/index.esm.js",
-      "types": "./dist/index.d.ts",
-      "require": "./dist/src/tag.cjs.js"
+      "import": "./dist/src/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./Tag": {
-      "import": "./dist/src/tag.esm.js",
-      "types": "./dist/tag.d.ts",
-      "require": "./dist/src/tag.cjs.js"
+      "import": "./dist/src/tag.js",
+      "types": "./dist/tag.d.ts"
     },
     "./styles.css": {
-      "import": "./dist/styles/globals.css",
-      "require": "./dist/styles/globals.css"
-    },
-    "./config": {
-      "types": "./dist/index.d.ts"
+      "import": "./dist/styles/globals.css"
     }
   },
   "scripts": {
