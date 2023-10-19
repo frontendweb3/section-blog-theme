@@ -1,14 +1,29 @@
 ---
 title : Section theme blog --- Nextra
 ---
-import { Hero } from "../components/Hero";
-import { FeaturesGrid } from "../components/Feature"
-import { Request } from "../components/Request"
-import { Table } from '@mantine/core';
 
-<Hero />
+# Installation of Section Blog Theme with Nextra.js
+The section is nextra and MDX-based blog theme. You can start your blog within just one minute. It has an inbuilt dark mode, a Search bar, Customize Navigation, and SEO Support.
 
-<FeaturesGrid title="Feature" description="The section theme blog supports inbuilt dark mode, a Search bar, Customize Navigation, and SEO Support without extra configuration. " /> 
+<br />
+<br />
 
-<Request />
+## Feature
+The section theme blog supports inbuilt dark mode, a Search bar, Customize Navigation, and SEO Support without extra configuration.
 
+<br />
+<br />
+
+import { IconMoon, IconSeo, IconSearch, IconLayoutNavbar, IconLayout } from "@tabler/icons-react"
+import { Cards, Card } from 'nextra/components'
+
+<Cards>
+      <Card icon={<IconSeo />} title="SEO Support" description="Adding inbuilt  SEO support on your blog" href="#" />
+      <Card icon={<IconMoon />} title="dark mode" description="Switch the blog theme from light to dark" href="#" />
+      <Card icon={<IconSearch />} title="Inbuilt Search Support" description="Inbuilt rich Search support to search a blog post based on text." href="#" />
+      <Card icon={<IconLayoutNavbar />} title="Navigation" description="Customize your header, footer navigation, and as well social media icon." href="#" />
+      <Card icon={<IconLayout />} title="Mutiple Layout Support" description="In-built multiple layout support for the home page, regular page, author, author, posts, post, tag, etc." href="#" />
+</Cards>
+
+## Submit Issues
+Submit new issues and feature requests on the section theme blog. -- [New issue](https://github.com/frontendweb3/section-theme-blog/issues/new)
