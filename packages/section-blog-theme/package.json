@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": false,
   "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
   "typesVersions": {
     "*": {
       ".": [
@@ -36,6 +35,9 @@
     "./styles.css": {
       "import": "./dist/styles/globals.css",
       "require": "./dist/styles/globals.css"
+    },
+    "./config": {
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
