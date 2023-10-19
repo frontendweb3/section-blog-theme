@@ -7,6 +7,5 @@ export default defineConfig({
   },
   format: 'esm',
   name: "section-blog-theme",
-  outExtension: () => ({ js: '.js' }),
   external: ["nextra"],
 });
