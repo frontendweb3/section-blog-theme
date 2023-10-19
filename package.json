@@ -13,5 +13,8 @@
     "prettier": "^2.8.8",
     "turbo": "^1.10.15"
   },
-  "packageManager": "pnpm@8.6.9"
+  "packageManager": "pnpm@8.6.9",
+  "dependencies": {
+    "@changesets/cli": "^2.26.2"
+  }
 }
