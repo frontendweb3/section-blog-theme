@@ -1,5 +1,3 @@
-// import type { TypeSectionBlogTheme } from "section-blog-theme";
-
 const themeConfig = {
   settings: {
     title: "My title",
