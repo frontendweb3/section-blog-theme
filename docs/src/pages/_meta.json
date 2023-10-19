@@ -1,11 +1,7 @@
 {
   "index": {
     "type": "page",
-    "title": "Section theme blog --- Nextra",
-    "display": "hidden",
-    "theme": {
-      "layout": "raw"
-    }
+    "title": "Home"
   },
   "docs": {
     "type": "page",

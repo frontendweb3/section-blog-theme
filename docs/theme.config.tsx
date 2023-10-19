@@ -1,7 +1,7 @@
 import type { DocsThemeConfig } from "nextra-theme-docs";
 
 const themeConfig: DocsThemeConfig = {
-  logo: <span> Section Theme </span>,
+  logo: <span> Section Blog </span>,
   project: {
     link: "https://github.com/frontendweb3/section-theme-blog",
   },
@@ -19,7 +19,7 @@ const themeConfig: DocsThemeConfig = {
       <span>
         MIT {new Date().getFullYear()} ©{" "}
         <a href="https://nextra.site" target="_blank">
-          Section Theme
+          Section Blog
         </a>
         .
       </span>
