@@ -51,6 +51,7 @@ export interface TypeSectionBlogTheme {
 }
 
 export type MdxFileCard<FrontMatterType = BlogFrontMatter> = {
+  [x: string]: any;
   kind: "MdxPage";
   name: string;
   route: string;
