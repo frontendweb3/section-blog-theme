@@ -14,8 +14,14 @@ const config = {
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/components/$1',
-  }
-}
+  },
+  // transformIgnorePatterns: [
+  //   "<rootDir>/node_modules/lucide-react/.*"
+  // ]
+//   "transformIgnorePatterns": [
+//     "node_modules/(?!(lucide-react)/)"
+//   ]
+ }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
 export default createJestConfig(config)
