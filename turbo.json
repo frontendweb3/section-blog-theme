@@ -11,15 +11,6 @@
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "docs:dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "docs:build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
-    },
-    "docs:lint": {}
+    }
   }
 }
