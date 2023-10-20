@@ -79,7 +79,7 @@ export type LayoutTypes =
 
 export interface authorType {
   name: string;
-  authorUrl?: string;
+  url: string;
 }
 
 export type BlogFrontMatter = {
