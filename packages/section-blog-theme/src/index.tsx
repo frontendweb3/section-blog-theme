@@ -4,11 +4,11 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Footer } from "@/components/Footer/Footer"
 import { BlogLayout } from "@/components/Layouts/BlogLayout"
 import { Banner } from "@/components/banner/banner";
-import { useBannerCookies } from "@/utility/useCookies";
 import { ReactNode, useEffect, useState } from "react";
 import { DefaultSeo } from "next-seo";
 import { TypeSectionBlogTheme } from "./types";
 import { ErrorBoundary } from "react-error-boundary";
+import { useLocalStorage } from 'usehooks-ts'
 
 function fallbackRender({ error, resetErrorBoundary }) {
   return (
@@ -23,29 +23,28 @@ export default function Layout({ pageOpts, themeConfig, children }: {
   pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme;
   children: ReactNode;
 }) {
-  const { banner, hideBanner } = useBannerCookies();
-  const [showBanner, setBanner] = useState<string>("hide")
 
-  const { Logo, PrimaryNavigation, SecondaryNavigation, SocialLinks, bannerMessage, settings } = themeConfig;
-
-
+  // Hanndle banner 
+  const [banner, setBanner] = useLocalStorage('banner', true)
+  const [showBanner, setShwobanner] = useState<boolean | undefined>()
+  const toggleBanner = () => {
+    setBanner((prevValue: boolean) => !prevValue)
+  }
   useEffect(function() {
-    setBanner(banner)
+    setShwobanner(banner)
   }, [banner])
+
+  // get theme Configuration from theme.config.ts
+  const { Logo, PrimaryNavigation, SecondaryNavigation, SocialLinks, bannerMessage, settings } = themeConfig;
 
   return (
 
-    <ErrorBoundary
-      fallbackRender={fallbackRender}
-      onReset={(details) => {
-        // Reset the state of your app so the error doesn't happen again
-      }}
-    >
-      <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
+    <ErrorBoundary fallbackRender={fallbackRender} >
 
+      <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
         {settings && settings?.defaultSEO && <DefaultSeo {...settings.defaultSEO} />}
 
-        {showBanner === "show" && bannerMessage !== undefined ? <Banner hideBanner={hideBanner} message={bannerMessage} /> : ""}
+        {showBanner && bannerMessage !== undefined ? <Banner hideBanner={toggleBanner} message={bannerMessage} /> : ""}
 
         <Header socialLinks={SocialLinks} Logo={Logo} PrimaryNavigation={PrimaryNavigation} />
 
@@ -54,6 +53,7 @@ export default function Layout({ pageOpts, themeConfig, children }: {
         <Footer socialLinks={SocialLinks} Logo={Logo} SecondaryNavigation={SecondaryNavigation} />
 
       </NextThemesProvider>
+
     </ErrorBoundary>
   );
 }
