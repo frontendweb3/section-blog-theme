@@ -6,7 +6,7 @@ import NavigationItems from "@/components/Navigation/NavigationItems";
 import NavigationItem from "@/components/Navigation/NavgationItem";
 import Image from "next/image";
 import { SocialLink } from "@/components/SocialLink/SocialLink";
-import { SearchCommandDialog } from "@/components/command/command";
+import { SearchCommandDialog } from "@/components/Command/Command";
 
 export function Header({ Logo, PrimaryNavigation, socialLinks }: { Logo: Logo; PrimaryNavigation: Navigation[]; socialLinks: SocialLinks[]; }) {
 
