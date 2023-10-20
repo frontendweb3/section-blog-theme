@@ -11,7 +11,7 @@ import {
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/router";
-import { useFetch } from '@/utility/useFetch'
+import { useFetch } from 'usehooks-ts'
 import Link from "next/link";
 
 export function SearchCommandDialog() {
