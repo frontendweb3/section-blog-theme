@@ -1,15 +1,7 @@
-import {
-  Error404,
-  Error500,
-  HomePage,
-  Page,
-  Posts,
-  Read,
-  Tag
-} from "@/components/Layouts";
+import { Error404, Error500, HomePage, Page, Posts, Read, Tag } from "@/components/Layouts";
 import * as React from "react";
-import type { PageOpts, ThemeConfig } from "nextra";
-import type { LayoutTypes } from "@/src/types";
+import type { PageOpts } from "nextra";
+import type { LayoutTypes,TypeSectionBlogTheme } from "@/src/types";
 
 const Layouts = {
   home: HomePage,
@@ -24,7 +16,7 @@ const Layouts = {
 export function BlogLayout(
   { pageOpts, themeConfig, children }: {
     pageOpts?: PageOpts;
-    themeConfig?: ThemeConfig;
+    themeConfig?: TypeSectionBlogTheme;
     children: React.ReactNode;
   }) {
   let LayoutType: LayoutTypes = pageOpts?.frontMatter.type ||
@@ -34,7 +26,7 @@ export function BlogLayout(
 
   if (!Layout) {
     throw new Error(
-      `Section blog theme does not support the layout type "${LayoutType}" It only supports "Post","Posts", "Page", "Home","Author","Authors","405","500", and "Tag"`,
+      `Section blog theme does not support the layout type "${LayoutType}" It only supports "Post","Posts", "Page", "Home","404","500", and "Tag"`,
     );
   }
 
@@ -42,9 +34,13 @@ export function BlogLayout(
     throw new Error(`Not found pageOpts`);
   }
 
-  if (LayoutType === 404 || LayoutType === 500) {
-    return <Layout pageOpts={pageOpts}>{children}</Layout>;
+  if (LayoutType === 500) {
+    return <Error500 />
   }
+
+  if (LayoutType === 404) {
+    return <Error404 />
+  }  
 
   return (
     <Layout pageOpts={pageOpts} themeConfig={themeConfig}>
