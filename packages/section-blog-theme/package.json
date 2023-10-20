@@ -2,8 +2,7 @@
   "name": "section-blog-theme",
   "version": "0.1.0",
   "private": false,
-  "main": "dist/index.js",
-  "type": "module",
+  "main": "dist/index.mjs",
   "keywords": [
     "blogging",
     "mdx",
@@ -44,11 +43,11 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/src/index.js",
+      "import": "./dist/src/index.mjs",
       "types": "./dist/index.d.ts"
     },
     "./Tag": {
-      "import": "./dist/src/tag.js",
+      "import": "./dist/src/tag.mjs",
       "types": "./dist/tag.d.ts"
     },
     "./styles.css": {
@@ -57,8 +56,8 @@
   },
   "scripts": {
     "clean": "rm  -Rf dist",
-    "dev": " tsup --watch",
-    "build": " pnpm run clean && tsup --minify",
+    "dev": "tsup --watch",
+    "build": "pnpm run clean && tsup --minify",
     "types": "tsup --dts-only",
     "types:check": "tsc --noEmit",
     "lint": "next lint",
@@ -92,7 +91,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-error-boundary": "^4.0.11",
-    "react-use-cookie": "^1.4.0",
     "react-web-share": "^2.0.2",
     "slugify": "^1.6.6",
     "tailwind-merge": "^1.14.0",
@@ -100,6 +98,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tsup": "^6.7.0",
     "typescript": "5.0.4",
+    "usehooks-ts": "^2.9.1",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
