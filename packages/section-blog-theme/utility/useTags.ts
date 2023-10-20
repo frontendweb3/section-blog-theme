@@ -1,5 +1,4 @@
 import slugify from "slugify";
-// import type { PageMapItem } from "nextra"
 import type { MdxFileCard } from "@/src/types"
 
 export function useTags(pageMap: MdxFileCard[]) {
