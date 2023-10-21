@@ -1,6 +1,6 @@
 {
   "name": "section-blog-theme",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": false,
   "main": "dist/index.mjs",
   "keywords": [
