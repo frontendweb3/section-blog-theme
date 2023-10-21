@@ -33,7 +33,6 @@ const themeConfig = {
     ImageLightPath: "/logo.svg",
     ImageDarkPath: "/next.svg",
   },
-
   PrimaryNavigation: [
     {
       href: "/",
