@@ -6,21 +6,21 @@ Start your blog journey with Next.js, Nextra, and MDX using section themes. You 
 
 ### Installation
 
-The Installation of the section theme blog is a lot easier. You can install the section theme blog with the following command.
+The Installation of the section blog theme is a lot easier. You can install the section blog theme with the following command.
 
 ```bash
-pnpm add nextra section-theme-blog
+pnpm add nextra section-blog-theme
 ```
 
 ```bash
-yarn add nextra section-theme-blog
+yarn add nextra section-blog-theme
 ```
 
 ```bash
-npm install nextra section-theme-blog
+npm install nextra section-blog-theme
 ```
 
-### Configure the section theme with nextra
+### Configure the section blog with nextra
 
 Create the following `next.config.js` file in your project’s root directory:
 
@@ -42,69 +42,96 @@ The lastly create a `theme.config.tsx` or `theme.config.jsx` file in your root l
 ```javascript
 // theme.config.tsx
 
-import type { SectionBlogTheme } from "section-theme-blog";
-
-const themeConfig: SectionBlogTheme = {
-  siteURL: "http://localhost:3000",
-  logo: {
-    text: "Section",
-    svg: (
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V12"
-          stroke="black"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
+const themeConfig = {
+  settings: {
+    title: "My title",
+    description: "my descript is here ",
+    defaultSEO: {
+      title: "default SEO  title is here",
+      titleTemplate: '%s | Section Blog Theme',
+      twitter: {
+        handle: "@FrontendWeb3",
+        site: "FrontendWeb3",
+        cardType: "summary_large_image",
+      }
+    }
   },
-  primary_navigation: [
+  DateFormat: "MMM DD, YYYY",
+  bannerMessage: "How are your <a style='margin: 0px 10px;' target='_blank' href='https://google.com'> learn more </a>",
+  SocialLinks: [
     {
-      route: "/",
-      name: "Home",
+      name: "twitter",
+      url: "https://twitter.com/Official_R_deep",
     },
     {
-      route: "/posts",
-      name: "Blog",
+      name: "linkedin",
+      url: "https://www.linkedin.com/in/officalrajdeepsingh/",
     },
     {
-      route: "/about",
-      name: "About",
-    },
-    {
-      route: "/contact",
-      name: "Contact",
+      name: "github",
+      url: "https://github.com/officialrajdeepsingh",
     },
   ],
-  secondary_navigation: [
+  Logo: {
+    TextLogo: "Section",
+    ImageLightPath: "/logo.svg",
+    ImageDarkPath: "/next.svg",
+  },
+  PrimaryNavigation: [
     {
-      route: "/disclaimer",
-      name: "Disclaimer",
+      href: "/",
+      title: "Home",
     },
     {
-      route: "/privacy-policy",
-      name: "Privacy policy",
+      href: "/posts",
+      title: "Blog",
+    },
+    {
+      title: "Projects",
+      subNav: true,
+      subNavigation: [
+        {
+          title: "Personal Blog",
+          href: "https://officialrajdeepsingh.dev/",
+          description:
+            "Check out my personal portfolio blog website.",
+        },
+        {
+          title: "Section Blog Theme",
+          href: "https://github.com/frontendweb3/section-blog-theme",
+          description: "Section blog theme is nextra based theme.",
+        },
+        {
+          title: "Awesome Nextjs",
+          href: "https://github.com/officialrajdeepsingh/awesome-nextjs",
+          description:
+            "A curated list of awesome Nextjs-based libraries that help build small and large-scale applications with next.js.",
+        },
+      ],
+    },
+    {
+      href: "/about",
+      title: "About",
+    },
+    {
+      href: "/contact",
+      title: "Contact",
     },
   ],
-  social_links: [
+  SecondaryNavigation: [
     {
-      name: "Twitter",
-      url: "https://facebook.com/officialrajdeepsingh",
+      href: "/disclaimer",
+      title: "Disclaimer",
     },
     {
-      name: "Github",
-      url: "https://facebook.com/officialrajdeepsingh",
+      href: "/privacy-policy",
+      title: "Privacy policy",
     },
-  ],
+    {
+      href: "/contact",
+      title: "Contact",
+    },
+  ]
 };
-
 export default themeConfig;
 ```
