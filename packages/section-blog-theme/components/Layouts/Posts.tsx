@@ -5,17 +5,18 @@ import type { PageOpts, ThemeConfig } from "nextra";
 import { useContent } from "@/utility/useContent";
 import dayjs from "dayjs";
 import { Seo } from "../Seo/Seo";
+import { TypeSectionBlogTheme } from "@/src/types";
 
-export function Posts({ children, themeConfig, pageOpts }: { pageOpts: PageOpts; themeConfig: ThemeConfig; children: React.ReactNode; }) {
+export function Posts({ children, themeConfig, pageOpts }: { pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme; children: React.ReactNode; }) {
 
-  const { posts, frontMatter } = useContent(pageOpts);
+  const { posts } = useContent(pageOpts);
 
   const { DateFormat } = themeConfig
 
   return (
     <>
 
-      <Seo frontMatter={frontMatter} />
+      <Seo pageOpts={pageOpts} themeConfig={themeConfig} />
 
       <Article>{children}</Article>
 

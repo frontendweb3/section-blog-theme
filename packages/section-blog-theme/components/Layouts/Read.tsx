@@ -1,8 +1,8 @@
 import { Article } from "@/components/Article/Article";
 import * as React from "react";
-import type { PageOpts, ThemeConfig } from "nextra";
+import type { PageOpts } from "nextra";
 import dayjs from "dayjs";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { PrinterIcon, Share2Icon } from "lucide-react";
 import { RWebShare } from "react-web-share";
 import { Next_URL } from "@/utility/NextURL";
@@ -31,7 +31,7 @@ export function Read(
   return (
     <>
 
-      <Seo frontMatter={frontMatter} />
+      <Seo pageOpts={pageOpts} themeConfig={themeConfig} />
 
 
       <div className="px-3 sm:px-0 mx-auto my-6 print:block prose prose-pre:bg-primary-foreground prose-zinc sm:prose-sm md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl dark:prose-invert">

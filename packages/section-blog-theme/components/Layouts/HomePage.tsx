@@ -1,15 +1,14 @@
 import { Article } from "@/components/Article/Article";
 import * as React from "react";
 import { Seo } from "@/components/Seo/Seo";
-import type { PageOpts, ThemeConfig } from "nextra";
-import { useContent } from "@/utility/useContent";
-export function HomePage({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: ThemeConfig; children: React.ReactNode; }) {
+import type { PageOpts } from "nextra";
+import { TypeSectionBlogTheme } from "@/src/types";
 
-  const { frontMatter } = useContent(pageOpts);
+export function HomePage({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme; children: React.ReactNode; }) {
 
   return (
     <>   
-      <Seo frontMatter={frontMatter} themeConfig={themeConfig} />
+      <Seo pageOpts={pageOpts} themeConfig={themeConfig} />
       <Article>{children}</Article>
     </>  
   );
