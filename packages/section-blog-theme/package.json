@@ -1,6 +1,6 @@
 {
   "name": "section-blog-theme",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/index.mjs",
   "keywords": [
     "blogging",
@@ -60,7 +60,8 @@
     "types": "tsup --dts-only",
     "types:check": "tsc --noEmit",
     "lint": "next lint",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "publish": "publish -r --no-git-checks"
   },
   "dependencies": {
     "@radix-ui/react-aspect-ratio": "^1.0.3",
