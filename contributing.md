@@ -45,13 +45,13 @@ The example folder contains a demo site built or used with a section blog theme.
 You can start the local development server with the following command.
 
 ```bash
-pnpm dev  --filter=section-blog-theme  --filter=demo-section-blog
+pnpm dev --filter=section-blog-theme  --filter=demo-section-blog
 ```
 ### Documentation server
 Start your documentation server with following command.
 
 ```bash
-pnpm dev  --filter=docs
+pnpm dev --filter=docs
 ```
 ## What and where we found components?
 
