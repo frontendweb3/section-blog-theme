@@ -4,7 +4,6 @@ import type { Logo, Navigation, SocialLinks } from "@/src/types";
 import Link from "next/link";
 import NavigationItems from "@/components/Navigation/NavigationItems";
 import NavigationItem from "@/components/Navigation/NavgationItem";
-import Image from "next/image";
 import { SocialLink } from "@/components/SocialLink/SocialLink";
 import { SearchCommandDialog } from "@/components/Command/Command";
 
@@ -14,38 +13,10 @@ export function Header({ Logo, PrimaryNavigation, socialLinks }: { Logo: Logo; P
 
     <header className="container print:hidden mt-3 px-4 lg:px-6 py-8 flex justify-center flex-wrap flex-row md:justify-between items-center mx-auto">
 
-      <Link href="/" className="flex items-center">
-        {
-          Logo.ImageLightPath
-            ? (
-              <>
-                <Image
-                  className="block dark:hidden"
-                  width="34"
-                  height="34"
-                  src={Logo.ImageDarkPath}
-                  alt="logo"
-                />
-                <Image
-                  className="hidden dark:block"
-                  width="34"
-                  height="34"
-                  src={Logo.ImageLightPath}
-                  alt="logo"
-                />
-              </>
-            )
-            : ""
-        }
-        {
-          Logo.TextLogo
-            ? (
-              <span className="ml-2 self-center text-xl font-semibold whitespace-nowrap !text-foreground dark:text-white">
-                {Logo.TextLogo}
-              </span>
-            )
-            : ""}
-      </Link>
+
+      {Logo.TextLogo && <Link href="/" className="ml-2 self-center text-xl font-semibold whitespace-nowrap !text-foreground dark:text-white">
+        {Logo.TextLogo}
+      </Link>}
 
       <NavigationMenu className="my-3 flex flex-wrap justify-between items-center mx-auto md:my-0">
 
