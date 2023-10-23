@@ -16,7 +16,7 @@ const Layouts = {
 export function BlogLayout(
   { pageOpts, themeConfig, children }: {
     pageOpts?: PageOpts;
-    themeConfig?: TypeSectionBlogTheme;
+    themeConfig: TypeSectionBlogTheme;
     children: React.ReactNode;
   }) {
   let LayoutType: LayoutTypes = pageOpts?.frontMatter.type ||
