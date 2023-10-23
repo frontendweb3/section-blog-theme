@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 import { DefaultSeoProps } from "next-seo";
 import { LucideProps } from 'lucide-react';
+
+
 export interface SubNavigation {
   title: string;
   href: string;
@@ -27,8 +29,6 @@ export interface IconProps extends LucideProps {
 
 export interface Logo {
   TextLogo: string;
-  ImageLightPath: string;
-  ImageDarkPath: string;
 }
 
 export interface settingsTypes {
