@@ -62,14 +62,13 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install
-
+        run: pnpm install --filter=docs
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
           static_site_generator: next
       - name: Build with Next.js
-        run: pnpm next build
+        run: pnpm next build  --filter=docs
       - name: Static HTML export with Next.js
         run: pnpm next export
       - name: Upload artifact
