@@ -75,9 +75,9 @@ jobs:
         with:
           static_site_generator: next
       - name: Build with Next.js
-        run: pnpm next build  --filter=docs
+        run: pnpm run next build  --filter=docs
       - name: Static HTML export with Next.js
-        run: pnpm next export
+        run: pnpm run next export  --filter=docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
