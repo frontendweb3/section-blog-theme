@@ -1,3 +1,6 @@
+/**
+ * @type {import('next').NextConfig}
+ */
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.tsx",
@@ -6,4 +9,9 @@ const withNextra = require("nextra")({
   readingTime: true,
 });
 
-module.exports = withNextra();
+module.exports = withNextra({
+  output: 'export',
+  image:{
+    unoptimized: true
+  }
+});
