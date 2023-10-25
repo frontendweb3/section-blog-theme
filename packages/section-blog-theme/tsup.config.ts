@@ -5,7 +5,7 @@ export default defineConfig({
   dts: {
     entry: ["src/index.tsx", "src/tag.tsx","src/components.tsx", "src/icons.tsx"]
   },
-  format: 'esm',
+  format: ['esm','cjs'],
   name: "section-blog-theme",
   external: ["nextra"],
 });

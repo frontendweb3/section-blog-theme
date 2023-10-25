@@ -26,10 +26,10 @@
       "./Tag": [
         "./dist/tag.d.ts"
       ],
-      "./components":[
+      "./components": [
         "./dist/components.d.ts"
       ],
-      "./icons":[
+      "./icons": [
         "./dist/icons.d.ts"
       ]
     }
@@ -49,21 +49,23 @@
   "exports": {
     ".": {
       "import": "./dist/src/index.mjs",
+      "require":"./dist/src/index.js",
       "types": "./dist/index.d.ts"
     },
     "./Tag": {
       "import": "./dist/src/tag.mjs",
+      "require":"./dist/src/tag.js",
       "types": "./dist/tag.d.ts"
     },
     "./styles.css": {
       "import": "./dist/styles/globals.css"
     },
-    "./components":{
+    "./components": {
       "import": "./dist/src/components.mjs",
       "require": "./dist/src/components.js",
       "types": "./dist/components.d.ts"
     },
-    "./icons":{
+    "./icons": {
       "import": "./dist/src/icons.mjs",
       "require": "./dist/src/icons.js",
       "types": "./dist/icons.d.ts"
@@ -85,7 +87,9 @@
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-navigation-menu": "^1.1.4",
+    "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@types/node": "20.8.7",
