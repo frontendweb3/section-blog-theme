@@ -79,7 +79,7 @@
     "types:check": "tsc --noEmit",
     "lint": "next lint",
     "test": "jest --watch",
-    "publish": "publish -r --no-git-checks"
+    "publish": "publish -r"
   },
   "dependencies": {
     "@radix-ui/react-aspect-ratio": "^1.0.3",
