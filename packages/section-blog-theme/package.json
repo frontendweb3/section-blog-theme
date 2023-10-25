@@ -25,6 +25,15 @@
       ],
       "./Tag": [
         "./dist/tag.d.ts"
+<<<<<<< Updated upstream
+=======
+      ],
+      "./components":[
+        "./dist/components.d.ts"
+      ],
+      "./icons":[
+        "./dist/icons.d.ts"
+>>>>>>> Stashed changes
       ]
     }
   },
@@ -51,6 +60,19 @@
     },
     "./styles.css": {
       "import": "./dist/styles/globals.css"
+<<<<<<< Updated upstream
+=======
+    },
+    "./components":{
+      "import": "./dist/src/components.mjs",
+      "require": "./dist/src/components.js",
+      "types": "./dist/components.d.ts"
+    },
+    "./icons":{
+      "import": "./dist/src/icons.mjs",
+      "require": "./dist/src/icons.js",
+      "types": "./dist/icons.d.ts"
+>>>>>>> Stashed changes
     }
   },
   "scripts": {
