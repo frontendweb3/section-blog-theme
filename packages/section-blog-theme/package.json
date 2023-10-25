@@ -1,7 +1,8 @@
 {
   "name": "section-blog-theme",
   "version": "0.0.5",
-  "main": "dist/index.mjs",
+  "main": "dist/index.js",
+  "types": "dist/types.d.mts",
   "keywords": [
     "blogging",
     "mdx",
@@ -21,23 +22,22 @@
   "typesVersions": {
     "*": {
       ".": [
-        "./dist/index.d.ts"
+        "./dist/index.d.mts"
       ],
       "./Tag": [
-        "./dist/tag.d.ts"
+        "./dist/tag.d.mts"
       ],
       "./components": [
-        "./dist/components.d.ts"
+        "./dist/components.d.mts"
       ],
       "./icons": [
-        "./dist/icons.d.ts"
+        "./dist/icons.d.mts"
       ]
     }
   },
   "files": [
     "dist/*"
   ],
-  "types": "dist/types.d.ts",
   "homepage": "https://section-theme-blog-docs.vercel.app",
   "repository": {
     "type": "git",
@@ -48,27 +48,23 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/src/index.mjs",
-      "require":"./dist/src/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/src/index.js",
+      "types": "./dist/index.d.mts"
     },
     "./Tag": {
-      "import": "./dist/src/tag.mjs",
-      "require":"./dist/src/tag.js",
-      "types": "./dist/tag.d.ts"
+      "import": "./dist/src/tag.js",
+      "types": "./dist/tag.d.mts"
     },
     "./styles.css": {
       "import": "./dist/styles/globals.css"
     },
     "./components": {
-      "import": "./dist/src/components.mjs",
-      "require": "./dist/src/components.js",
-      "types": "./dist/components.d.ts"
+      "import": "./dist/src/components.js",
+      "types": "./dist/components.d.mts"
     },
     "./icons": {
-      "import": "./dist/src/icons.mjs",
-      "require": "./dist/src/icons.js",
-      "types": "./dist/icons.d.ts"
+      "import": "./dist/src/icons.js",
+      "types": "./dist/icons.d.mts"
     }
   },
   "scripts": {
