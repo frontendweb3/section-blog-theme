@@ -1,38 +1,149 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Start your blog journey with Next.js, Nextra, and MDX using section themes. You can start your blog in less than two minutes, and you need only one command and zero configuration. Section theme comes with an inbuilt dark mode, a search bar, Customize Navigation, and SEO Support.
 
-## Getting Started
+## Buy a Coffee
 
-First, run the development server:
+[![Buy a Coffee](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K2E87F0)
+
+### Installation
+
+The Installation of the section blog theme is a lot easier. You can install the section blog theme with the following command.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+pnpm add nextra section-blog-theme
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+yarn add nextra section-blog-theme
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install nextra section-blog-theme
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Configure the section blog with nextra
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Create the following `next.config.js` file in your project’s root directory:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```javascript
+// next.config.js
 
-## Learn More
+const withNextra = require("nextra")({
+  theme: "section-blog-theme",
+  themeConfig: "./theme.config.jsx",
+});
 
-To learn more about Next.js, take a look at the following resources:
+module.exports = withNextra();
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### import css 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Next step to import css file from section blog theme inside your `_app.mdx' file.
 
-## Deploy on Vercel
+```javascript
+import "section-blog-theme/styles.css"
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Create Theme Config file
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The lastly create a `theme.config.jsx` or `theme.config.tsx` file in your root level.
+
+```javascript
+// theme.config.jsx
+
+const themeConfig = {
+  settings: {
+    title: "My title",
+    description: "my descript is here ",
+    SiteURL:"https://section-theme-blog-docs.vercel.app",
+    defaultSEO: {
+      title: "default SEO  title is here",
+      titleTemplate: '%s | Section Blog Theme',
+      twitter: {
+        handle: "@FrontendWeb3",
+        site: "FrontendWeb3",
+        cardType: "summary_large_image",
+      }
+    }
+  },
+  DateFormat: "MMM DD, YYYY",
+  bannerMessage: "How are your <a style='margin: 0px 10px;' target='_blank' href='https://google.com'> learn more </a>",
+  SocialLinks: [
+    {
+      name: "twitter",
+      url: "https://twitter.com/Official_R_deep",
+    },
+    {
+      name: "linkedin",
+      url: "https://www.linkedin.com/in/officalrajdeepsingh/",
+    },
+    {
+      name: "github",
+      url: "https://github.com/officialrajdeepsingh",
+    },
+  ],
+  Logo: {
+    TextLogo: "logo here"
+  },
+  PrimaryNavigation: [
+    {
+      href: "/",
+      title: "Home",
+    },
+    {
+      href: "/posts",
+      title: "Blog",
+    },
+    {
+      title: "Projects",
+      subNav: true,
+      subNavigation: [
+        {
+          title: "Personal Blog",
+          href: "https://officialrajdeepsingh.dev/",
+          description:
+            "Check out my personal portfolio blog website.",
+        },
+        {
+          title: "Section Blog Theme",
+          href: "https://github.com/frontendweb3/section-blog-theme",
+          description: "Section blog theme is nextra based theme.",
+        },
+        {
+          title: "Awesome Nextjs",
+          href: "https://github.com/officialrajdeepsingh/awesome-nextjs",
+          description:
+            "A curated list of awesome Nextjs-based libraries that help build small and large-scale applications with next.js.",
+        },
+      ],
+    },
+    {
+      href: "/about",
+      title: "About",
+    },
+    {
+      href: "/contact",
+      title: "Contact",
+    },
+  ],
+  SecondaryNavigation: [
+    {
+      href: "/disclaimer",
+      title: "Disclaimer",
+    },
+    {
+      href: "/privacy-policy",
+      title: "Privacy policy",
+    },
+    {
+      href: "/contact",
+      title: "Contact",
+    },
+  ]
+};
+export default themeConfig;
+```
+## rename your file.
+Lastly, rename the file extension the .tsx or .jsx  to a .mdx. for every file inside the pages folder. But does not change the `_document.jsx or _document.tsx` file extension.

@@ -29,23 +29,35 @@ Create the following `next.config.js` file in your project’s root directory:
 
 const withNextra = require("nextra")({
   theme: "section-blog-theme",
-  themeConfig: "./theme.config.tsx",
+  themeConfig: "./theme.config.jsx",
 });
 
 module.exports = withNextra();
 ```
 
-### Create Theme Config file
+### import css 
 
-The lastly create a `theme.config.tsx` or `theme.config.jsx` file in your root level.
+Next step to import css file from section blog theme inside your `_app.mdx' file.
 
 ```javascript
-// theme.config.tsx
+import "section-blog-theme/styles.css"
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+```
+
+### Create Theme Config file
+
+The lastly create a `theme.config.jsx` or `theme.config.tsx` file in your root level.
+
+```javascript
+// theme.config.jsx
 
 const themeConfig = {
   settings: {
     title: "My title",
     description: "my descript is here ",
+    SiteURL:"https://section-theme-blog-docs.vercel.app",
     defaultSEO: {
       title: "default SEO  title is here",
       titleTemplate: '%s | Section Blog Theme',
@@ -73,9 +85,7 @@ const themeConfig = {
     },
   ],
   Logo: {
-    TextLogo: "Section",
-    ImageLightPath: "/logo.svg",
-    ImageDarkPath: "/next.svg",
+    TextLogo: "logo here"
   },
   PrimaryNavigation: [
     {
@@ -135,3 +145,5 @@ const themeConfig = {
 };
 export default themeConfig;
 ```
+## rename your file.
+Lastly, rename the file extension the .tsx or .jsx  to a .mdx. for every file inside the pages folder. But does not change the `_document.jsx or _document.tsx` file extension.
