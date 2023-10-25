@@ -78,8 +78,7 @@
     "types": "tsup --dts-only",
     "types:check": "tsc --noEmit",
     "lint": "next lint",
-    "test": "jest --watch",
-    "publish": "publish -r"
+    "test": "jest --watch"
   },
   "dependencies": {
     "@radix-ui/react-aspect-ratio": "^1.0.3",
