@@ -20,7 +20,7 @@ Section blog theme work with [Nextra](https://nextra.site/) and [MDX](https://md
 
 Create the following `next.config.js` file in your project’s root directory:
 
-```bash {2-3} copy filename="next.config.js"
+```jsx {2-3} copy filename="next.config.js"
 const withNextra = require("nextra")({
   theme: "section-theme-blog",
   themeConfig: "./theme.config.tsx",
@@ -28,81 +28,6 @@ const withNextra = require("nextra")({
 
 module.exports = withNextra(); 
 ```
-
-### Create Theme Config file
-
-The lastly create a `theme.config.tsx` or `theme.config.jsx` file in your root level.
-
-```bash copy filename="theme.config.tsx"
-
-import type { SectionBlogTheme } from "section-theme-blog";
-
-const themeConfig:SectionBlogTheme = {
-  siteURL: "http://localhost:3000",
-  logo: {
-    text: "Section",
-    svg: (
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V12"
-          stroke="black"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  primary_navigation: [
-    {
-      route: "/",
-      name: "Home",
-    },
-    {
-      route: "/posts",
-      name: "Blog",
-    },
-    {
-      route: "/about",
-      name: "About",
-    },
-    {
-      route: "/contact",
-      name: "Contact",
-    },
-  ],
-  secondary_navigation: [
-    {
-      route: "/disclaimer",
-      name: "Disclaimer",
-    },
-    {
-      route: "/privacy-policy",
-      name: "Privacy policy",
-    }
-  ],
-  social_links: [
-
-    {
-      name: "Twitter",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
-    {
-      name: "Github",
-      url: "https://facebook.com/officialrajdeepsingh",
-    },
-  ],
-};
-
-export default themeConfig;
-```
-
 ### Rename the `_app.tsx` to `_app.mdx`
 
 ```javascript
@@ -110,9 +35,120 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 ```
+
+### Import css
+Next step is import section blog theme css file on `_aap.mdx` file.
+```jsx {1-1} filename="_aap.mdx"
+import "section-blog-theme/styles.css"
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+```
+
+### Create Theme Config file
+
+The next create a `theme.config.tsx` or `theme.config.jsx` file in your root level.
+
+```jsx copy filename="theme.config.tsx"
+
+const themeConfig = {
+  settings: {
+    title: "My title",
+    description: "my descript is here ",
+    defaultSEO: {
+      title: "default SEO  title is here",
+      titleTemplate: '%s | Section Blog Theme',
+      twitter: {
+        handle: "@FrontendWeb3",
+        site: "FrontendWeb3",
+        cardType: "summary_large_image",
+      }
+    }
+  },
+  DateFormat: "MMM DD, YYYY",
+  bannerMessage: "How are your <a style='margin: 0px 10px;' target='_blank' href='https://google.com'> learn more </a>",
+  SocialLinks: [
+    {
+      name: "twitter",
+      url: "https://twitter.com/Official_R_deep",
+    },
+    {
+      name: "linkedin",
+      url: "https://www.linkedin.com/in/officalrajdeepsingh/",
+    },
+    {
+      name: "github",
+      url: "https://github.com/officialrajdeepsingh",
+    },
+  ],
+  Logo: {
+    TextLogo: "Section"
+  },
+  PrimaryNavigation: [
+    {
+      href: "/",
+      title: "Home",
+    },
+    {
+      href: "/posts",
+      title: "Blog",
+    },
+    {
+      title: "Projects",
+      subNav: true,
+      subNavigation: [
+        {
+          title: "Personal Blog",
+          href: "https://officialrajdeepsingh.dev/",
+          description:
+            "Check out my personal portfolio blog website.",
+        },
+        {
+          title: "Section Blog Theme",
+          href: "https://github.com/frontendweb3/section-blog-theme",
+          description: "Section blog theme is nextra based theme.",
+        },
+        {
+          title: "Awesome Nextjs",
+          href: "https://github.com/officialrajdeepsingh/awesome-nextjs",
+          description:
+            "A curated list of awesome Nextjs-based libraries that help build small and large-scale applications with next.js.",
+        },
+      ],
+    },
+    {
+      href: "/about",
+      title: "About",
+    },
+    {
+      href: "/contact",
+      title: "Contact",
+    },
+  ],
+  SecondaryNavigation: [
+    {
+      href: "/disclaimer",
+      title: "Disclaimer",
+    },
+    {
+      href: "/privacy-policy",
+      title: "Privacy policy",
+    },
+    {
+      href: "/contact",
+      title: "Contact",
+    },
+  ]
+};
+export default themeConfig;
+
+```
+
 ### Rename your `index.tsx` to `index.mdx`
 
-```markdown
+Paste the following code into rename `index.mdx` file.
+
+```mdx
 ---
 type: home
 title : Welcome to Home Page
@@ -125,23 +161,7 @@ Lastly run your local devlpment server with `pnpm dev or npm run dev ` command a
 </Steps>
 
 ### Update the Section theme
-
-<Tabs items={['pnpm', 'npm', 'yarn']}>
-  <Tab>
-  ```bash
-pnpm update section-theme-blog
-  ```
-  </Tab>
-    <Tab>
-  ```bash
-yarn update section-theme-blog
-  ```
-  </Tab>
-    <Tab>
-  ```bash
-npm update section-theme-blog
-  ```
-  </Tab>
-</Tabs>
-
-> Sometimes when we update the theme and does show a change then remove the `.next` folder and restart your development server.
+```bash npm2yarn
+npm update section-blog-theme
+```
+Sometimes when we update the theme and does show a change then remove the `.next` folder and restart your development server.

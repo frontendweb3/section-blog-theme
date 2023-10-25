@@ -1,39 +1,42 @@
 # Alert
 
-Section Theme blog provides an [inbuilt Alert component](https://mantine.dev/core/alert/) with mantine UI.
+Section blog theme comes with Alert component, Alert component built with [shadcn/ui](https://ui.shadcn.com/docs/components/alert)
 
 ## Example
 
 ```javascript
 <Alert>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis quis tellus eget congue. Curabitur ullamcorper faucibus efficitur.
+  <SpinnerIcon className="h-4 w-4" />
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>
+    You can add components and dependencies to your app using the cli.
+  </AlertDescription>
 </Alert>
 ```
 
-## Color and Background
-
-You can change Background and font color in Alert component.
+## How to use it?
+First import alert component and icons from section blog theme package.
 
 ```javascript
-<Alert title="Lorem ipsum" color="red" variant="outline">
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis quis tellus eget congue. Curabitur ullamcorper faucibus efficitur.
-</Alert>
+// Alert component
+import { Alert, AlertDescription, AlertTitle } from "section-blog-theme/components";
+
+// Icons
+import { AlertTriangle } from "section-blog-theme/icons"
+
 ```
 
-## Icon
-You can change svg Icon in Alert component.
+Next step is use, inside you mdx file.
 
 ```javascript
-<Alert icon={<IconAlertCircle size="1rem" />}>
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis quis tellus eget congue. Curabitur ullamcorper faucibus efficitur.
-</Alert>
-```
+import { Alert, AlertDescription, AlertTitle } from "section-blog-theme/components";
+import { AlertTriangle } from "section-blog-theme/icons"
 
-## Radius
-You can change Radius in Alert component.
-
-```javascript
-<Alert title="Lorem ipsum"  radius="md" variant="outline">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis quis tellus eget congue. Curabitur ullamcorper faucibus efficitur.
+<Alert>
+  <AlertTriangle className="h-4 w-4" />
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>
+    You can add components and dependencies to your app using the cli.
+  </AlertDescription>
 </Alert>
 ```

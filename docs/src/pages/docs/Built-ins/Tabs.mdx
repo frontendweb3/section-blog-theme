@@ -1,78 +1,47 @@
 # Tabs
 
-The section theme inbuilt provide a tabs component built based on the matine UI [Tab component](https://mantine.dev/core/tabs).
+The section blog theme inbuilt provide a tabs component built-in based on the [shadcn UI](https://ui.shadcn.com/docs/components/tabs).
 
 ## Example
 
 ```javascript
-<Tabs defaultValue="gallery">
-      <Tabs.List>
-        <Tabs.Tab value="gallery">Gallery</Tabs.Tab>
-        <Tabs.Tab value="messages">Messages</Tabs.Tab>
-        <Tabs.Tab value="settings">Settings</Tabs.Tab>
-      </Tabs.List>
-
-      <Tabs.Panel value="gallery" pt="xs">
-        Gallery tab content
-      </Tabs.Panel>
-
-      <Tabs.Panel value="messages" pt="xs">
-        Messages tab content
-      </Tabs.Panel>
-
-      <Tabs.Panel value="settings" pt="xs">
-        Settings tab content
-      </Tabs.Panel>
+<Tabs defaultValue="npm" className="w-[624px]">
+  <TabsList>
+    <TabsTrigger className="mx-1" value="npm">NPM</TabsTrigger>
+    <TabsTrigger className="mx-1" value="yarn">Yarn</TabsTrigger>
+    <TabsTrigger className="mx-1" value="pnpm">PNPM</TabsTrigger>
+  </TabsList>
+  <TabsContent value="npm">
+  ``` npm install nextra section-theme-blog ```
+  </TabsContent>
+  <TabsContent value="yarn">
+  ``` yarn add nextra section-theme-blog ```
+  </TabsContent>
+  <TabsContent value="pnpm">
+  ``` pnpm add nextra section-theme-blog ```
+  </TabsContent>
 </Tabs>
 ```
-
-## Color
-
-Change the color in Tabs component.
+## How to use it?
 
 ```javascript
-<Tabs color="red">
-      <Tabs.List>
-        <Tabs.Tab value="gallery">Gallery</Tabs.Tab>
-        <Tabs.Tab value="messages">Messages</Tabs.Tab>
-        <Tabs.Tab value="settings">Settings</Tabs.Tab>
-      </Tabs.List>
 
-      <Tabs.Panel value="gallery" pt="xs">
-        Gallery tab content
-      </Tabs.Panel>
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "section-blog-theme/components"
 
-      <Tabs.Panel value="messages" pt="xs">
-        Messages tab content
-      </Tabs.Panel>
-
-      <Tabs.Panel value="settings" pt="xs">
-        Settings tab content
-      </Tabs.Panel>
+<Tabs defaultValue="npm" className="w-[624px]">
+  <TabsList>
+    <TabsTrigger className="mx-1" value="npm">NPM</TabsTrigger>
+    <TabsTrigger className="mx-1" value="yarn">Yarn</TabsTrigger>
+    <TabsTrigger className="mx-1" value="pnpm">PNPM</TabsTrigger>
+  </TabsList>
+  <TabsContent value="npm">
+  ``` npm install nextra section-theme-blog ```
+  </TabsContent>
+  <TabsContent value="yarn">
+  ``` yarn add nextra section-theme-blog ```
+  </TabsContent>
+  <TabsContent value="pnpm">
+  ``` pnpm add nextra section-theme-blog ```
+  </TabsContent>
 </Tabs>
-```
-
-## Icon
-Adding or Change the icon in Tabs component.
-
-```javascript
-<Tabs color="teal" defaultValue="gallery">
-      <Tabs.List>
-        <Tabs.Tab value="gallery" icon={<IconPhoto size="0.8rem" />}>Gallery</Tabs.Tab>
-        <Tabs.Tab value="messages" icon={<IconMessageCircle size="0.8rem" />}>Messages</Tabs.Tab>
-        <Tabs.Tab value="settings" icon={<IconSettings size="0.8rem" />}>Settings</Tabs.Tab>
-      </Tabs.List>
-
-      <Tabs.Panel value="gallery" pt="xs">
-        Gallery tab content
-      </Tabs.Panel>
-
-      <Tabs.Panel value="messages" pt="xs">
-        Messages tab content
-      </Tabs.Panel>
-
-      <Tabs.Panel value="settings" pt="xs">
-        Settings tab content
-      </Tabs.Panel>
-    </Tabs>
 ```
