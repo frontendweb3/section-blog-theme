@@ -12,7 +12,6 @@ const themeConfig = {
       }
     }
   },
-  DateFormat: "MMM DD, YYYY",
   bannerMessage: "How are your <a style='margin: 0px 10px;' target='_blank' href='https://google.com'> learn more </a>",
   SocialLinks: [
     {
