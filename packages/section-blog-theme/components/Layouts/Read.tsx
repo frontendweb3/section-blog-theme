@@ -65,7 +65,7 @@ export function Read(
               title={postTime}
             >
               {postTime}
-            </time> • <Link href={`${Next_URL(settings?.SiteURL)}/tags/${slugify(frontMatter.tags[0])}`} className="ml-2 hover:text-gray-600"> {frontMatter.tags[0]} </Link>
+            </time> • <Link href={`${Next_URL(settings?.SiteURL)}/tags/${slugify(frontMatter.tags[0])}`} className="capitalize ml-2 hover:text-gray-600"> {frontMatter.tags[0]} </Link>
           </div>
 
           <div className="hidden sm:flex flex-row print:block">
@@ -87,8 +87,8 @@ export function Read(
           </div>
         </section>
 
-        <h1 className="mb-2">{frontMatter.title}</h1>
-        <p className="mb-4 mt-0 font-bold">{frontMatter.description}</p>
+        <h1 className="mb-2 font-bold">{frontMatter.title}</h1>
+        <p className="mb-4 mt-0 font-medium">{frontMatter.description}</p>
 
       </div>
 

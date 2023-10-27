@@ -11,7 +11,7 @@ export function ArticleCard({ title, description, date, tag, URL, author }: { ti
             {
               typeof author === 'string' ? <span>Published By {author}</span> : typeof author === 'object' ? <span>Published By {author.name}</span> : ""} • {tag && tag.length > 0
                 ? (
-                  <span>
+                  <span className="capitalize">
                     {tag[0]}
                   </span>
                 )
