@@ -7,7 +7,7 @@ import { PrinterIcon, Share2Icon } from "lucide-react";
 import { RWebShare } from "react-web-share";
 import { Next_URL } from "@/utility/NextURL";
 import Link from "next/link";
-import { Seo } from "../Seo/Seo";
+import { Seo } from "@/components/Seo/Seo";
 import { slugify } from "@/utility/slugify";
 import { TypeSectionBlogTheme } from "@/src/types";
 
