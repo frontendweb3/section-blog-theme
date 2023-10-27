@@ -11,22 +11,13 @@ import { Seo } from "@/components/Seo/Seo";
 import { slugify } from "@/utility/slugify";
 import { TypeSectionBlogTheme } from "@/src/types";
 
-export function Read(
-  {
-    pageOpts,
-    themeConfig,
-    children,
-  }: {
-    pageOpts: PageOpts;
-    themeConfig: TypeSectionBlogTheme;
-    children: React.ReactNode;
-  }
-) {
+export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme; children: React.ReactNode; }) {
+
   const { frontMatter } = pageOpts;
 
   let { DateFormat, settings } = themeConfig;
 
-  let postTime = dayjs(frontMatter.date).format(DateFormat);
+  let getDate  = dayjs(frontMatter.date).format(DateFormat? DateFormat : "MMM DD, YYYY");
 
   return (
     <>
@@ -61,10 +52,10 @@ export function Read(
             } </span>
             • <time
               className="mx-2"
-              dateTime={frontMatter.date}
-              title={postTime}
+              dateTime={getDate}
+              title={getDate}
             >
-              {postTime}
+              {getDate}
             </time> • <Link href={`${Next_URL(settings?.SiteURL)}/tags/${slugify(frontMatter.tags[0])}`} className="capitalize ml-2 hover:text-gray-600"> {frontMatter.tags[0]} </Link>
           </div>
 
