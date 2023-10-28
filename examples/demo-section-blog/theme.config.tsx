@@ -28,9 +28,7 @@ const themeConfig = {
     },
   ],
   Logo: {
-    TextLogo: "Section",
-    ImageLightPath: "/logo.svg",
-    ImageDarkPath: "/next.svg",
+    TextLogo: "Section"
   },
   PrimaryNavigation: [
     {
