@@ -29,6 +29,7 @@ export const getStaticProps: GetStaticProps = ({ params }) => {
     }
   }
 }
+
 export function getStaticPaths() {
 
   const globalData = (globalThis as any)[NEXTRA_INTERNAL].pageMap
