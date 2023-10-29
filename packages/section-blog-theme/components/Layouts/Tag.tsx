@@ -5,8 +5,9 @@ import { ArticleCard } from "@/components/Card/Card";
 import dayjs from "dayjs";
 import { Article } from "@/components/Article/Article";
 import { Error404 } from "./404";
+import { TypeSectionBlogTheme } from "@/src/types"
 
-export function Tag({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: ThemeConfig; children: React.ReactNode; }) {
+export function Tag({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme; children: React.ReactNode; }) {
 
   const { DateFormat } = themeConfig;
 
@@ -15,7 +16,8 @@ export function Tag({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; t
   let tagSlug = router.query && router.query.tag && typeof router.query.tag === "string" ? router.query.tag : router?.query?.tag as string
 
   const { posts } = useTagContent(pageOpts, tagSlug)
-  if (posts.length === 0) {
+  
+  if ( posts === undefined || posts.length === 0) {
     return (<Error404 /> )
   }
   return (
