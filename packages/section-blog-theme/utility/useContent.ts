@@ -23,16 +23,5 @@ export function useContent({ pageMap, frontMatter }: PageOpts) {
     return dateB - dateA
   });
 
-  // Authors
-  let tempAuthors: MdxFileCard[] | undefined = [];
-
-  for (let page of pageMap) {
-    if (page.kind === "Folder" && page.name === "authors") {
-      tempAuthors?.push(...page?.children);
-    }
-  }
-
-  let authors = tempAuthors.filter((temp) => temp?.name !== "index" && temp?.kind !== "Meta");
-
   return { posts: formatPostBasedOnDate, frontMatter: frontMatter };
 }
