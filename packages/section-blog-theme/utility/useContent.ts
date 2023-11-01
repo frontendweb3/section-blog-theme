@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 
 export function useContent({ pageMap, frontMatter }: PageOpts) {
 
-  // posts
+  // store posts
   let tempPosts: MdxFileCard[] | undefined = [];
 
   for (let page of pageMap) {
@@ -15,13 +15,15 @@ export function useContent({ pageMap, frontMatter }: PageOpts) {
 
   // posts
   let posts = tempPosts.filter((temp: MdxFileCard) => temp?.name !== "index" && temp?.kind !== "Meta");
-
-   // Descending
+  
+   // Descending order
    let formatPostBasedOnDate = posts.sort(function (a, b) {
-    let dateA = dayjs(a.frontMatter.date)
-    let dateB = dayjs(b.frontMatter.date)
+    let dateA = dayjs(a?.frontMatter?.date)
+    let dateB = dayjs(b?.frontMatter?.date)
     return dateB - dateA
   });
 
-  return { posts: formatPostBasedOnDate, frontMatter: frontMatter };
+  let checkPosts = posts.length === 0? posts :formatPostBasedOnDate
+
+  return { posts: checkPosts, frontMatter: frontMatter };
 }
