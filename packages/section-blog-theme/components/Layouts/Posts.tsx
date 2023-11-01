@@ -1,7 +1,7 @@
 import { ArticleCard } from "@/components/Card/Card";
 import { Article } from "@/components/Article/Article";
 import * as React from "react";
-import type { PageOpts, ThemeConfig } from "nextra";
+import type { PageOpts } from "nextra";
 import { useContent } from "@/utility/useContent";
 import dayjs from "dayjs";
 import { Seo } from "../Seo/Seo";
