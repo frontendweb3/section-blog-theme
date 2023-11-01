@@ -5,7 +5,7 @@ export function Banner({ message, hideBanner }: { message: string; hideBanner: (
         <div className="print:hidden flex flex-row justify-around bg-primary/80 text-primary-foreground px-4 py-3 sm:flex-nowrap sm:items-center sm:justify-center sm:gap-3 sm:pr-8 md:px-8">
             
             {/* Message */}
-            <div className="text-primary-foreground order-1 mb-2 inline-block w-11/12 max-w-screen-sm text-sm sm:order-none sm:mb-0 sm:w-auto md:text-base" dangerouslySetInnerHTML={{
+            <div className="text-primary-foreground order-1 mb-2 inline-block w-11/12 text-sm sm:order-none sm:mb-0 sm:w-auto md:text-base" dangerouslySetInnerHTML={{
                 __html: message
             }}>
             </div>
