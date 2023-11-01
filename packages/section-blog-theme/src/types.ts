@@ -99,3 +99,6 @@ export type iconsType =
   | "instagram";
 
 export type GetMetaData = MdxFileCard
+
+// space the type
+export type spaceType = "xs"| "sm"| "md" | "lg" | "xl" | "2xl"
