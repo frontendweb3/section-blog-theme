@@ -12,7 +12,7 @@ export function Banner({ message, hideBanner }: { message: string; hideBanner: (
 
             {/* Exit Button */}
             <div className="order-2 flex w-1/12 items-start justify-end sm:absolute sm:right-0 sm:order-none sm:mr-1 sm:w-auto xl:mr-3">
-                <button onClick={hideBanner} type="button" className=" text-primary-foreground transition duration-100">
+                <button aria-label="close banner" onClick={hideBanner} type="button" className=" text-primary-foreground transition duration-100">
                     <X width={20} height={20} />
                 </button>
             </div>
