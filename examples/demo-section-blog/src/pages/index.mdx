@@ -5,7 +5,7 @@ description : Home page
 image: https://cdn.pixabay.com/photo/2023/05/21/19/45/rose-8009275_1280.jpg
 ---
 
-import { Alert, AlertDescription, AlertTitle, Separator, Tabs, TabsContent, TabsList, TabsTrigger } from "section-blog-theme/components"
+import { Alert, AlertDescription, AlertTitle, Separator, Tabs, TabsContent, TabsList, TabsTrigger, Space } from "section-blog-theme/components"
 import { AlertTriangle, Ban, Check, CheckCircle, HelpCircle, Terminal, Braces, BadgeAlert, BadgeX, Shield, Lightbulb} from "section-blog-theme/icons"
 
 ![Rajdeep singh](https://capsule-render.vercel.app/api?type=soft&color=auto&height=400&section=header&text=Build%20and%20Deploy&fontSize=90&animation=fadeIn)
@@ -46,7 +46,7 @@ Aenean gravida, lacus non gravida fermentum, ante enim `console.log` facilisis d
 
 
 ## Tabs
-<Tabs defaultValue="npm" className="w-[624px]">
+<Tabs defaultValue="npm" className="w-full md:w-[624px]">
   <TabsList>
     <TabsTrigger className="mx-1" value="npm">NPM</TabsTrigger>
     <TabsTrigger className="mx-1" value="yarn">Yarn</TabsTrigger>
@@ -78,6 +78,10 @@ function MyButton() {
   );
 }
 ```
+## Space
+
+<Space h={"sm"} />
+
 ## Separator
 
 <Separator />
