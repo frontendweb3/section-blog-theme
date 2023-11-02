@@ -11,7 +11,7 @@ import { Callout } from 'nextra/components'
 The Installation of the section theme blog is a lot easier. You can install the section theme blog with the following command.
 
 ```bash npm2yarn
-npm install nextra section-theme-blog
+npm install nextra section-blog-theme
 ```
 
 Section blog theme work with [Nextra](https://nextra.site/) and [MDX](https://mdxjs.com/). Currently Nextra does not work with the nextjs app directory.
@@ -22,7 +22,7 @@ Create the following `next.config.js` file in your project’s root directory:
 
 ```jsx {2-3} copy filename="next.config.js"
 const withNextra = require("nextra")({
-  theme: "section-theme-blog",
+  theme: "section-blog-theme",
   themeConfig: "./theme.config.tsx",
 });
 
