@@ -7,13 +7,23 @@ The section theme inbuilt support multiple layouts for the blog. You can handle 
 ## Front matter 
 Section theme supports the common front matter for your blog that helps you with SEO.
 
-```markdown  filename="front matter example"
+```markdown  filename="new-post.mdx"
 ---
-type: page
-title : my title
-expect: my description
-image: https://cdn.pixabay.com/photo/2016/05/31/10/52/contact-us-1426589_1280.png
+type: post
+title: 15 Facts You Never Knew About Photography
+description: Dolor adipisicing adipisicing Lorem et irure veniam nisi anim excepteur mollit occaecat eu.
+date: 2022-11-15T08:14:33.826Z
+tags:
+  - 15 facts
+  - Photography
+  - Jeanne Ballard facts
+image: /images/photographer.jpg
+author: 
+      name: Rajdeep Singh
+      url: "http://officialrajdeepsingh.dev"
 ---
+
+start write your post from now on.
 ```
 
 ## Image
@@ -56,9 +66,8 @@ You can set up a blog home page with the Section Theme. It is unique For your si
 type: home
 title: Home Page - Rajdeep Singh
 except : Home page 
-image:
-  - url : https://cdn.pixabay.com/photo/2023/05/21/19/45/rose-8009275_1280.jpg
-    alt : Pixabay image
+image: https://cdn.pixabay.com/photo/2023/05/21/19/45/rose-8009275_1280.jpg
+
 ---
 ```
 
@@ -71,10 +80,9 @@ You can create basic or regular page like about, contact, etc.
 ---
 type: page
 title: About us - Rajdeep Singh
-except : About page
-image:
-  - url : https://cdn.pixabay.com/photo/2023/05/21/19/45/rose-8009275_1280.jpg
-    alt : Pixabay image
+description : About page
+image: https://cdn.pixabay.com/photo/2023/05/21/19/45/rose-8009275_1280.jpg
+
 ---
 
 ```
@@ -88,7 +96,7 @@ Show all the posts or articles in current folder.
 ---
 type: posts
 title: Posts List
-expect: Our blog posts
+description: Our blog posts
 ---
 ```
 
@@ -102,14 +110,12 @@ Show single post on page.
 ---
 type: post
 title: Markdown Example
-except: my unque Markdown example.
+description: my unque Markdown example.
 date: 2022-11-01T08:40:19.051Z
 tags:
   - Markdown
   - Theme
 image: /images/MDX.png
-imageAlt: My Image Alt.
-imageCaption: My unique capation
 author: Rajdeep Singh
 ---
 ```
