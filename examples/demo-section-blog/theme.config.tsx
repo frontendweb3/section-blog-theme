@@ -16,15 +16,15 @@ const themeConfig = {
   SocialLinks: [
     {
       name: "twitter",
-      url: "https://twitter.com/Official_R_deep",
+      url: "https://twitter.com/FrontendWeb3",
     },
     {
       name: "linkedin",
-      url: "https://www.linkedin.com/in/officalrajdeepsingh/",
+      url: "https://www.linkedin.com/company/frontendweb",
     },
     {
       name: "github",
-      url: "https://github.com/officialrajdeepsingh",
+      url: "https://github.com/frontendweb3/section-theme-blog",
     },
   ],
   Logo: {
