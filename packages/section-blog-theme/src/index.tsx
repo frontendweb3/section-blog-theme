@@ -18,14 +18,14 @@ export default function Layout({ pageOpts, themeConfig, children }: {
   // Handle banner
   const [banner, setBanner] = useLocalStorage('banner', true)
   
-  const [showBanner, setShwobanner] = useState<boolean | undefined>()
+  const [showBanner, setShowbanner] = useState<boolean | undefined>()
   
   const toggleBanner = () => {
     setBanner((prevValue: boolean) => !prevValue)
   }
   
   useEffect(function () {
-    setShwobanner(banner)
+    setShowbanner(banner)
   }, [banner])
 
   // get theme Configuration from theme.config.ts
