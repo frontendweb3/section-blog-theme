@@ -4,7 +4,7 @@ import * as React from "react";
 import type { PageOpts } from "nextra";
 import { useContent } from "@/utility/useContent";
 import dayjs from "dayjs";
-import { Seo } from "../Seo/Seo";
+import { Seo } from "@/components/Seo/Seo";
 import { TypeSectionBlogTheme } from "@/src/types";
 
 export function Posts({ children, themeConfig, pageOpts }: { pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme; children: React.ReactNode; }) {
@@ -20,30 +20,32 @@ export function Posts({ children, themeConfig, pageOpts }: { pageOpts: PageOpts;
 
       <Article>{children}</Article>
 
-      <div className="mx-auto my-24 divide-y divide-slate-700 grid-cols-1 grid max-w-[724px] lg:max-w-[1024px] gap-4">
-        {posts?.map(
-          (post) => {
+      <section className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div className="grid gap-8 lg:grid-cols-2">
+          {posts?.map(
+            (post) => {
 
-            let getDate  = dayjs(post.frontMatter.date).format(DateFormat? DateFormat : "MMM DD, YYYY");
+              let getDate = dayjs(post.frontMatter.date).format(DateFormat ? DateFormat : "MMM DD, YYYY");
 
-            if (post.frontMatter.title === undefined && post.frontMatter.description === undefined) {
-              throw new Error(`we coud not find litile and description on follwing router: ${post.route} `)
-            }
+              if (post.frontMatter.title === undefined && post.frontMatter.description === undefined) {
+                throw new Error(`We could not find the title and description on the following router: ${post.route} `)
+              }
 
-            return (
-              <ArticleCard
-                key={post.frontMatter.date + post.frontMatter.title}
-                title={post.frontMatter.title}
-                description={post.frontMatter.description}
-                tag={post.frontMatter.tags}
-                date={getDate}
-                URL={post.route}
-                author={post.frontMatter?.author}
-              />
-            );
-          },
-        )}
-      </div>
+              return (
+                <ArticleCard
+                  key={post.frontMatter.date + post.frontMatter.title}
+                  title={post.frontMatter.title}
+                  description={post.frontMatter.description}
+                  tag={post.frontMatter.tags}
+                  date={getDate}
+                  URL={post.route}
+                  author={post.frontMatter?.author}
+                />
+              );
+            },
+          )}
+        </div>
+      </section>
 
     </>
   );
