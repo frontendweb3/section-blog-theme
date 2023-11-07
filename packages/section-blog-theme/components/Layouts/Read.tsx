@@ -17,8 +17,18 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
 
   let { DateFormat, settings } = themeConfig;
 
-  let getDate  = dayjs(frontMatter.date).format(DateFormat? DateFormat : "MMM DD, YYYY");
+  let getDate = dayjs(frontMatter.date).format(DateFormat ? DateFormat : "MMM DD, YYYY");
 
+  let getTag = slugify(frontMatter.tags[0])
+
+  let getSite = settings?.SiteURL
+
+  let getAuthorURL = frontMatter?.author?.url
+  
+  let getTagURL = Next_URL(getSite) + "tags/" + getTag 
+
+  let getRwebURL = Next_URL(getSite) + (pageOpts.route.replace("/",""))
+  
   return (
     <>
 
@@ -35,20 +45,19 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
 
               typeof frontMatter.author === 'string' ?
                 <Link
-                  href={Next_URL(settings?.SiteURL)}
+                  href={Next_URL(getSite)}
                   rel="author"
-                  className="mr-2 hover:text-gray-600"
+                  className="mr-2 hover:text-gray-700"
                 >
                   {frontMatter?.author}
                 </Link> : typeof frontMatter.author === 'object' ? <Link
-                  href={frontMatter?.author?.url}
+                  href={getAuthorURL}
                   target="_blank"
                   rel="author"
                   className="mr-2 hover:text-gray-600 "
                 >
                   {frontMatter?.author.name}
                 </Link> : ""
-
             } </span>
             • <time
               className="mx-2"
@@ -56,25 +65,34 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
               title={getDate}
             >
               {getDate}
-            </time> • <Link href={`${Next_URL(settings?.SiteURL)}/tags/${slugify(frontMatter.tags[0])}`} className="capitalize ml-2 hover:text-gray-600"> {frontMatter.tags[0]} </Link>
+            </time> • <Link href={getTagURL} className="capitalize ml-2 hover:text-gray-600"> {frontMatter.tags[0]} </Link>
           </div>
 
           <div className="hidden sm:flex flex-row print:block">
+            
             <RWebShare
               data={{
                 text: frontMatter.description,
-                url: `${Next_URL(settings?.SiteURL)}${pageOpts.route}`,
+                url: getRwebURL,
                 title: frontMatter.title,
               }}
               onClick={() => console.log("shared successfully!")}
             >
+              
               <Button aria-label="Share a Post" variant="ghost" size="icon">
+                
                 <Share2Icon className="h-4 w-4" />
+
               </Button>
+
             </RWebShare>
+
             <Button aria-label="Print" onClick={() => print()} variant="ghost" size="icon">
+
               <PrinterIcon className="h-4 w-4" />
+
             </Button>
+
           </div>
         </section>
 
