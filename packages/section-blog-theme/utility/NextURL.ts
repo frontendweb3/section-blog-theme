@@ -1,14 +1,17 @@
-export function Next_URL(URL: string| undefined) {
-  
-  if (process.env.NODE_ENV === "production" && URL !== undefined) {
-    
-    if (process.env.vercel_url) {
-      return process.env.vercel_url;
-    } else {
-      return URL;
-    }
 
+export function Next_URL(Site: string | undefined): string {
+
+  let getPort = process.env.PORT || 3000
+
+  let getDomain = `http://localhost:${getPort}`
+
+  if (process.env.NODE_ENV === 'development' || getPort) {
+    return getDomain + "/"
   } else {
-    return "http://localhost:3000";
+    if (Site) {
+      return Site
+    } else {
+      return getDomain + "/"
+    }
   }
 }
