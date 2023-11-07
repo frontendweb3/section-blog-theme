@@ -1,29 +1,33 @@
 import Link from "next/link";
 import type { authorType } from "@/src/types"
+
 export function ArticleCard({ title, description, date, tag, URL, author }: { title: string; description: string; date: string; tag: string[] | undefined; URL: string; author?: string | authorType; }) {
   return (
-    <Link href={URL}>
-      <div className="my-16 container border-foreground/60 dark:border-foreground flex-row flex max-[479px]">
-        <div className="px-0 sm:px-8">
-          <h1 className="text-2xl lg:text-4xl font-bold mb-1 lg:mb-1">{title}</h1>
-          <p className="text-ellipsis text-md lg:text-lg mb-2 md:mb-2 lg:mb-3">{description}</p>
-          <div className="mt-1 text-xs sm:text-sm">
-            {
-              typeof author === 'string' ? <span>Published By {author}</span> : typeof author === 'object' ? <span>Published By {author.name}</span> : ""} • {tag && tag.length > 0
-                ? (
-                  <span className="capitalize">
-                    {tag[0]}
-                  </span>
-                )
-                : ""} • <time
-                  dateTime={date}
-                  title={date}
-                >
-              {date}
-            </time>
-          </div>
-        </div>
+    <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <div className="flex justify-between items-center mb-5 text-gray-500">
+        { tag && tag.length > 0
+          ? (
+            <span className="bg-[#1E429F] px-2.5 py-0.5 text-white text-xs font-medium inline-flex items-center rounded">
+              {tag[0]}
+            </span>
+          )
+          : ""}
+        <time className="text-sm" dateTime={date} title={date}>
+          {date}
+        </time>
       </div>
-    </Link>
+      <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> <Link href={URL}>{title}</Link> </h2>
+      <p className="mb-5 font-light">{description}</p>
+
+      <div className="flex justify-between items-center">
+        <div className="flex items-center space-x-4">
+          {typeof author === 'string' ? <span className="font-medium text-black dark:text-white"> {author}</span> : typeof author === 'object' ? <span className="font-medium dark:text-white"> {author.name}</span> : ""}
+        </div>
+        <Link href={URL} className="inline-flex items-center font-medium">
+          Read More
+        </Link>
+      </div>
+    </article>
   );
+
 }
