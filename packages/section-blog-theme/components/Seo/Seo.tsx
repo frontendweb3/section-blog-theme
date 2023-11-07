@@ -1,44 +1,46 @@
-import { ArticleJsonLd, NextSeo } from "next-seo";
+import { NextSeo } from "next-seo";
 import { TypeSectionBlogTheme } from "@/src/types";
 import { Next_URL } from "@/utility/NextURL";
 import { useContent } from "@/utility/useContent";
 import { PageOpts } from "nextra";
+import { OpenGraphMedia } from "next-seo/lib/types";
 
-export function Seo({ pageOpts, themeConfig }: {pageOpts: PageOpts; themeConfig?: TypeSectionBlogTheme; }) {
+export function Seo({ pageOpts, themeConfig }: { pageOpts: PageOpts; themeConfig?: TypeSectionBlogTheme; }) {
+
+  let getSiteURL = Next_URL(themeConfig?.settings?.SiteURL)
 
   const { frontMatter } = useContent(pageOpts);
+
   const getDate = frontMatter.date
-  const getImages:string[] = frontMatter.image !== undefined && typeof frontMatter.image === "string" ? [frontMatter?.image] : frontMatter?.image
 
   if ((frontMatter.image !== undefined) || (frontMatter.tags !== undefined) || (getDate !== undefined) || (frontMatter.author !== undefined)) {
-    
-    const getAuthor: string[] = typeof frontMatter.author === "object" ? [frontMatter?.author?.url] : [Next_URL(themeConfig?.settings?.SiteURL)]
-  
+
+    const getAuthor: string[] = typeof frontMatter.author === "object" ? [frontMatter?.author?.url] : [getSiteURL]
+
     const keyword = frontMatter.tags && typeof frontMatter.tags !== "object" ? frontMatter?.tags?.split(',') : frontMatter?.tags
 
+    const getImages: OpenGraphMedia[] = frontMatter.image !== undefined && typeof frontMatter.image === "string" ? [{ url: frontMatter?.image }] : [{ url: frontMatter?.image }]
+
     return (
-      <>
-        <NextSeo
-          title={frontMatter.title}
-          description={frontMatter.description}
-          openGraph={
-            {
-              
-              title: frontMatter.title,
-              description: frontMatter.description,
-              images:getImages,
-              type: 'article',
-              article: {
-                publishedTime: getDate,
-                authors: getAuthor,
-                tags: keyword,
-              }
+      <NextSeo
+        title={frontMatter.title}
+        description={frontMatter.description}
+        openGraph={
+          {
+
+            title: frontMatter.title,
+            description: frontMatter.description,
+            images: getImages,
+            type: 'article',
+            article: {
+              publishedTime: getDate,
+              authors: getAuthor,
+              tags: keyword,
             }
           }
-          twitter={{ cardType: "summary_large_image" }}
-        />
-
-      </>)
+        }
+        twitter={{ cardType: "summary_large_image" }}
+      />)
   }
 
   return (
@@ -46,10 +48,11 @@ export function Seo({ pageOpts, themeConfig }: {pageOpts: PageOpts; themeConfig?
       title={frontMatter.title}
       description={frontMatter.description}
       openGraph={{
-        url: Next_URL(themeConfig?.settings?.SiteURL),
-        title: frontMatter.title,
+        url: getSiteURL,
+        title: "frontMatter is title",
         description: frontMatter.description,
       }}
+      twitter={{ cardType: "summary" }}
     />
   );
 }
