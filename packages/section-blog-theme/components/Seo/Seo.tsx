@@ -49,7 +49,7 @@ export function Seo({ pageOpts, themeConfig }: { pageOpts: PageOpts; themeConfig
       description={frontMatter.description}
       openGraph={{
         url: getSiteURL,
-        title: "frontMatter is title",
+        title: frontMatter.title,
         description: frontMatter.description,
       }}
       twitter={{ cardType: "summary" }}
