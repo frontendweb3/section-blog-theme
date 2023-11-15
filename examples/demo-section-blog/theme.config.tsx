@@ -2,6 +2,7 @@ const themeConfig = {
   settings: {
     title: "My title",
     description: "my descript is here ",
+    SiteURL:"https://officialrajdeepsingh.dev",
     defaultSEO: {
       title: "default SEO  title is here",
       titleTemplate: '%s | Section Blog Theme',
