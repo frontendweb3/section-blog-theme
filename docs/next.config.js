@@ -9,9 +9,4 @@ const withNextra = require("nextra")({
   readingTime: true,
 });
 
-module.exports = withNextra({
-  output: 'export',
-  images:{
-    unoptimized: true
-  }
-});
+module.exports = withNextra({});
