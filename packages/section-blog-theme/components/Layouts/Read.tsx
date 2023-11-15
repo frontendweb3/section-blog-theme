@@ -1,5 +1,5 @@
 import { Article } from "@/components/Article/Article";
-import * as React from "react";
+import { useState, useEffect } from "react";
 import type { PageOpts } from "nextra";
 import dayjs from "dayjs";
 import { Button } from "@/components/ui/button";
@@ -10,8 +10,10 @@ import Link from "next/link";
 import { Seo } from "@/components/Seo/Seo";
 import { slugify } from "@/utility/slugify";
 import { TypeSectionBlogTheme } from "@/src/types";
+import type {ReactNode} from "react";
 
-export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme; children: React.ReactNode; }) {
+export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme; children: ReactNode; }) {
+  const [domain, setDomain] = useState<string>()
 
   const { frontMatter } = pageOpts;
 
@@ -24,16 +26,20 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
   let getSite = settings?.SiteURL
 
   let getAuthorURL = frontMatter?.author?.url
-  
-  let getTagURL = Next_URL(getSite) + "tags/" + getTag 
 
-  let getRwebURL = Next_URL(getSite) + (pageOpts.route.replace("/",""))
-  
+  useEffect(function () {
+    let getDomain = window.location.origin as string
+    setDomain(getDomain)
+  }, [])
+
+  let getTagURL = Next_URL(getSite) + "tags/" + getTag
+
+  let getRwebURL = domain + "/" + (pageOpts.route.replace("/", ""))
+
   return (
     <>
 
       <Seo pageOpts={pageOpts} themeConfig={themeConfig} />
-
 
       <div className="px-3 sm:px-0 mx-auto my-6 print:block prose prose-pre:bg-primary-foreground prose-zinc sm:prose-sm md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl dark:prose-invert">
 
@@ -65,11 +71,11 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
               title={getDate}
             >
               {getDate}
-            </time> • <Link href={getTagURL} className="capitalize ml-2 hover:text-gray-600"> {frontMatter.tags[0]} </Link>
+            </time> • <Link href={getTagURL} className="capitalize ml-2 hover:text-gray-600"> {getTag} </Link>
           </div>
 
           <div className="hidden sm:flex flex-row print:block">
-            
+
             <RWebShare
               data={{
                 text: frontMatter.description,
@@ -78,9 +84,9 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
               }}
               onClick={() => console.log("shared successfully!")}
             >
-              
+
               <Button aria-label="Share a Post" variant="ghost" size="icon">
-                
+
                 <Share2Icon className="h-4 w-4" />
 
               </Button>
