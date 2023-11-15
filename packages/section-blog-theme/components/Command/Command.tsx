@@ -1,5 +1,5 @@
 import * as React from "react"
-import { File, SearchIcon } from 'lucide-react';
+import { File, CommandIcon } from 'lucide-react';
 import {
     CommandDialog,
     CommandEmpty,
@@ -45,7 +45,7 @@ export function SearchCommandDialog() {
                             size={"icon"}
                             onClick={() => setOpen(!open)}
                         >
-                            <SearchIcon className="h-5 w-5" />
+                            <CommandIcon className="h-5 w-5" />
                         </Button>
                     </TooltipTrigger>
 
@@ -56,11 +56,12 @@ export function SearchCommandDialog() {
             </TooltipProvider>
 
             <CommandDialog open={open} onOpenChange={setOpen}>
-                <CommandInput placeholder="Type a command or search..." />
-
-
+                
+                <CommandInput placeholder={"Type a command or search..."} />
+                
                 <CommandList>
-                    <CommandEmpty>No results found.</CommandEmpty>
+                
+                    <CommandEmpty> No results found.</CommandEmpty>
 
                     {
                         data && Object.entries(data).map(([key, value]) => {
@@ -77,7 +78,9 @@ export function SearchCommandDialog() {
                     }
 
                     <CommandSeparator />
+                
                 </CommandList>
+            
             </CommandDialog>
         </>
     )
