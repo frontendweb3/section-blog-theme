@@ -45,7 +45,7 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
 
         <section className="not-prose flex flex-row justify-between items-center">
 
-          <div className="flex flex-row items-center text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex flex-row items-center text-sm">
 
             <span> By {
 
@@ -53,14 +53,14 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
                 <Link
                   href={Next_URL(getSite)}
                   rel="author"
-                  className="mr-2 hover:text-gray-700"
+                  className="mr-2 hover:text-gray-400"
                 >
                   {frontMatter?.author}
                 </Link> : typeof frontMatter.author === 'object' ? <Link
                   href={getAuthorURL}
                   target="_blank"
                   rel="author"
-                  className="mr-2 hover:text-gray-600 "
+                  className="mr-2 hover:text-gray-400 "
                 >
                   {frontMatter?.author.name}
                 </Link> : ""
@@ -71,7 +71,7 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
               title={getDate}
             >
               {getDate}
-            </time> • <Link href={getTagURL} className="capitalize ml-2 hover:text-gray-600"> {getTag} </Link>
+            </time> • <Link href={getTagURL} className="capitalize ml-2 hover:text-gray-400"> {getTag} </Link>
           </div>
 
           <div className="hidden sm:flex flex-row print:block">
