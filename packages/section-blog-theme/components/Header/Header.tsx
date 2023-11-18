@@ -11,7 +11,7 @@ export function Header({ Logo, PrimaryNavigation, socialLinks }: { Logo: Logo; P
 
   return (
 
-    <header className="container print:hidden mt-3 px-4 lg:px-6 py-8 flex justify-center flex-wrap flex-row md:justify-between items-center mx-auto">
+    <header className="container print:hidden mt-3 px-4 lg:px-6 py-8 flex gap-y-5 justify-center flex-col sm:flex-row md:justify-between items-center mx-auto">
 
 
       {Logo.TextLogo && <Link href="/" className="ml-2 self-center text-xl font-semibold whitespace-nowrap !text-foreground dark:text-white">
@@ -20,7 +20,7 @@ export function Header({ Logo, PrimaryNavigation, socialLinks }: { Logo: Logo; P
 
       <NavigationMenu className="my-3 flex flex-wrap justify-between items-center mx-auto md:my-0">
 
-        <NavigationMenuList>
+        <NavigationMenuList className="flex-wrap sm:fle-row">
 
           {
 
