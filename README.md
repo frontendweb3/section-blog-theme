@@ -1,8 +1,25 @@
 Start your blog journey with Next.js, Nextra, and MDX using section themes. You can start your blog in less than two minutes, and you need only one command and zero configuration. Section theme comes with an inbuilt dark mode, a search bar, Customize Navigation, and SEO Support.
 
-## Buy a Coffee
+### Tech Stack
 
-[![Buy a Coffee](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K2E87F0)
+<div className="flex flex-row flex-wrap item-center md:justify-between"  id="badges">
+  <img style="margin: 5px auto;" title="typescript" alt="typescript"  src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img style="margin: 5px auto;" title="pnpm" alt="pnpm" src="https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220" />
+  <img style="margin: 5px auto;" title="tailwind css" alt="tailwind css" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img style="margin: 5px auto;" title="markdown" alt="markdown"  src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white"/>
+  <img style="margin: 5px auto;" title="reactjs" alt="reactjs"  src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
+  <img style="margin: 5px auto;" title="nextjs" alt="nextjs"  src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"/>
+  <img style="margin: 5px auto;" title="radix ui" alt="radix ui"  src="https://img.shields.io/badge/radixui-%23DD0031.svg?style=for-the-badge&logo=radixui&logoColor=white"/>
+  <img style="margin: 5px auto;" title="vercel" alt="vercel"  src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"/>
+  <img style="margin: 5px auto;" title="turborepo" alt="turborepo" src="https://img.shields.io/badge/turborepo-000204?style=for-the-badge&logo=turborepo&logoColor=white">
+  <img style="margin: 5px auto;" title="github pages" alt="github pages"  src="https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white"/>
+  <img style="margin: 5px auto;" title="netlify" alt="netlify"  src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7"/>
+  <a target="_blank" href="https://codesandbox.io/u/officialrajdeepsingh">
+    <img title="Buy a Coffee" alt="Buy a Coffee"  src="https://ko-fi.com/img/githubbutton_sm.svg"/>
+  </a>
+</div>
+
+<div > </div>
 
 ### Installation
 
