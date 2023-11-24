@@ -1,4 +1,4 @@
-The section blog theme comes under an open-source license. Before starting the contribution, first read our Code of Conduct guidelines.
+The section blog theme comes under an open-source license. Before starting the contribution, first read our [Code of Conduct](./CODE_OF_CONDUCT.md) guidelines.
 
 How to start a contribution?
 1. Clone Repo
@@ -56,9 +56,9 @@ pnpm dev --filter=docs
 ## What and where we found components?
 
 * `components/Article/Article.tsx` > article by frontmatter
-* `components/banner/banner.tsx` > Banner
+* `components/banner/Banner.tsx` > Banner
 * `components/Card/Card.tsx` > posts card
-* `components/command/Command.tsx` > command or cmd
+* `components/Command/Command.tsx` > command or cmd
 * `components/Footer/Footer.tsx` > footer component
 * `components/Header/Header.tsx` > header component
 * `components/Header/ThemeToggle.tsx` > theme toggle
@@ -85,16 +85,13 @@ pnpm dev --filter=docs
 * `src/types.ts` > type 
 * `styles/globals.css` > tailwind css
 * `tsup.config.ts` > tsup config
-* `utility/NextURL.ts` > check develpment or production
-* `utility/slugify.ts` > convert title slugify 
-* `utility/useContent.ts` > return all posts
-* `utility/useCookies.ts` > set, get cookies use by banner
-* `utility/useFetch.ts` > fetch URL use inside 
+* `utility/NextURL.ts` > check develpment or production *
+* `utility/slugify.ts` > convert title slugify *
+* `utility/useContent.ts` > return all posts *
 * `utility/useTagContent.ts` > return post based on tag
 * `utility/useTags.ts` > return all tags based on posts
 * `utility/utils.ts` > use by shadcn/ui and tailwind css
 * `public/` > Public folder
 * `__TEST__/` > testing folder
 * `tsconfig.json` >  typescript config
-
 
