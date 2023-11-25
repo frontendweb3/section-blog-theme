@@ -19,11 +19,11 @@ Start your blog journey with Next.js, Nextra, and MDX using section themes. You 
   </a>
 </div>
 
-<div > </div>
+<div style="margin: 5px auto;width:100%;"></div>
 
 ### Installation
 
-The Installation of the section blog theme is a lot easier. You can install the section blog theme with the following command.
+The Installation of the [section blog theme](https://www.npmjs.com/package/section-blog-theme) is a lot easier. You can install the section blog theme with the following command.
 
 ```bash
 pnpm add nextra section-blog-theme
