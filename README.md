@@ -1,14 +1,14 @@
 <div style="display: block; margin-left: auto; margin-right: auto;width: 40%;">
-  <svg  width="477" height="509" viewBox="0 0 477 509" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M247.177 104.672C242.99 97.1095 232.118 97.1095 227.93 104.672L68.3924 392.805C64.333 400.137 69.6354 409.133 78.0158 409.133H397.092C405.472 409.133 410.775 400.137 406.715 392.805L247.177 104.672ZM238.312 323.4C258.367 323.4 274.625 307.864 274.625 288.7C274.625 269.536 258.367 254 238.312 254C218.258 254 202 269.536 202 288.7C202 307.864 218.258 323.4 238.312 323.4Z" fill="white"></path>
-  </svg>
+
+![logo](./logo.svg)
+
 </div>
 
-<div style="margin: 8px auto;width:100%;"></div>
+<div style="margin-top: 10px auto;width:100%;"></div>
 
 Start your blog journey with Next.js, Nextra, and MDX using section themes. You can start your blog in less than two minutes, and you need only one command and zero configuration. Section theme comes with an inbuilt dark mode, a search bar, Customize Navigation, and SEO Support.
 
-### Tech Stack
+## Tech Stack
 
 <div className="flex flex-row flex-wrap item-center md:justify-between">
   <img style="margin: 5px auto;" title="pnpm" alt="pnpm" src="https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220" />
@@ -23,7 +23,7 @@ Start your blog journey with Next.js, Nextra, and MDX using section themes. You 
 
 <div style="margin: 5px auto;width:100%;"></div>
 
-### Installation
+## Installation
 
 The Installation of the [section blog theme](https://www.npmjs.com/package/section-blog-theme) is a lot easier. You can install the section blog theme with the following command.
 
@@ -35,7 +35,7 @@ yarn add nextra section-blog-theme
 npm install nextra section-blog-theme
 ```
 
-### Configure the section blog with nextra
+## Configure the section blog with nextra
 
 Create the following `next.config.js` file in your project’s root directory:
 
@@ -50,7 +50,7 @@ const withNextra = require("nextra")({
 module.exports = withNextra();
 ```
 
-### import css 
+## import css 
 
 Next step to import css file from section blog theme inside your `_app.mdx' file.
 
@@ -63,7 +63,7 @@ export default function App({ Component, pageProps }) {
 }
 ```
 
-### Create Theme Config file
+## Create Theme Config file
 
 The lastly create a `theme.config.jsx` or `theme.config.tsx` file in your root level.
 
