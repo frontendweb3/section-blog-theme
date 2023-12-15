@@ -5,16 +5,16 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "update:package":"pnpm update -L --filter=section-blog-theme --filter=demo-section-blog"
+    "update:package": "pnpm update -L --filter=section-blog-theme --filter=demo-section-blog"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.10.15",
-    "eslint": "^7.32.0",
-    "prettier": "^2.8.8",
-    "turbo": "^1.10.16"
+    "@turbo/gen": "^1.11.2",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.1",
+    "turbo": "^1.11.2"
   },
   "packageManager": "pnpm@8.6.9",
   "dependencies": {
-    "@changesets/cli": "^2.26.2"
+    "@changesets/cli": "^2.27.1"
   }
 }

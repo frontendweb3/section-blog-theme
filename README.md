@@ -1,11 +1,3 @@
-<div style="display: block; margin-left: auto; margin-right: auto;width: 40%;">
-
-![logo](./logo.svg)
-
-</div>
-
-<div style="margin-top: 10px auto;width:100%;"></div>
-
 Start your blog journey with Next.js, Nextra, and MDX using section themes. You can start your blog in less than two minutes, and you need only one command and zero configuration. Section theme comes with an inbuilt dark mode, a search bar, Customize Navigation, and SEO Support.
 
 ## Tech Stack
