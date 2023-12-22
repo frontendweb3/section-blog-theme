@@ -6,6 +6,7 @@ import NavigationItems from "@/components/Navigation/NavigationItems";
 import NavigationItem from "@/components/Navigation/NavgationItem";
 import { SocialLink } from "@/components/SocialLink/SocialLink";
 import { SearchCommandDialog } from "@/components/Command/Command";
+import { renderComponent } from "@/utility/render";
 
 export function Header({ Logo, PrimaryNavigation, socialLinks }: { Logo: Logo; PrimaryNavigation: Navigation[]; socialLinks: SocialLinks[]; }) {
 
@@ -13,10 +14,9 @@ export function Header({ Logo, PrimaryNavigation, socialLinks }: { Logo: Logo; P
 
     <header className="container print:hidden mt-3 px-4 lg:px-6 py-8 flex gap-y-5 justify-center flex-col sm:flex-row md:justify-between items-center mx-auto">
 
-
-      {Logo.TextLogo && <Link href="/" className="ml-2 self-center text-xl font-semibold whitespace-nowrap !text-foreground dark:text-white">
-        {Logo.TextLogo}
-      </Link>}
+      <Link target={Logo.target ? Logo.target : "_blank"} href={Logo.link ? Logo.link : "/"} className="flex flex-row items-center justify-between text-black dark:text-white">
+        {renderComponent(Logo.logo)}
+      </Link>
 
       <NavigationMenu className="my-3 flex flex-wrap justify-between items-center mx-auto md:my-0">
 

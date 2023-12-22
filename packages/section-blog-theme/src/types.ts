@@ -1,15 +1,16 @@
-import type { ReactNode } from "react";
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 import { DefaultSeoProps } from "next-seo";
 import { LucideProps } from 'lucide-react';
+import type {  ReactNode, FC } from 'react';
 
-
+// SubNavigation 
 export interface SubNavigation {
   title: string;
   href: string;
   target: string;
   description: string;
 }
+// Navigation
 export interface Navigation {
   href?: string;
   title: string;
@@ -18,19 +19,22 @@ export interface Navigation {
   target: string;
   subNavigation?: SubNavigation[];
 }
-
+// Social link
 export interface SocialLinks extends IconProps {
   url: string;
 }
 
+// Lucide icon
 export interface IconProps extends LucideProps {
   name: keyof typeof dynamicIconImports;
 }
 
+// logo
 export interface Logo {
-  TextLogo: string;
+  logo: React.ReactNode | FC;
+  link?: string;
+  target?: string;
 }
-
 export interface settingsTypes {
   SiteURL?: string;
   title?: string;
@@ -58,6 +62,7 @@ export type MdxFileCard<FrontMatterType = BlogFrontMatter> = {
   frontMatter: FrontMatterType;
 };
 
+// layout type
 export type LayoutTypes =
   | "home"
   | "post"
@@ -67,20 +72,13 @@ export type LayoutTypes =
   | 404
   | 500;
 
-// export interface MetaImage {
-//   src: string;
-//   width?: number;
-//   height?: number;
-//   alt?: string;
-//   type?: string;
-//   caption?: string
-// }
-
+// author 
 export interface authorType {
   name: string;
   url: string;
 }
 
+// blog front matter
 export type BlogFrontMatter = {
   author?: authorType | string;
   date?: string;
@@ -90,6 +88,8 @@ export type BlogFrontMatter = {
   title: string;
   type: "post";
 };
+
+// icon type 
 export type iconsType =
   | "facebook"
   | "twitter"
@@ -100,5 +100,5 @@ export type iconsType =
 
 export type GetMetaData = MdxFileCard
 
-// space the type
+// type for space component
 export type spaceType = "xs"| "sm"| "md" | "lg" | "xl" | "2xl"

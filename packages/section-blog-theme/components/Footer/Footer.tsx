@@ -3,15 +3,17 @@ import type { Logo, Navigation, SocialLinks } from "@/src/types";
 import Link from "next/link";
 import NavigationItem from "@/components/Navigation/NavgationItem";
 import { SocialLink } from "@/components/SocialLink/SocialLink";
+import { renderComponent } from "@/utility/render";
 
 export function Footer({ Logo, SecondaryNavigation, socialLinks }: { Logo: Logo; SecondaryNavigation: Navigation[]; socialLinks: SocialLinks[] }) {
 
   return (
     <footer className="print:hidden container flex flex-wrap flex-row item-center justify-center my-5 p-5 mx-auto lg:flex-row divide-gray-400">
 
-     { Logo.TextLogo && <Link href="/" className="ml-2 self-center text-xl font-semibold whitespace-nowrap !text-foreground dark:text-white">
-        {Logo.TextLogo}
-      </Link>}
+      <Link target={Logo.target ? Logo.target : "_blank"} href={Logo.link ? Logo.link : "/"} className="flex flex-row items-center justify-between text-black dark:text-white">
+        {renderComponent(Logo.logo)}
+      </Link>
+
 
       <NavigationMenu className="my-3 flex flex-wrap justify-between items-center mx-auto md:my-0">
         <NavigationMenuList>
