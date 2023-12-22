@@ -20,6 +20,7 @@ export default function Layout({ pageOpts, themeConfig, children }: {
   
   const [showBanner, setShowbanner] = useState<boolean | undefined>()
   
+  // toggle Banner
   const toggleBanner = () => {
     setBanner((prevValue: boolean) => !prevValue)
   }

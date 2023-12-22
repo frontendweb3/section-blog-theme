@@ -1,13 +1,6 @@
 import * as React from "react"
 import { File, CommandIcon } from 'lucide-react';
-import {
-    CommandDialog,
-    CommandEmpty,
-    CommandInput,
-    CommandItem,
-    CommandList,
-    CommandSeparator
-} from "@/components/ui/command"
+import { CommandDialog, CommandEmpty, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/router";
@@ -65,15 +58,18 @@ export function SearchCommandDialog() {
 
                     {
                         data && Object.entries(data).map(([key, value]) => {
+                            
                             if (key.includes("tag" || key.includes("tags"))) {
                                 return null
                             }
+
                             return (
                                 <CommandItem className="p-2 m-2" key={key + value.title} value={value.title}>
                                     <File className="mr-2 h-4 w-4" />
                                     <Link href={key}>{value.title}</Link>
                                 </CommandItem>
                             )
+
                         })
                     }
 
