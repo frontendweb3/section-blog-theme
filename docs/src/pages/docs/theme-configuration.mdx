@@ -125,11 +125,13 @@ settings.SiteURL | `string`  | `false` | Site URL is help in SEO. It takes your 
 
 
 ## Logo
-You can change and add logo on your blog.
+You can add a logo on your blog.
 
 Option       | TYPE          | Require |  Description
 ------------- | ------------- | ------ | -------------
-Logo.TextLogo  | `string`  | `false` | Show a logo on website.
+Logo.logo  | `ReactNode | FC`  | `true` | Show a logo on website using image,svg or text.
+Logo.link  | `strig`  | `false` | add a link in logo default is `/`.
+Logo.target  | `string`  | `false` | Open link in new tab.
 
 
 ## PrimaryNavigation
