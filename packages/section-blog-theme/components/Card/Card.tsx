@@ -5,7 +5,7 @@ import { CardContent, Card, CardFooter } from "@/components/ui/card"
 
 export function ArticleCard({ title, description, date, URL, author }: { title: string; description: string; date: string; URL: string; author?: string | authorType; }) {
   return (
-    <Card className="mb-10 p-2 sm:p-4  w-fill sm:w-6/6 md:w-5/6 lg:w-4/6  mx-auto shadow">
+    <Card className="mb-10 p-2 sm:p-4  w-fill sm:w-6/6 md:w-5/6 lg:w-4/6  mx-auto shadow-sm">
       <CardContent className="p-2 md:p-6">
         <h2 className="text-2xl mb-1 font-bold leading-7 sm:text-3xl">
           {title}
@@ -23,7 +23,7 @@ export function ArticleCard({ title, description, date, URL, author }: { title: 
         </p>
       </CardContent>
 
-      <CardFooter className="px-2 pb-6 md:px-6 md:pb-6">
+      <CardFooter className="px-2 pt-2 md:pt-0 pb-6 md:px-6 md:pb-6">
         <Link className="block" href={URL}>
           <Button className="" variant="outline">Read More</Button>
         </Link>

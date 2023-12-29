@@ -24,10 +24,9 @@ export function Tag({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; t
   }
   return (
     <>
-      <Article>{children}</Article>
+      <Article>{children}</Article> 
 
       <section className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="grid gap-8 lg:grid-cols-2">
           {posts?.map(
             (post) => {
 
@@ -38,7 +37,6 @@ export function Tag({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; t
                   key={post.frontMatter.date + post.frontMatter.title}
                   title={post.frontMatter.title}
                   description={post.frontMatter.description}
-                  tag={post.frontMatter.tags}
                   date={getDate}
                   URL={post.route}
                   author={post.frontMatter?.author}
@@ -46,7 +44,6 @@ export function Tag({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; t
               );
             },
           )}
-        </div>
       </section>
     </>
   );
