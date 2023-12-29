@@ -1,33 +1,33 @@
 import Link from "next/link";
 import type { authorType } from "@/src/types"
+import { Button } from "@/components/ui/button"
+import { CardContent, Card, CardFooter } from "@/components/ui/card"
 
-export function ArticleCard({ title, description, date, tag, URL, author }: { title: string; description: string; date: string; tag: string[] | undefined; URL: string; author?: string | authorType; }) {
+export function ArticleCard({ title, description, date, URL, author }: { title: string; description: string; date: string; URL: string; author?: string | authorType; }) {
   return (
-    <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-      <div className="flex justify-between items-center mb-5 capitalize">
-        { tag && tag.length > 0
-          ? (
-            <span className="bg-[#1E429F] capitalize px-2.5 py-0.5 text-white text-xs font-medium inline-flex items-center rounded">
-              {tag[0]}
-            </span>
-          )
-          : ""}
-        <time className="text-sm" dateTime={date} title={date}>
-          {date}
-        </time>
-      </div>
-      <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> <Link href={URL}>{title}</Link> </h2>
-      <p className="mb-5 font-light">{description}</p>
+    <Card className="mb-10 p-2 sm:p-4  w-fill sm:w-6/6 md:w-5/6 lg:w-4/6  mx-auto shadow">
+      <CardContent className="p-2 md:p-6">
+        <h2 className="text-2xl mb-1 font-bold leading-7 sm:text-3xl">
+          {title}
+        </h2>
+        {
+          typeof author === 'string' ? <time className="text-sm" dateTime={date} title={date}>
+            Published By  {author} on {date}
+          </time> : typeof author === 'object' ? <time className="text-sm" dateTime={date} title={date}>
+            Published By  {author.name} on {date}
+          </time> : ""
+        }
 
-      <div className="flex justify-between items-center">
-        <div className="flex items-center space-x-4">
-          {typeof author === 'string' ? <span className="font-medium text-black dark:text-white"> {author}</span> : typeof author === 'object' ? <span className="font-medium dark:text-white"> {author.name}</span> : ""}
-        </div>
-        <Link href={URL} className="px-2 font-medium hover:bg-[#1E429F] hover:text-white">
-          Read More
+        <p className="mt-2">
+          {description}
+        </p>
+      </CardContent>
+
+      <CardFooter className="px-2 pb-6 md:px-6 md:pb-6">
+        <Link className="block" href={URL}>
+          <Button className="" variant="outline">Read More</Button>
         </Link>
-      </div>
-    </article>
-  );
-
+      </CardFooter>
+    </Card>
+  )
 }
