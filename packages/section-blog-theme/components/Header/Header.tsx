@@ -14,7 +14,7 @@ export function Header({ Logo, PrimaryNavigation, socialLinks }: { Logo: Logo; P
 
     <header className="container print:hidden mt-3 px-4 lg:px-6 py-8 flex gap-y-5 justify-center flex-col sm:flex-row md:justify-between items-center mx-auto">
 
-      <Link target={Logo.target ? Logo.target : "_blank"} href={Logo.link ? Logo.link : "/"} className="flex flex-row items-center justify-between text-black dark:text-white">
+      <Link aria-label="brand logo" target={Logo.target ? Logo.target : "_blank"} href={Logo.link ? Logo.link : "/"} className="flex flex-row items-center justify-between text-black dark:text-white">
         {renderComponent(Logo.logo)}
       </Link>
 

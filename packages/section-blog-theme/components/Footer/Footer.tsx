@@ -10,7 +10,7 @@ export function Footer({ Logo, SecondaryNavigation, socialLinks }: { Logo: Logo;
   return (
     <footer className="print:hidden container flex flex-wrap flex-row item-center justify-center my-5 p-5 mx-auto lg:flex-row divide-gray-400">
 
-      <Link target={Logo.target ? Logo.target : "_blank"} href={Logo.link ? Logo.link : "/"} className="flex flex-row items-center justify-between text-black dark:text-white">
+      <Link aria-label="brand logo" target={Logo.target ? Logo.target : "_blank"} href={Logo.link ? Logo.link : "/"} className="flex flex-row items-center justify-between text-black dark:text-white">
         {renderComponent(Logo.logo)}
       </Link>
 
