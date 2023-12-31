@@ -1,8 +1,11 @@
 {
   "name": "section-theme-blog",
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
+    "build": "turbo run build --filter=section-blog-theme --filter=demo-section-blog --filter=docs",
+    "dev": "turbo run dev --filter=section-blog-theme --filter=demo-section-blog ",
+    "clean": "turbo run clean",
+    "build:all": "turbo run build",
+    "dev:docs": "turbo run dev --filter=docs",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "update:package": "pnpm update -L --filter=section-blog-theme --filter=demo-section-blog"
