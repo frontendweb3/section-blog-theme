@@ -10,7 +10,8 @@ import Link from "next/link";
 import { Seo } from "@/components/Seo/Seo";
 import { slugify } from "@/utility/slugify";
 import { TypeSectionBlogTheme } from "@/src/types";
-import type {ReactNode} from "react";
+import type { ReactNode } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme; children: ReactNode; }) {
   const [domain, setDomain] = useState<string>()
@@ -41,11 +42,22 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
 
       <Seo pageOpts={pageOpts} themeConfig={themeConfig} />
 
-      <div className="px-3 sm:px-0 mx-auto my-6 print:block prose prose-pre:bg-primary-foreground prose-zinc sm:prose-sm md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl dark:prose-invert">
+      <div className=" px-5 sm:px-0 prose dark:prose-p:text-white prose-img:mx-auto prose-pre:bg-primary-foreground prose-slate sm:prose-sm md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-1xl dark:prose-invert mx-auto">
 
-        <section className="not-prose flex flex-row justify-between items-center">
+        <h1 className="text-black dark:text-white antialiased my-3 text-3xl font-bold tracking-wide sm:text-4xl md:text-5xl"> {frontMatter.title} </h1>
 
-          <div className="flex flex-row items-center text-sm">
+        <p className="text-black dark:text-white mt-1 text-lg leading-8 "> {frontMatter.description} </p>
+
+        <div className="my-2 flex flex-row items-center justify-between text-sm">
+
+          <div className="flex flex-row items-center print:block">
+
+            {frontMatter?.author?.image ? <Avatar className="mr-2 items-center justify-center">
+              <AvatarImage className="h-12 w-12" src={frontMatter?.author?.image} />
+              <AvatarFallback> {
+                typeof frontMatter.author === 'string' ? frontMatter?.author :
+                  typeof frontMatter.author === 'object' ? frontMatter?.author.name : ""} </AvatarFallback>
+            </Avatar> : ""}
 
             <span> By {
 
@@ -53,14 +65,14 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
                 <Link
                   href={Next_URL(getSite)}
                   rel="author"
-                  className="mr-2 hover:text-gray-400"
+                  className="text-xs md:text-sm font-bold mr-2"
                 >
                   {frontMatter?.author}
                 </Link> : typeof frontMatter.author === 'object' ? <Link
                   href={getAuthorURL}
                   target="_blank"
                   rel="author"
-                  className="mr-2 hover:text-gray-400 "
+                  className="text-xs md:text-sm font-bold mr-2"
                 >
                   {frontMatter?.author.name}
                 </Link> : ""
@@ -71,10 +83,10 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
               title={getDate}
             >
               {getDate}
-            </time> • <Link href={getTagURL} className="capitalize ml-2 hover:text-gray-400"> {getTag} </Link>
+            </time> • <Link href={getTagURL} className="text-xs md:text-sm font-bold capitalize ml-2"> {getTag} </Link>
           </div>
 
-          <div className="hidden sm:flex flex-row print:block">
+          <div className="hidden sm:flex flex-row items-center print:block">
 
             <RWebShare
               data={{
@@ -100,10 +112,8 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
             </Button>
 
           </div>
-        </section>
 
-        <h1 className="mb-2 font-bold">{frontMatter.title}</h1>
-        <p className="mb-4 mt-0 font-medium">{frontMatter.description}</p>
+        </div>
 
       </div>
 
