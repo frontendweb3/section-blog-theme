@@ -2,7 +2,8 @@
 
 const withNextra = require("nextra")({
   theme: "section-blog-theme",
-  themeConfig: "./theme.config.tsx"
+  themeConfig: "./theme.config.tsx",
+  readingTime: true
 });
 
 module.exports = withNextra({
