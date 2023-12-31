@@ -14,9 +14,10 @@ import type { ReactNode } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; themeConfig: TypeSectionBlogTheme; children: ReactNode; }) {
+
   const [domain, setDomain] = useState<string>()
 
-  const { frontMatter } = pageOpts;
+  const { frontMatter, readingTime } = pageOpts;
 
   let { DateFormat, settings } = themeConfig;
 
@@ -46,13 +47,13 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
 
         <h1 className="text-black dark:text-white antialiased my-3 text-3xl font-bold tracking-wide sm:text-4xl md:text-5xl"> {frontMatter.title} </h1>
 
-        <p className="text-black dark:text-white mt-1 text-lg leading-8 "> {frontMatter.description} </p>
+        <p className="text-black dark:text-white mt-1 mb-2 text-lg leading-8 "> {frontMatter.description} </p>
 
-        <div className="my-2 flex flex-row items-center justify-between text-sm">
+        <div className="mt-2.5 mb-1.5 flex flex-row items-center justify-between text-sm">
 
-          <div className="flex flex-row items-center print:block">
+          <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3 sm:gap-0  items-center print:block">
 
-            {frontMatter?.author?.image ? <Avatar className="mr-2 items-center justify-center">
+            { frontMatter?.author?.image ? <Avatar className="mr-2 items-center justify-center">
               <AvatarImage className="h-12 w-12" src={frontMatter?.author?.image} />
               <AvatarFallback> {
                 typeof frontMatter.author === 'string' ? frontMatter?.author :
@@ -60,30 +61,16 @@ export function Read({ pageOpts, themeConfig, children }: { pageOpts: PageOpts; 
             </Avatar> : ""}
 
             <span> By {
-
-              typeof frontMatter.author === 'string' ?
-                <Link
-                  href={Next_URL(getSite)}
-                  rel="author"
-                  className="text-xs md:text-sm font-bold mr-2"
-                >
+                typeof frontMatter.author === 'string' ? <Link href={Next_URL(getSite)} rel="author" className="text-sm font-bold mr-2">
                   {frontMatter?.author}
-                </Link> : typeof frontMatter.author === 'object' ? <Link
-                  href={getAuthorURL}
-                  target="_blank"
-                  rel="author"
-                  className="text-xs md:text-sm font-bold mr-2"
-                >
+                </Link> : typeof frontMatter.author === 'object' ? <Link href={getAuthorURL} target="_blank" rel="author" className="text-sm font-bold mr-2">
                   {frontMatter?.author.name}
                 </Link> : ""
-            } </span>
-            • <time
-              className="mx-2"
-              dateTime={getDate}
-              title={getDate}
-            >
+                }
+            </span>
+            • <time className="mx-2" dateTime={getDate} title={getDate}>
               {getDate}
-            </time> • <Link href={getTagURL} className="text-xs md:text-sm font-bold capitalize ml-2"> {getTag} </Link>
+            </time> • <Link href={getTagURL} className="mr-2 text-sm font-bold capitalize ml-2"> {getTag} </Link>  • {readingTime !== undefined ? <span className="text-sm font-bold capitalize ml-2"> {readingTime.text} </span> : ""}
           </div>
 
           <div className="hidden sm:flex flex-row items-center print:block">
