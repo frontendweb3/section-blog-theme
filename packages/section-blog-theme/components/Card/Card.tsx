@@ -7,7 +7,7 @@ export function ArticleCard({ title, description, date, URL, author }: { title: 
   return (
     <Card className="mb-10 p-2 sm:p-4  w-fill sm:w-6/6 md:w-5/6 lg:w-4/6  mx-auto shadow-sm">
       <CardContent className="p-2 md:p-6">
-        <h2 className="text-2xl mb-1 font-bold leading-7 sm:text-3xl">
+        <h2 className="text-2xl mb-1 leading-8 font-bold sm:text-3xl">
           {title}
         </h2>
         {
