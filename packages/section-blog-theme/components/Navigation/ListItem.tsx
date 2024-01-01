@@ -1,8 +1,11 @@
-import * as React from "react"
+import * as React from "react";
 import { cn } from "@/utility/utils";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 
-const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(({ className, title, children, ...props }, ref) => {
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -25,5 +28,4 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
 });
 ListItem.displayName = "ListItem";
 
-
-export { ListItem }
+export { ListItem };

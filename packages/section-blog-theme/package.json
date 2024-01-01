@@ -68,7 +68,7 @@
     }
   },
   "scripts": {
-    "clean": "rm  -Rf dist",
+    "clean": "rimraf dist ",
     "dev": "tsup --watch",
     "build": "pnpm run clean && tsup --minify",
     "types": "tsup --dts-only",
@@ -77,7 +77,7 @@
     "test": "jest --watch"
   },
   "dependencies": {
-    "@radix-ui/react-aspect-ratio": "^1.0.3",
+    "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-label": "^2.0.2",
@@ -87,6 +87,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "20.10.4",
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.17",
@@ -106,17 +107,16 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-web-share": "^2.0.2",
+    "rimraf": "^5.0.5",
     "slugify": "^1.6.6",
     "tailwind-merge": "^2.1.0",
     "tailwindcss": "3.3.6",
     "tailwindcss-animate": "^1.0.7",
     "tsup": "^8.0.1",
     "typescript": "5.3.3",
-    "usehooks-ts": "^2.9.1",
-    "zustand": "^4.4.7"
+    "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
     "jest": "^29.7.0",
@@ -129,5 +129,6 @@
       "zod@<=3.22.2": ">=3.22.3",
       "postcss@<8.4.31": ">=8.4.31"
     }
-  }
+  },
+  "packageManager": "pnpm@8.10.5"
 }

@@ -1,16 +1,15 @@
-<div style="display: block; margin-left: auto; margin-right: auto;width: 40%;">
+<p align="center">
+  <a href="https://section-blog-theme-docs.vercel.app">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/frontendweb3/section-blog-theme/.github/logo-dark.png">
+      <img src="https://cdn.jsdelivr.net/gh/frontendweb3/section-blog-theme/.github/logo-light.svg" height="128">
+    </picture>
+    <h1 align="center">Section Blog Theme</h1>
+  </a>
+</p>
 
-![logo](../../logo.svg)
+<div style="display:flex; margin: 5px auto;">
 
-</div>
-
-<div style="margin-top: 10px auto;width:100%;"></div>
-
-Start your blog journey with Next.js, Nextra, and MDX using section themes. You can start your blog in less than two minutes, and you need only one command and zero configuration. Section theme comes with an inbuilt dark mode, a search bar, Customize Navigation, and SEO Support.
-
-## Tech Stack
-
-<div className="flex flex-row flex-wrap item-center md:justify-between">
   <img style="margin: 5px auto;" title="pnpm" alt="pnpm" src="https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220" />
   <img style="margin: 5px auto;" title="reactjs" alt="reactjs"  src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
   <img style="margin: 5px auto;" title="nextjs" alt="nextjs"  src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"/>
@@ -19,7 +18,12 @@ Start your blog journey with Next.js, Nextra, and MDX using section themes. You 
   <img style="margin: 5px auto;" title="tailwind css" alt="tailwind css" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
   <img style="margin: 5px auto;" title="markdown" alt="markdown"  src="https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white"/>
   <img style="margin: 5px auto;" title="turborepo" alt="turborepo" src="https://img.shields.io/badge/turborepo-000204?style=for-the-badge&logo=turborepo&logoColor=white">
+  
 </div>
+
+<div style="margin-top: 10px auto;width:100%;"></div>
+
+Start your blog journey with Next.js, Nextra, and MDX using section themes. You can start your blog in less than two minutes, and you need only one command and zero configuration. Section theme comes with an inbuilt dark mode, a search bar, Customize Navigation, and SEO Support.
 
 <div style="margin: 5px auto;width:100%;"></div>
 
@@ -50,16 +54,16 @@ const withNextra = require("nextra")({
 module.exports = withNextra();
 ```
 
-## import css 
+## import css
 
-Next step to import css file from section blog theme inside your `_app.mdx' file.
+Next step to import css file from section blog theme inside your `\_app.mdx' file.
 
 ```javascript
 // _app.mdx
 
-import "section-blog-theme/styles.css"
+import "section-blog-theme/styles.css";
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 ```
 
@@ -74,18 +78,19 @@ const themeConfig = {
   settings: {
     title: "My title",
     description: "my descript is here ",
-    SiteURL:"https://officialrajdeepsingh.dev",
+    SiteURL: "https://officialrajdeepsingh.dev",
     defaultSEO: {
       title: "default SEO  title is here",
-      titleTemplate: '%s | Section Blog Theme',
+      titleTemplate: "%s | Section Blog Theme",
       twitter: {
         handle: "@FrontendWeb3",
         site: "FrontendWeb3",
         cardType: "summary_large_image",
-      }
-    }
+      },
+    },
   },
-  bannerMessage: "Start your markdown portfolio blog with nextjs, nextra, tailwind CSS, and Shadcn UI using <a style='margin: 0px 4px;text-decoration:underline;' target='_blank' href='https://www.npmjs.com/package/section-blog-theme'>  the section blog theme. </a>",
+  bannerMessage:
+    "Start your markdown portfolio blog with nextjs, nextra, tailwind CSS, and Shadcn UI using <a style='margin: 0px 4px;text-decoration:underline;' target='_blank' href='https://www.npmjs.com/package/section-blog-theme'>  the section blog theme. </a>",
   SocialLinks: [
     {
       name: "twitter",
@@ -101,8 +106,24 @@ const themeConfig = {
     },
   ],
   Logo: {
-    text: "Section",
-    logo:'<svg width="477" height="509" viewBox="0 0 477 509" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M247.177 104.672C242.99 97.1095 232.118 97.1095 227.93 104.672L68.3924 392.805C64.333 400.137 69.6354 409.133 78.0158 409.133H397.092C405.472 409.133 410.775 400.137 406.715 392.805L247.177 104.672ZM238.312 323.4C258.367 323.4 274.625 307.864 274.625 288.7C274.625 269.536 258.367 254 238.312 254C218.258 254 202 269.536 202 288.7C202 307.864 218.258 323.4 238.312 323.4Z" fill="white"/></svg>'
+    logo: (
+      <>
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 434 420"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            fill="currentColor"
+            d="M226.569 66.5458C222.348 59.1514 211.686 59.1514 207.464 66.5458L63.4636 318.753C59.2767 326.086 64.5719 335.207 73.0163 335.207H361.018C369.462 335.207 374.757 326.086 370.57 318.753L226.569 66.5458ZM217.017 270.333C235.355 270.333 250.221 256.557 250.221 239.563C250.221 222.57 235.355 208.793 217.017 208.793C198.679 208.793 183.813 222.57 183.813 239.563C183.813 256.557 198.679 270.333 217.017 270.333Z"
+          />
+        </svg>
+      </>
+    ),
+    link: "/",
   },
   PrimaryNavigation: [
     {
@@ -120,8 +141,7 @@ const themeConfig = {
         {
           title: "Personal Blog",
           href: "https://officialrajdeepsingh.dev/",
-          description:
-            "Check out my personal portfolio blog website.",
+          description: "Check out my personal portfolio blog website.",
         },
         {
           title: "Section Blog Theme",
@@ -158,10 +178,11 @@ const themeConfig = {
       href: "/contact",
       title: "Contact",
     },
-  ]
+  ],
 };
 export default themeConfig;
 ```
 
 ## rename your file.
+
 Lastly, rename the file extension the `.tsx ` or `.jsx` to a `.mdx`. for every file inside the pages folder. But does not change the `_document.jsx or _document.tsx` file extension.

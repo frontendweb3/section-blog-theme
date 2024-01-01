@@ -1,5 +1,5 @@
-import * as React from "react"
-import { cn } from "@/utility/utils"
+import * as React from "react";
+import { cn } from "@/utility/utils";
 
 interface ArticleProps {
   children: React.ReactNode;
@@ -8,6 +8,14 @@ interface ArticleProps {
 
 export function Article({ className, children }: ArticleProps) {
   return (
-    <article className={cn("container mt-10 mb-20 sm:px-0 prose dark:prose-p:text-white prose-img:mx-auto prose-pre:bg-slate-700/25 dark:prose-pre:bg-primary-foreground prose-zinc sm:prose-sm md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl dark:prose-invert mx-auto", className)}> {children} </article>
+    <article
+      className={cn(
+        "mt-5 px-5 sm:px-0 mb-20 prose dark:prose-p:text-white prose-img:mx-auto prose-pre:bg-primary-foreground prose-slate sm:prose-sm md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-1xl dark:prose-invert mx-auto",
+        className,
+      )}
+    >
+      {" "}
+      {children}{" "}
+    </article>
   );
 }

@@ -1,9 +1,12 @@
-import { NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import {
+  NavigationMenuItem,
+  NavigationMenuLink,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import { Navigation } from "@/src/types";
 import Link from "next/link";
 
 const NavigationItem = ({ navigation }: { navigation: Navigation }) => {
-
   return (
     <NavigationMenuItem className="my-2 md:my-0">
       <Link href={navigation.href as string} legacyBehavior passHref>
@@ -13,7 +16,6 @@ const NavigationItem = ({ navigation }: { navigation: Navigation }) => {
       </Link>
     </NavigationMenuItem>
   );
-
 };
 
 export default NavigationItem;
