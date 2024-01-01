@@ -76,11 +76,11 @@ The lastly create a `theme.config.jsx` or `theme.config.tsx` file in your root l
 
 const themeConfig = {
   settings: {
-    title: "My title",
-    description: "my descript is here ",
+    title: "Start your blog or portfolio using MDX, Next.Js, and Nextra.",
+    description: "Section blog theme is build with Nextjs and tailwind css.",
     SiteURL: "https://officialrajdeepsingh.dev",
     defaultSEO: {
-      title: "default SEO  title is here",
+      title: "Start your blog or portfolio using MDX, Next.Js, and Nextra.",
       titleTemplate: "%s | Section Blog Theme",
       twitter: {
         handle: "@FrontendWeb3",
@@ -124,6 +124,7 @@ const themeConfig = {
       </>
     ),
     link: "/",
+    target: "_blank",
   },
   PrimaryNavigation: [
     {
