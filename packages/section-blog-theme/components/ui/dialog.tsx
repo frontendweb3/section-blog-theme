@@ -57,8 +57,7 @@ const DialogContent = React.forwardRef<
             fill="currentColor"
             fillRule="evenodd"
             clipRule="evenodd"
-          >
-          </path>
+          ></path>
         </svg>
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>

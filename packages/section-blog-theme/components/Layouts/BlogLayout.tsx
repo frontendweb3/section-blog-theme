@@ -1,7 +1,15 @@
-import { Error404, Error500, HomePage, Page, Posts, Read, Tag } from "@/components/Layouts";
+import {
+  Error404,
+  Error500,
+  HomePage,
+  Page,
+  Posts,
+  Read,
+  Tag,
+} from "@/components/Layouts";
 import * as React from "react";
 import type { PageOpts } from "nextra";
-import type { LayoutTypes,TypeSectionBlogTheme } from "@/src/types";
+import type { LayoutTypes, TypeSectionBlogTheme } from "@/src/types";
 
 const Layouts = {
   home: HomePage,
@@ -13,14 +21,17 @@ const Layouts = {
   500: Error500,
 };
 
-export function BlogLayout(
-  { pageOpts, themeConfig, children }: {
-    pageOpts?: PageOpts;
-    themeConfig: TypeSectionBlogTheme;
-    children: React.ReactNode;
-  }) {
-  let LayoutType: LayoutTypes = pageOpts?.frontMatter.type ||
-    ("home" as string);
+export function BlogLayout({
+  pageOpts,
+  themeConfig,
+  children,
+}: {
+  pageOpts?: PageOpts;
+  themeConfig: TypeSectionBlogTheme;
+  children: React.ReactNode;
+}) {
+  let LayoutType: LayoutTypes =
+    pageOpts?.frontMatter.type || ("home" as string);
 
   let Layout = Layouts[LayoutType];
 
@@ -35,12 +46,12 @@ export function BlogLayout(
   }
 
   if (LayoutType === 500) {
-    return <Error500 />
+    return <Error500 />;
   }
 
   if (LayoutType === 404) {
-    return <Error404 />
-  }  
+    return <Error404 />;
+  }
 
   return (
     <Layout pageOpts={pageOpts} themeConfig={themeConfig}>

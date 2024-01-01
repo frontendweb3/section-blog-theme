@@ -1,9 +1,9 @@
-import dynamicIconImports from 'lucide-react/dynamicIconImports';
+import dynamicIconImports from "lucide-react/dynamicIconImports";
 import { DefaultSeoProps } from "next-seo";
-import { LucideProps } from 'lucide-react';
-import type {  ReactNode, FC } from 'react';
+import { LucideProps } from "lucide-react";
+import type { ReactNode, FC } from "react";
 
-// SubNavigation 
+// SubNavigation
 export interface SubNavigation {
   title: string;
   href: string;
@@ -72,7 +72,7 @@ export type LayoutTypes =
   | 404
   | 500;
 
-// author 
+// author
 export interface authorType {
   name: string;
   url: string;
@@ -89,7 +89,7 @@ export type BlogFrontMatter = {
   type: "post";
 };
 
-// icon type 
+// icon type
 export type iconsType =
   | "facebook"
   | "twitter"
@@ -98,17 +98,17 @@ export type iconsType =
   | "github"
   | "instagram";
 
-export type GetMetaData = MdxFileCard
+export type GetMetaData = MdxFileCard;
 
 // type for space component
-export type spaceType = "xs"| "sm"| "md" | "lg" | "xl" | "2xl"
+export type spaceType = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 
 // command
-export type StructurizedData = Record<string, string>
+export type StructurizedData = Record<string, string>;
 
 export type SearchData = {
   [route: string]: {
-    title: string
-    data: StructurizedData
-  }
-}
+    title: string;
+    data: StructurizedData;
+  };
+};
