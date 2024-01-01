@@ -1,9 +1,6 @@
 <p align="center">
   <a href="https://section-blog-theme-docs.vercel.app">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/frontendweb3/section-blog-theme/.github/logo-dark.png">
-      <img src="https://cdn.jsdelivr.net/gh/frontendweb3/section-blog-theme/.github/logo-light.svg" height="128">
-    </picture>
+      <img src="https://cdn.jsdelivr.net/gh/frontendweb3/section-blog-theme/.github/logo.svg" height="128">
     <h1 align="center">Section Blog Theme</h1>
   </a>
 </p>
