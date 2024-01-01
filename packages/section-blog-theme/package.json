@@ -1,6 +1,6 @@
 {
   "name": "section-blog-theme",
-  "version": "0.1.9",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "types": "dist/types.d.mts",
   "keywords": [
@@ -41,7 +41,7 @@
   "homepage": "https://section-theme-blog-docs.vercel.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/frontendweb3/section-theme-blog.git"
+    "url": "git+https://github.com/frontendweb3/section-theme-blog.git"
   },
   "bugs": {
     "url": "https://github.com/frontendweb3/section-theme-blog/issues"
