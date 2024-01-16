@@ -3,7 +3,7 @@
 const withNextra = require("nextra")({
   theme: "section-blog-theme",
   themeConfig: "./theme.config.tsx",
-  readingTime: true
+  readingTime: true,
 });
 
 module.exports = withNextra({
@@ -20,8 +20,8 @@ module.exports = withNextra({
         hostname: "picsum.photos",
       },
       {
-        hostname:"cdn.pixabay.com"
-      }
+        hostname: "cdn.pixabay.com",
+      },
     ],
   },
 });
