@@ -131,8 +131,16 @@ Show posts related to a tags page.
 
 ```markdown {2} filename="tags/[slug].mdx"
 ---
-type : tag
+type: tag
 ---
+
+import { TagName, TagTitle } from "section-blog-theme/Tag";
+
+<TagTitle />
+
+# Posts Tagged with “<TagName />”
+
+export { getStaticProps, getStaticPaths } from "section-blog-theme/Tag";
 ```
 ## 404
 Create 404 error page in blog.
