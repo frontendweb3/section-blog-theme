@@ -1,48 +1,72 @@
 ---
 type: home
-title: Home Page 
-description : Home page
+title: Home Page
+description: Home page
 image: https://cdn.pixabay.com/photo/2023/05/21/19/45/rose-8009275_1280.jpg
 ---
 
-import { Alert, AlertDescription, AlertTitle, Separator, Tabs, TabsContent, TabsList, TabsTrigger, Space } from "section-blog-theme/components"
-import { AlertTriangle, Ban, Check, CheckCircle, HelpCircle, Terminal, Braces, BadgeAlert, BadgeX, Shield, Lightbulb} from "section-blog-theme/icons"
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+  Separator,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+  Space,
+} from "section-blog-theme/components";
+import {
+  AlertTriangle,
+  Ban,
+  Check,
+  CheckCircle,
+  HelpCircle,
+  Terminal,
+  Braces,
+  BadgeAlert,
+  BadgeX,
+  Shield,
+  Lightbulb,
+} from "section-blog-theme/icons";
 
 ![Rajdeep singh](https://capsule-render.vercel.app/api?type=soft&color=auto&height=400&section=header&text=Build%20and%20Deploy&fontSize=90&animation=fadeIn)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis eros vitae dictum dignissim. Cras ex leo, accumsan in dapibus sed, tincidunt et nisi. Sed vehicula sollicitudin fringilla.
 
-> Donec rutrum rutrum metus, in feugiat enim consequat quis. Duis dictum dolor nec eros venenatis ullamcorper. 
+> Donec rutrum rutrum metus, in feugiat enim consequat quis. Duis dictum dolor nec eros venenatis ullamcorper.
 
 Aenean gravida, lacus non gravida fermentum, ante enim `console.log` facilisis dolor, quis lacinia purus enim sed mauris. Nam viverra justo lectus, sit amet ultrices odio sodales eu.
 
 ## Icons
+
 <div className="flex flex-row justify-between">
- <AlertTriangle />
- <Ban />
- <Check />
- <CheckCircle />
- <HelpCircle />
- <Lightbulb />
- <Terminal />
- <BadgeAlert />
- <BadgeX />
- <Shield />
- <Braces />
+  <AlertTriangle />
+  <Ban />
+  <Check />
+  <CheckCircle />
+  <HelpCircle />
+  <Lightbulb />
+  <Terminal />
+  <BadgeAlert />
+  <BadgeX />
+  <Shield />
+  <Braces />
 </div>
 
-
 ## Alert
+
 <Alert>
   <AlertTriangle className="h-4 w-4" />
-  <AlertTitle >Heads up!</AlertTitle>
+  <AlertTitle>Heads up!</AlertTitle>
   <AlertDescription>
-    You can add components and dependencies to your app using the cli.
+    {" "}
+    You can add components and dependencies to your app using the cli.{" "}
   </AlertDescription>
 </Alert>
 
-
 ## Tabs
+
 <Tabs defaultValue="npm" className="w-full md:w-[624px]">
   <TabsList>
     <TabsTrigger className="mx-1" value="npm">NPM</TabsTrigger>
@@ -68,13 +92,13 @@ Aenean gravida, lacus non gravida fermentum, ante enim `console.log` facilisis d
 </Tabs>
 
 ## Code Block
+
 ```js filename="example.js"
 function MyButton() {
-  return (
-    <button>I'm a button</button>
-  );
+  return <button>I'm a button</button>;
 }
 ```
+
 ## Space
 
 <Space h={"sm"} />
@@ -87,21 +111,63 @@ function MyButton() {
 
 <div className="flex justify-between" id="badges">
 
-  <a style={{"margin":" auto 3px"}} target="_blank" href="https://medium.com/@officialrajdeepsingh">
-    <img title="Medium" alt="medium" src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="LinkedIn Badge"/>
-  </a> 
-  <a style={{"margin":" auto 3px"}} target="_blank" href="https://github.com/officialrajdeepsingh">
-    <img title="GitHub" alt="GitHub"  src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
-  </a>
-  <a style={{"margin":" auto 3px"}} target="_blank" href="https://twitter.com/Official_R_deep">
-    <img title="Twitter" alt="twitter"  src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white"/>
-  </a>
-  <a style={{"margin":" auto 3px"}} target="_blank" href="https://www.linkedin.com/in/officalrajdeepsingh/">
-    <img title="Linkedin" alt="Linkedin"  src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-   <a style={{"margin":" auto 3px"}} target="_blank" href="https://codesandbox.io/u/officialrajdeepsingh">
-    <img title="Freecodecamp" alt="Freecodecamp"  src="https://img.shields.io/badge/Freecodecamp-%23123.svg?&style=for-the-badge&logo=freecodecamp&logoColor=green"/>
-  </a>
+{" "}
+
+<a
+  style={{ margin: " auto 3px" }}
+  target="_blank"
+  href="https://medium.com/@officialrajdeepsingh"
+>
+  <img
+    title="Medium"
+    alt="medium"
+    src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white"
+    alt="LinkedIn Badge"
+  />
+</a>
+<a
+  style={{ margin: " auto 3px" }}
+  target="_blank"
+  href="https://github.com/officialrajdeepsingh"
+>
+  <img
+    title="GitHub"
+    alt="GitHub"
+    src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
+  />
+</a>
+<a
+  style={{ margin: " auto 3px" }}
+  target="_blank"
+  href="https://twitter.com/Official_R_deep"
+>
+  <img
+    title="Twitter"
+    alt="twitter"
+    src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white"
+  />
+</a>
+<a
+  style={{ margin: " auto 3px" }}
+  target="_blank"
+  href="https://www.linkedin.com/in/officalrajdeepsingh/"
+>
+  <img
+    title="Linkedin"
+    alt="Linkedin"
+    src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"
+  />
+</a>
+<a
+  style={{ margin: " auto 3px" }}
+  target="_blank"
+  href="https://codesandbox.io/u/officialrajdeepsingh"
+>
+  <img
+    title="Freecodecamp"
+    alt="Freecodecamp"
+    src="https://img.shields.io/badge/Freecodecamp-%23123.svg?&style=for-the-badge&logo=freecodecamp&logoColor=green"
+  />
+</a>
 
 </div>
-
