@@ -10,7 +10,7 @@ export function Article({ className, children }: ArticleProps) {
   return (
     <article
       className={cn(
-        "mt-5 px-5 sm:px-0 mb-20 prose dark:prose-p:text-white prose-img:mx-auto prose-pre:bg-primary-foreground prose-slate sm:prose-sm md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-1xl dark:prose-invert mx-auto",
+        "max-w-none nx-mt-5 nx-px-5 sm:nx-px-0 nx-mb-20 nx-format nx-format-section nx-format-img:nx-mx-auto sm:nx-format-sm md:nx-format-base lg:nx-format-lg xl:nx-format-2xl 2xl:nx-format-2xl nx-mx-auto",
         className,
       )}
     >
