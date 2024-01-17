@@ -12,13 +12,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "nx-block nx-select-none nx-space-y-1 nx-rounded-md nx-p-3 nx-leading-none nx-no-underline nx-outline-none nx-transition-colors hover:nx-bg-accent hover:nx-text-accent-foreground focus:nx-bg-accent focus:nx-text-accent-foreground",
             className,
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="nx-text-sm nx-font-medium nx-leading-none">{title}</div>
+          <p className="nx-line-clamp-2 nx-text-sm nx-leading-snug nx-text-muted-foreground">
             {children}
           </p>
         </a>
