@@ -21,18 +21,18 @@ export function Header({
   socialLinks: SocialLinks[];
 }) {
   return (
-    <header className="container print:hidden mt-3 px-4 lg:px-6 py-8 flex gap-y-5 justify-center flex-col sm:flex-row md:justify-between items-center mx-auto">
+    <header className="nx-container print:nx-hidden nx-mt-3 nx-px-4 lg:nx-px-6 nx-py-8 nx-flex nx-gap-y-5 nx-justify-center nx-flex-col sm:nx-flex-row md:nx-justify-between nx-items-center nx-mx-auto">
       <Link
         aria-label="brand logo"
         target={Logo.target ? Logo.target : "_blank"}
         href={Logo.link ? Logo.link : "/"}
-        className="flex flex-row items-center justify-between text-black dark:text-white"
+        className="nx-flex nx-flex-row nx-items-center nx-justify-between"
       >
         {renderComponent(Logo.logo)}
       </Link>
 
-      <NavigationMenu className="my-3 flex flex-wrap justify-between items-center mx-auto md:my-0">
-        <NavigationMenuList className="flex-wrap sm:fle-row">
+      <NavigationMenu className="nx-my-3 nx-flex nx-flex-wrap nx-justify-between nx-items-center nx-mx-auto md:nx-my-0">
+        <NavigationMenuList className="nx-flex-wrap sm:nx-fle-row">
           {PrimaryNavigation.map((navigation: Navigation) => {
             if (navigation.subNav === true) {
               return (
@@ -54,7 +54,7 @@ export function Header({
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="flex flex-row justify-between gap-2 items-center">
+      <div className="nx-flex nx-flex-row nx-justify-between nx-gap-2 nx-items-center">
         <SearchCommandDialog />
 
         <ThemeToggle />
