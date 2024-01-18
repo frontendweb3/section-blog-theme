@@ -1,0 +1,103 @@
+---
+title : To use 10000+ difference theming in the section blog theme.
+
+---
+
+The section blog theme is based on [Shadcn UI](https://ui.shadcn.com/docs/theming), and Shadcn UI has the functionality to use different themes. 
+Official Shadcn UI has two themes: the first is the default, and the second is the New York theme. 
+
+There are tons of themes available for Shadcn UI on the internet. 
+The [ui.jln.dev](https://ui.jln.dev/) website offers you more than 10000 custom Shadcn UI. You can use different themes in the section blog theme with copy-paste code.
+
+
+
+## How to use the custom theme in the section blog theme?
+
+You can copy any theme on ui.jln.dev website, paste in the global CSS file without **@layer directive**.
+
+```css filename="globals.css"
+    :root {
+      --card: 287 70% 98%;
+      --ring: 287 66% 82%;
+      --input: 220 13% 91%;
+      --muted: 47 39% 88%;
+      --accent: 167 66% 82%;
+      --border: 220 13% 91%;
+      --popover: 287 70% 99%;
+      --primary: 287 66% 82%;
+      --secondary: 47 66% 82%;
+      --background: 287 70% 99%;
+      --foreground: 287 53% 0%;
+      --destructive: 20 81% 21%;
+      --card-foreground: 0 0% 0%;
+      --muted-foreground: 47 0% 36%;
+      --accent-foreground: 167 66% 22%;
+      --popover-foreground: 287 53% 0%;
+      --primary-foreground: 287 66% 22%;
+      --secondary-foreground: 47 66% 22%;
+      --destructive-foreground: 20 81% 81%;
+      --radius: 0.5rem;
+    }
+  
+    .dark {
+      --card: 287 55% 4%;
+      --ring: 287 66% 82%;
+      --input: 215 27.9% 16.9%;
+      --muted: 47 39% 12%;
+      --accent: 167 66% 82%;
+      --border: 215 27.9% 16.9%;
+      --popover: 287 55% 3%;
+      --primary: 287 66% 82%;
+      --secondary: 47 66% 82%;
+      --background: 287 55% 3%;
+      --foreground: 287 33% 98%;
+      --destructive: 20 81% 47%;
+      --card-foreground: 287 33% 99%;
+      --muted-foreground: 47 0% 64%;
+      --accent-foreground: 167 66% 22%;
+      --popover-foreground: 287 33% 98%;
+      --primary-foreground: 287 66% 22%;
+      --secondary-foreground: 47 66% 22%;
+      --destructive-foreground: 0 0% 100%;
+    }
+
+```
+
+
+## Why is Dark mode not working with the section blog theme with tailwind CSS?
+If you create your project using create-next-app, then remove the following code from your tailwind globals.css file. It creates conflict with Shadcn UI CSS variables. 
+
+
+```css {5, 7-29} filename="globals.css"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove/uncomment the bellow code. */
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} 
+
+
+```

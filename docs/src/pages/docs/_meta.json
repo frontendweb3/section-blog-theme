@@ -1,6 +1,9 @@
 {
   "index": "Installation",
   "page-configuration": "",
-  "theme-configuration": "",
-  "Built-ins": "Built-ins"
+  "configuration": "",
+  "theme":"Theme",
+  "Built-ins": "Built-ins",
+  "deploy":"Deploy",
+  "contributing":"Contributing"
 }
