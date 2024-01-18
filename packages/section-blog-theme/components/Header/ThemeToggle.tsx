@@ -1,22 +1,19 @@
+import { useTheme } from "next-themes"
 import { SunIcon, MoonIcon } from "lucide-react";
-import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export function ThemeToggle() {
-  const { setTheme } = useTheme();
+
+  const { setTheme } = useTheme()
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="secondary" className="ml-1" size="icon">
-          <SunIcon className="h-5 w-5  rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <MoonIcon className=" h-5 w-5 absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
+        <Button variant="ghost" size="icon">
+          <SunIcon className="nx-h-[1.2rem] nx-w-[1.2rem] nx-rotate-0 nx-scale-100 nx-transition-all dark:nx-rotate-90 dark:nx-scale-0" />
+          <MoonIcon className="nx-absolute nx-h-[1.2rem] nx-w-[1.2rem] nx-rotate-90 nx-scale-0 nx-transition-all dark:nx-rotate-0 dark:nx-scale-100" />
+          <span className="nx-sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -31,5 +28,5 @@ export function ThemeToggle() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

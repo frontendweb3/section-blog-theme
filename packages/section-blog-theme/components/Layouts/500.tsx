@@ -9,25 +9,25 @@ export function Error500() {
         description="Something went wrong, sorry, we couldn't find this page."
         noindex={true}
       />
-      <section className="flex items-center h-full p-16 ">
-        <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-          <div className="max-w-md text-center">
-            <h2 className="mb-8 font-extrabold text-9xl ">
-              <span className="sr-only">Error</span>500
+      <section className="nx-flex nx-items-center nx-h-full nx-p-16">
+        <div className="nx-container nx-flex nx-flex-col nx-items-center nx-justify-center nx-px-5 nx-mx-auto nx-my-8">
+          <div className="nx-max-w-md nx-text-center">
+            <h2 className="nx-mb-8 nx-font-extrabold nx-text-9xl ">
+              <span className="nx-sr-only">Error</span>500
             </h2>
 
-            <p className="text-2xl font-semibold md:text-3xl">
+            <p className="nx-text-2xl nx-font-semibold md:nx-text-3xl">
               Sorry, we couldn't find this page.
             </p>
 
-            <p className="mt-4 mb-8 ">
+            <p className="nx-mt-4 nx-mb-8 ">
               But dont worry, you can find plenty of other things on our
               homepage.
             </p>
 
             <Link
               href="/"
-              className="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
+              className="nx-px-8 nx-py-3 nx-font-semibold nx-rounded dark:nx-bg-violet-400 dark:nx-text-gray-900"
             >
               Back to homepage
             </Link>

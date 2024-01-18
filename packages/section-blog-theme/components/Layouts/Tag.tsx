@@ -35,7 +35,7 @@ export function Tag({
     <>
       <Article>{children}</Article>
 
-      <section className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <section className="nx-py-8 nx-px-4 nx-mx-auto nx-max-w-screen-xl lg:nx-py-16 lg:nx-px-6">
         {posts?.map((post) => {
           let getDate = dayjs(post.frontMatter.date).format(
             DateFormat ? DateFormat : "MMM DD, YYYY",

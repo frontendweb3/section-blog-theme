@@ -46,7 +46,13 @@ export default function Layout({
   } = themeConfig;
 
   return (
-    <ThemeProvider>
+    <ThemeProvider
+      enableColorScheme={true}
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem
+      disableTransitionOnChange
+    >
       {settings && settings?.defaultSEO && (
         <DefaultSeo {...settings.defaultSEO} />
       )}

@@ -1,14 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
-  important: true,
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
+  prefix: 'nx-',
   theme: {
     container: {
       center: true,
@@ -18,6 +15,30 @@ module.exports = {
       },
     },
     extend: {
+      typography: () => ({
+        section: {
+          css: {
+            '--tw-format-body': "hsl(var(--foreground))",
+            '--tw-format-headings': "hsl(var(--foreground))",
+            '--tw-format-lead': "hsl(var(--foreground))",
+            '--tw-format-links': "hsl(var(--foreground))",
+            '--tw-format-bold': "hsl(var(--foreground))",
+            '--tw-format-counters': "hsl(var(--foreground))",
+            '--tw-format-bullets': "hsl(var(--foreground))",
+            '--tw-format-hr': "hsl(var(--foreground))",
+            '--tw-format-quotes': "hsl(var(--foreground))",
+            '--tw-format-quote-borders': "hsl(var(--foreground))",
+            '--tw-format-captions': "hsl(var(--foreground))",
+            '--tw-format-code': "hsl(var(--accent-foreground))",
+            '--tw-format-code-bg': "hsl(var(--accent))", // code
+            '--tw-format-pre-code': "hsl(var(--foreground))", // pre code
+            '--tw-format-pre-bg': "hsl(var(--accent))",  // pre code backgaroud
+            '--tw-format-th-bg': "hsl(var(--accent))",
+            '--tw-format-th-borders': "hsl(var(--border))",
+            '--tw-format-td-borders': "hsl(var(--border))",
+          },
+        },
+      }),
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -60,19 +81,19 @@ module.exports = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: 0 },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
+          to: { height: "0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-      }
-    },
+      },
+    }
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
+  plugins: [require("tailwindcss-animate"), require('flowbite-typography')],
 }
