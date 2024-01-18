@@ -12,6 +12,7 @@ import { slugify } from "@/utility/slugify";
 import { TypeSectionBlogTheme } from "@/src/types";
 import type { ReactNode } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardFooter } from "../ui/card";
 
 export function Read({
   pageOpts,
@@ -46,30 +47,24 @@ export function Read({
   let getTagURL = Next_URL(getSite) + "tags/" + getTag;
 
   let getRwebURL = domain + "/" + pageOpts.route.replace("/", "");
-
   return (
     <>
+
       <Seo pageOpts={pageOpts} themeConfig={themeConfig} />
 
-      <div className=" px-5 sm:px-0 prose dark:prose-p:text-white prose-img:mx-auto prose-pre:bg-primary-foreground prose-slate sm:prose-sm md:prose-base lg:prose-lg xl:prose-xl 2xl:prose-1xl dark:prose-invert mx-auto">
-        <h1 className="text-black dark:text-white antialiased my-3 text-3xl font-bold tracking-wide sm:text-4xl md:text-5xl">
-          {" "}
-          {frontMatter.title}{" "}
-        </h1>
+      <Card className="nx-mt-12 nx-border-none nx-shadow-none nx-format nx-format-section sm:nx-format-sm md:nx-format-base lg:nx-format-lg xl:nx-format-xl 2xl:nx-format-xl mx-auto">
 
-        <p className="text-black dark:text-white mt-1 mb-2 text-lg leading-8 ">
-          {" "}
-          {frontMatter.description}{" "}
-        </p>
+        <CardContent className="nx-px-5 !nx-pb-0 sm:nx-px-0">
+          <h1 className="nx-antialiased !nx-mb-3 nx-text-3xl nx-font-bold nx-tracking-wide sm:nx-text-4xl md:nx-text-5xl">{frontMatter.title}</h1>
+          <p className="!nx-my-2 nx-text-lg nx-leading-8">{frontMatter.description}</p>
+        </CardContent>
 
-        <div className="mt-2.5 mb-1.5 flex flex-row items-center justify-between text-sm">
-          <div className="flex flex-row flex-wrap sm:flex-nowrap gap-3 sm:gap-0  items-center print:block">
-            {frontMatter?.author?.image ? (
-              <Avatar className="mr-2 items-center justify-center">
-                <AvatarImage
-                  className="h-12 w-12"
-                  src={frontMatter?.author?.image}
-                />
+        <CardFooter className="nx-px-5 sm:nx-px-0 nx-flex nx-flex-row nx-items-center nx-justify-between nx-text-sm">
+
+          <div className="nx-flex nx-flex-row nx-flex-wrap sm:nx-flex-nowrap nx-gap-3 sm:nx-gap-0 nx-items-center print:nx-block">
+            {
+              frontMatter?.author?.image ? (<Avatar className="nx-mr-2 nx-items-center nx-justify-center">
+                <AvatarImage className="nx-h-12 nx-w-12" src={frontMatter?.author?.image} />
                 <AvatarFallback>
                   {" "}
                   {typeof frontMatter.author === "string"
@@ -79,57 +74,43 @@ export function Read({
                       : ""}{" "}
                 </AvatarFallback>
               </Avatar>
-            ) : (
-              ""
-            )}
+              ) : ("")
+            }
             <span>
               {" "}
               By{" "}
-              {typeof frontMatter.author === "string" ? (
-                <Link
-                  href={Next_URL(getSite)}
-                  rel="author"
-                  className="text-sm font-bold mr-2"
-                >
-                  {frontMatter?.author}
-                </Link>
-              ) : typeof frontMatter.author === "object" ? (
-                <Link
-                  href={getAuthorURL}
-                  target="_blank"
-                  rel="author"
-                  className="text-sm font-bold mr-2"
-                >
-                  {frontMatter?.author.name}
-                </Link>
-              ) : (
-                ""
-              )}
+              {
+                typeof frontMatter.author === "string" ? (
+                  <Link href={Next_URL(getSite)} rel="author" className="nx-text-sm nx-font-bold nx-transition nx-ease-in-out nx-mr-2 nx-underline hover:nx-text-secondary-foreground/80">
+                    {frontMatter?.author}
+                  </Link>
+                ) : typeof frontMatter.author === "object" ? (
+                  <Link href={getAuthorURL} target="_blank" rel="author" className="nx-text-sm nx-font-bold nx-transition nx-ease-in-out nx-mr-2 nx-underline hover:nx-text-secondary-foreground/80">
+                    {frontMatter?.author.name}
+                  </Link>
+                ) : ("")
+              }
             </span>
-            •{" "}
-            <time className="mx-2" dateTime={getDate} title={getDate}>
+            •
+            <time className="nx-mx-2" dateTime={getDate} title={getDate}>
               {getDate}
-            </time>{" "}
+            </time>
             •{" "}
-            <Link
-              href={getTagURL}
-              className="mr-2 text-sm font-bold capitalize ml-2"
-            >
+            <Link href={getTagURL} className="nx-mr-2 nx-text-sm nx-font-bold nx-transition nx-ease-in-out nx-capitalize nx-ml-2 nx-underline hover:nx-text-secondary-foreground/80">
               {" "}
               {getTag}{" "}
             </Link>{" "}
             •{" "}
-            {readingTime !== undefined ? (
-              <span className="text-sm font-bold capitalize ml-2">
-                {" "}
-                {readingTime.text}{" "}
-              </span>
-            ) : (
-              ""
-            )}
+            {
+              readingTime !== undefined ? (
+                <span className="nx-text-sm nx-capitalize nx-ml-2">
+                  {readingTime.text}{" "}
+                </span>
+              ) : ("")
+            }
           </div>
 
-          <div className="hidden sm:flex flex-row items-center print:block">
+          <div className="nx-hidden sm:nx-flex nx-flex-row nx-items-center print:nx-block">
             <RWebShare
               data={{
                 text: frontMatter.description,
@@ -139,7 +120,7 @@ export function Read({
               onClick={() => console.log("shared successfully!")}
             >
               <Button aria-label="Share a Post" variant="ghost" size="icon">
-                <Share2Icon className="h-4 w-4" />
+                <Share2Icon className="nx-h-4 nx-w-4" />
               </Button>
             </RWebShare>
 
@@ -149,13 +130,16 @@ export function Read({
               variant="ghost"
               size="icon"
             >
-              <PrinterIcon className="h-4 w-4" />
+              <PrinterIcon className="nx-h-4 nx-w-4" />
             </Button>
           </div>
-        </div>
-      </div>
+
+        </CardFooter>
+
+      </Card>
 
       <Article>{children}</Article>
+
     </>
   );
 }
