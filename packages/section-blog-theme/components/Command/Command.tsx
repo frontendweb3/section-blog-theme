@@ -1,20 +1,7 @@
 import * as React from "react";
 import { CommandIcon, TextIcon } from "lucide-react";
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandGroup,
-} from "@/components/ui/command";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { CommandDialog, CommandEmpty, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/router";
 import { useFetch } from "usehooks-ts";
@@ -55,13 +42,8 @@ export function SearchCommandDialog() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button
-              aria-label="Search article"
-              variant="secondary"
-              size={"icon"}
-              onClick={() => setOpen(!open)}
-            >
-              <CommandIcon className="h-5 w-5" />
+            <Button aria-label="Search article" variant={"ghost"} size={"icon"} onClick={() => setOpen(!open)}>
+              <CommandIcon className="nx-h-5 nx-w-5" />
             </Button>
           </TooltipTrigger>
 
@@ -72,9 +54,9 @@ export function SearchCommandDialog() {
       </TooltipProvider>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder={" Search here..."} />
+        <CommandInput placeholder={"Search here..."} />
 
-        <CommandList>
+        <CommandList className="mx-2">
           <CommandEmpty> No results found.</CommandEmpty>
           {data &&
             Object.entries(data).map(([key, value]) => {
@@ -85,14 +67,13 @@ export function SearchCommandDialog() {
               if (value.data) {
                 return (
                   <SubCommandItem
-                    className="border-l-2 ml-3  my-2 "
+                    className="nx-ml-3 nx-my-2 "
                     key={key + value.title}
                     value={value.title}
                   >
-                    <div className="flex w-fill flex-row items-center justify-around">
-                      <TextIcon className="h-5 w-5 mr-2" />
-
-                      <Link className="block text-sm" href={key}>
+                    <div className="nx-flex nx-w-fill nx-flex-row nx-items-center nx-justify-around">
+                      <TextIcon className="nx-h-5 nx-w-5 nx-mr-2" />
+                      <Link className="nx-block nx-text-sm" href={key}>
                         {value.title}
                       </Link>
                     </div>

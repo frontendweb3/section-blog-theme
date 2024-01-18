@@ -18,17 +18,17 @@ export function Footer({
   socialLinks: SocialLinks[];
 }) {
   return (
-    <footer className="print:hidden container flex flex-wrap flex-row item-center justify-center my-5 p-5 mx-auto lg:flex-row divide-gray-400">
+    <footer className="print:nx-hidden nx-container nx-flex nx-flex-wrap nx-flex-row nx-item-center nx-justify-center nx-my-5 nx-p-5 nx-mx-auto lg:nx-flex-row nx-divide-gray-400">
       <Link
         aria-label="brand logo"
         target={Logo.target ? Logo.target : "_blank"}
         href={Logo.link ? Logo.link : "/"}
-        className="flex flex-row items-center justify-between text-black dark:text-white"
+        className="nx-flex nx-flex-row nx-items-center nx-justify-between"
       >
         {renderComponent(Logo.logo)}
       </Link>
 
-      <NavigationMenu className="my-3 flex flex-wrap justify-between items-center mx-auto md:my-0">
+      <NavigationMenu className="nx-my-3 nx-flex nx-flex-wrap nx-justify-between nx-items-center nx-mx-auto md:nx-my-0">
         <NavigationMenuList>
           {SecondaryNavigation.map((navigation: Navigation) => {
             return (
@@ -38,7 +38,7 @@ export function Footer({
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="flex flex-row justify-between gap-2 items-center">
+      <div className="nx-flex nx-flex-row nx-justify-between nx-gap-2 nx-items-center">
         {socialLinks &&
           socialLinks?.map((link) => (
             <SocialLink key={link.name} socialLink={link} />
