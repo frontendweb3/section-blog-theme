@@ -24,7 +24,7 @@ export function Header({
     <header className="nx-container print:nx-hidden nx-mt-3 nx-px-4 lg:nx-px-6 nx-py-8 nx-flex nx-gap-y-5 nx-justify-center nx-flex-col sm:nx-flex-row md:nx-justify-between nx-items-center nx-mx-auto">
       <Link
         aria-label="brand logo"
-        target={Logo.target ? Logo.target : "_blank"}
+        target={Logo.target ? Logo.target : "_self"}
         href={Logo.link ? Logo.link : "/"}
         className="nx-flex nx-flex-row nx-items-center nx-justify-between"
       >
