@@ -18,10 +18,10 @@ export function Footer({
   socialLinks: SocialLinks[];
 }) {
   return (
-    <footer className="print:nx-hidden nx-container nx-flex nx-flex-wrap nx-flex-row nx-item-center nx-justify-center nx-my-5 nx-p-5 nx-mx-auto lg:nx-flex-row nx-divide-gray-400">
+    <footer className="nx-container print:nx-hidden nx-mt-3 nx-px-4 lg:nx-px-6 nx-py-8 nx-flex nx-gap-y-5 nx-justify-center nx-flex-col sm:nx-flex-row md:nx-justify-between nx-items-center nx-mx-auto">
       <Link
         aria-label="brand logo"
-        target={Logo.target ? Logo.target : "_blank"}
+        target={Logo.target ? Logo.target : "_self"}
         href={Logo.link ? Logo.link : "/"}
         className="nx-flex nx-flex-row nx-items-center nx-justify-between"
       >
@@ -29,7 +29,7 @@ export function Footer({
       </Link>
 
       <NavigationMenu className="nx-my-3 nx-flex nx-flex-wrap nx-justify-between nx-items-center nx-mx-auto md:nx-my-0">
-        <NavigationMenuList>
+        <NavigationMenuList className="nx-flex-wrap sm:nx-flex-row">
           {SecondaryNavigation.map((navigation: Navigation) => {
             return (
               <NavigationItem key={navigation.title} navigation={navigation} />

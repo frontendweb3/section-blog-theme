@@ -32,7 +32,7 @@ export function Header({
       </Link>
 
       <NavigationMenu className="nx-my-3 nx-flex nx-flex-wrap nx-justify-between nx-items-center nx-mx-auto md:nx-my-0">
-        <NavigationMenuList className="nx-flex-wrap sm:nx-fle-row">
+        <NavigationMenuList className="nx-flex-wrap sm:nx-flex-row">
           {PrimaryNavigation.map((navigation: Navigation) => {
             if (navigation.subNav === true) {
               return (
