@@ -9,7 +9,8 @@
     "dev:docs": "turbo run dev --filter=docs",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "release": "changeset publish "
+    "release": "changeset publish",
+    "publish-npm":"pnpm publish --filter=section-blog-theme"
   },
   "devDependencies": {
     "@turbo/gen": "^1.11.3",
