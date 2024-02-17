@@ -10,7 +10,7 @@
     "dev:docs": "turbo run dev --filter=docs",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "release": "changeset publish",
+    "release": "changeset publish --ignore demo-section-blog -r",
     "publish-npm":"pnpm publish --filter=section-blog-theme"
   },
   "devDependencies": {
