@@ -52,7 +52,7 @@ export function Read({
 
       <Seo pageOpts={pageOpts} themeConfig={themeConfig} />
 
-      <Card className="nx-mt-12 nx-border-none nx-shadow-none nx-format nx-format-section sm:nx-format-sm md:nx-format-base lg:nx-format-lg xl:nx-format-xl 2xl:nx-format-xl nx-mx-auto">
+      <Card className="nx-max-w-4xl nx-mt-12 nx-border-none nx-shadow-none nx-format nx-format-section sm:nx-format-sm md:nx-format-base lg:nx-format-lg xl:nx-format-xl 2xl:nx-format-xl nx-mx-auto">
 
         <CardContent className="nx-px-5 !nx-pb-0 sm:nx-px-0">
           <h1 className="nx-antialiased !nx-mb-3 nx-text-3xl nx-font-bold nx-tracking-wide sm:nx-text-4xl md:nx-text-5xl">{frontMatter.title}</h1>
