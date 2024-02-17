@@ -22,7 +22,7 @@
 
 Start your blog journey with Next.js, Nextra, and MDX using section themes. You can start your blog in less than two minutes, and you need only one command and zero configuration. Section theme comes with an inbuilt dark mode, a search bar, Customize Navigation, and SEO Support.
 
-Adding your [existing website](https://github.com/frontendweb3/section-blog-theme/blob/canary/docs/src/showcase.json) to the [showcase page](https://section-blog-theme-docs.vercel.app/showcase). 
+> Adding your [existing website](https://github.com/frontendweb3/section-blog-theme/blob/canary/docs/src/showcase.json) to the [showcase page](https://section-blog-theme-docs.vercel.app/showcase). 
 
 <div style="margin: 5px auto;width:100%;"></div>
 
