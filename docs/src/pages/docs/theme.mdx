@@ -1,6 +1,5 @@
 ---
 title : To use 10000+ difference theming in the section blog theme.
-
 ---
 
 The section blog theme is based on [Shadcn UI](https://ui.shadcn.com/docs/theming), and Shadcn UI has the functionality to use different themes. 
@@ -13,7 +12,7 @@ The [ui.jln.dev](https://ui.jln.dev/) website offers you more than 10000 custom 
 
 ## How to use the custom theme in the section blog theme?
 
-You can copy any theme on ui.jln.dev website, paste in the global CSS file without **@layer directive**.
+You can copy any theme on ui.jln.dev website, paste in the global CSS file without **@layer directive**. 
 
 ```css filename="globals.css"
     :root {
@@ -63,6 +62,13 @@ You can copy any theme on ui.jln.dev website, paste in the global CSS file witho
 
 ```
 
+Lastly, import the section blog theme on top of the file. Otherwise, your theme cannot work.
+
+```css {1} filename="_app.mdx"
+import "section-blog-theme/styles.css"
+import '@/styles/globals.css';
+
+```
 
 ## Why is Dark mode not working with the section blog theme with tailwind CSS?
 If you create your project using create-next-app, then remove the following code from your tailwind globals.css file. It creates conflict with Shadcn UI CSS variables. 
