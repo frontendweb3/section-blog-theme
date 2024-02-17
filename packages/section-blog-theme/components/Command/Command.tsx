@@ -57,7 +57,6 @@ export function SearchCommandDialog() {
         <CommandInput placeholder={"Search here..."} />
 
         <CommandList className="mx-2">
-          <CommandEmpty> No results found.</CommandEmpty>
           {data &&
             Object.entries(data).map(([key, value]) => {
               if (key.includes("tag" || key.includes("tags"))) {
@@ -67,11 +66,11 @@ export function SearchCommandDialog() {
               if (value.data) {
                 return (
                   <SubCommandItem
-                    className="nx-ml-3 nx-my-2 "
-                    key={key + value.title}
-                    value={value.title}
+                     className="nx-ml-3 nx-my-2"
+                     key={key + value.title}
+                     value={value.title}
                   >
-                    <div className="nx-flex nx-w-fill nx-flex-row nx-items-center nx-justify-around">
+                    <div onClick={()=>setOpen(false)} className="nx-flex nx-w-fill nx-flex-row nx-items-center nx-justify-around">
                       <TextIcon className="nx-h-5 nx-w-5 nx-mr-2" />
                       <Link className="nx-block nx-text-sm" href={key}>
                         {value.title}
