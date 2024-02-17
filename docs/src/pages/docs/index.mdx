@@ -1,9 +1,7 @@
 ---
 title : Installation
 ---
-import { Tab, Tabs } from 'nextra-theme-docs'
 import { Steps } from 'nextra-theme-docs'
-import { Callout } from 'nextra/components'
 
 <Steps>
 
@@ -37,9 +35,11 @@ export default function App({ Component, pageProps }) {
 ```
 
 ### Import css
-Next step is import section blog theme css file on `_aap.mdx` file.
-```jsx {1-1} filename="_aap.mdx"
-import "section-blog-theme/styles.css"
+The next step is to import the section blog theme `section-blog-theme/styles.css` file on `_aap.mdx` file.
+
+```jsx {1} filename="_aap.mdx"
+import "section-blog-theme/styles.css" 
+import '@/styles/globals.css' // For other CSS files go here.
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
@@ -173,10 +173,12 @@ title : Welcome to Home Page
 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 ```
 
-Lastly run your local devlpment server with `pnpm dev or npm run dev ` command and learn more about [page and layout](/docs/page-configuration).
+Lastly run your local devlpment server with `pnpm dev` or `npm run dev` command and learn more about [page and layout](/docs/page-configuration).
+
 </Steps>
 
 ### Update the Section theme
+
 ```bash
 # npm
 npm update section-blog-theme
@@ -187,4 +189,5 @@ yarn update section-blog-theme
 # pnpm
 pnpm update section-blog-theme
 ```
+
 Sometimes when we update the theme and does show a change then remove the `.next` folder and restart your development server.
