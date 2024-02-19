@@ -1,14 +1,14 @@
 {
   "name": "demo-section-blog",
   "version": "0.0.0",
-  "private":"true",
+  "private": "true",
   "scripts": {
     "clean": "rimraf .next/ ",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format":"pnpm exec prettier ./src --write"
+    "format": "pnpm exec prettier ./src --write"
   },
   "dependencies": {
     "@types/node": "20.11.0",
