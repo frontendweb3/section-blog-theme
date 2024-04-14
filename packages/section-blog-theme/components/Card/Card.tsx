@@ -3,7 +3,7 @@ import type { authorType } from "@/src/types";
 import { Button } from "@/components/ui/button";
 import { CardContent, Card, CardFooter } from "@/components/ui/card";
 
-export function ArticleCard({ title, description, date, URL, author }: { title: string; description: string; date: string; URL: string; author?: string | authorType; }) {
+export function DefaultArticleCard({ title, description, date, url, author }: { title: string; description: string; date: string; url: string; author?: string | authorType; }) {
   return (
     <Card className="nx-mb-10 nx-p-2 sm:nx-p-4 nx-w-fill sm:nx-w-6/6 md:nx-w-5/6 lg:nx-w-4/6 nx-mx-auto nx-shadow-sm">
       <CardContent className="nx-p-2 md:nx-p-6">
@@ -26,7 +26,7 @@ export function ArticleCard({ title, description, date, URL, author }: { title: 
       </CardContent>
 
       <CardFooter className="nx-px-2 nx-pt-2 md:nx-pt-0 nx-pb-6 md:nx-px-6 md:nx-pb-6">
-        <Link className="nx-block" href={URL}>
+        <Link className="nx-block" href={url}>
           <Button variant="outline">
             Read More
           </Button>
