@@ -1,6 +1,4 @@
-import dynamicIconImports from "lucide-react/dynamicIconImports";
 import { DefaultSeoProps } from "next-seo";
-import { LucideProps } from "lucide-react";
 import type { ReactNode, FC } from "react";
 
 // SubNavigation
@@ -19,14 +17,16 @@ export interface Navigation {
   target: string;
   subNavigation?: SubNavigation[];
 }
+
+
 // Social link
-export interface SocialLinks extends IconProps {
+export interface SocialLinks extends IconSvg {
   url: string;
 }
 
 // Lucide icon
-export interface IconProps extends LucideProps {
-  name: keyof typeof dynamicIconImports;
+export interface IconSvg extends React.SVGProps<SVGSVGElement> {
+  name: string;
 }
 
 // logo
@@ -45,6 +45,7 @@ export interface settingsTypes {
 
 export interface TypeSectionBlogTheme {
   DateFormat?: string;
+  CardType?: CardType
   settings?: settingsTypes;
   Logo: Logo;
   PrimaryNavigation: Navigation[];
@@ -71,6 +72,12 @@ export type LayoutTypes =
   | "tag"
   | 404
   | 500;
+
+// Card Type
+export type CardType = {
+   post: "one" | "two" | "three";
+   tag: "two" | "three" 
+}
 
 // author
 export interface authorType {
