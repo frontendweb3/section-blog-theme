@@ -1,24 +1,25 @@
 {
   "name": "demo-section-blog",
   "version": "0.0.0",
-  "private":"true",
+  "private": "true",
   "scripts": {
     "clean": "rimraf .next/ ",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format":"pnpm exec prettier ./src --write"
+    "format": "pnpm exec prettier ./src --write"
   },
   "dependencies": {
     "@types/node": "20.11.0",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
+    "@vercel/og": "^0.6.2",
     "autoprefixer": "10.4.16",
-    "eslint": "^8.56.0",
-    "eslint-config-next": "^14.0.4",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
     "next": "14.0.4",
-    "nextra": "^2.13.2",
+    "nextra": "^2.13.4",
     "postcss": "8.4.33",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -28,6 +29,6 @@
     "typescript": "5.3.3"
   },
   "devDependencies": {
-    "prettier": "^3.1.1"
+    "prettier": "^3.2.5"
   }
 }
