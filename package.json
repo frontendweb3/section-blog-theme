@@ -3,21 +3,21 @@
   "scripts": {
     "build:core": "turbo run build --filter=section-blog-theme",
     "build": "turbo run build --filter=section-blog-theme --filter=demo-section-blog",
-    "dev": "turbo run dev --filter=section-blog-theme --filter=demo-section-blog ",
-    "clean": "turbo run clean",
     "build:all": "turbo run build --filter=section-blog-theme --filter=demo-section-blog --filter=docs",
     "build:docs": "turbo run build --filter=docs",
+    "dev": "turbo run dev --filter=section-blog-theme --filter=demo-section-blog ",
+    "clean": "turbo run clean",
     "dev:docs": "turbo run dev --filter=docs",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "release": "changeset publish --ignore demo-section-blog -r",
-    "publish-npm":"pnpm publish --filter=section-blog-theme"
+    "publish-npm": "pnpm publish --filter=section-blog-theme"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.11.3",
-    "eslint": "^8.56.0",
-    "prettier": "^3.1.1",
-    "turbo": "^1.11.3"
+    "@turbo/gen": "^1.13.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "turbo": "^1.13.2"
   },
   "packageManager": "pnpm@8.6.9",
   "dependencies": {
