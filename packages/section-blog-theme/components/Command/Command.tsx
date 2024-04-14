@@ -4,7 +4,6 @@ import { CommandDialog, CommandInput, CommandItem, CommandList, CommandSeparator
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/router";
-// import { useFetch } from "usehooks-ts";
 import Link from "next/link";
 import type { SearchData } from "@/src/types";
 import { useCommandState } from "cmdk";
@@ -31,7 +30,7 @@ export function SearchCommandDialog() {
 
   const fetchItem = `${basePath}/_next/static/chunks/nextra-data-${locale}.json`;
 
-  const { data, error } = useSWR<SearchData>(fetchItem, fetcher)
+  const { data } = useSWR<SearchData>(fetchItem, fetcher)
   
   const SubCommandItem = (props) => {
     const search = useCommandState((state) => state.search);
