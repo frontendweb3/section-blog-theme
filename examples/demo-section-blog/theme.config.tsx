@@ -1,4 +1,8 @@
 const themeConfig = {
+  CardType: {
+    post: "one",
+    tag: "two"
+  },
   settings: {
     title: "Start your blog or portfolio using MDX, Next.Js, and Nextra.",
     description: "Section blog theme is build with Nextjs and tailwind css.",
