@@ -1,17 +1,17 @@
-// import icons from lucide-react icon library > https://lucide.dev/icons
 import {
   AlertTriangle,
-  Ban,
   Check,
-  CheckCircle,
-  HelpCircle,
+  CheckCircle, 
+  HelpCircle, 
+  Lightbulb,
   Terminal,
-  Braces,
   BadgeAlert,
+  Ban,
   BadgeX,
   Shield,
-  Lightbulb,
-} from "lucide-react";
+  CommandIcon,
+  FileIcon
+} from "@/components/icons/icons";
 // export
 export {
   AlertTriangle,
@@ -20,9 +20,10 @@ export {
   CheckCircle,
   HelpCircle,
   Terminal,
-  Braces,
   BadgeAlert,
   BadgeX,
   Shield,
   Lightbulb,
+  CommandIcon,
+  FileIcon
 };
