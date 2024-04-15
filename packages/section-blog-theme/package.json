@@ -43,7 +43,7 @@
   "files": [
     "dist/*"
   ],
-  "homepage": "https://section-theme-blog-docs.vercel.app",
+  "homepage": "https://section-blog-theme-docs.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/frontendweb3/section-theme-blog.git"
