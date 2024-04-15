@@ -10,6 +10,8 @@ module.exports = withNextra({
   reactStrictMode: true,
   images: {
     remotePatterns: [
+      { hostname:"assets.website-files.com" },
+      { hostname: "localhost"},
       {
         hostname: "flowbite.s3.amazonaws.com",
       },

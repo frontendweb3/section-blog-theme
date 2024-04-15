@@ -4,9 +4,17 @@ import { cn } from "@/utility/utils";
 interface ArticleProps {
   children: React.ReactNode;
   className?: object | string;
+  raw?: boolean
 }
 
-export function Article({ className, children }: ArticleProps) {
+export function Article({ className, children, raw }: ArticleProps) {
+
+  if (raw === true) {
+    return <article
+      className={cn(className)}
+    >{children}{" "} </article>
+  }
+
   return (
     <article
       className={cn(
@@ -17,5 +25,7 @@ export function Article({ className, children }: ArticleProps) {
       {" "}
       {children}{" "}
     </article>
+
+
   );
 }

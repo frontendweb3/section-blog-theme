@@ -1,0 +1,70 @@
+---
+type: raw
+title: Raw Page
+description: Our Raw page is here.
+image: https://cdn.pixabay.com/photo/2023/05/21/19/45/rose-8009275_1280.jpg
+---
+
+import {Hero} from "../components/Hero.tsx"
+import {Faq} from "../components/Faq.tsx"
+
+
+<Hero />
+
+<section>
+  
+  <div className="px-5 py-16 md:px-10 md:py-24 lg:py-32">
+    
+    <div className="mx-auto flex w-full max-w-[798px] flex-col rounded-[36px] bg-black py-8 text-white">
+      
+      <div className="grid h-full w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4 md:gap-0">
+        
+        <div className="flex flex-col items-center justify-center lg:border-r lg:border-solid lg:border-r-[#c3c0c04d]">
+          <h4 className="mb-4 text-2xl font-bold md:text-3xl">200+</h4>
+          <p className="text-sm">Blocks</p>
+        </div>
+        
+        <div className="flex flex-col items-center justify-center lg:border-r lg:border-solid lg:border-r-[#c3c0c04d]">
+          <h4 className="mb-4 text-2xl font-bold md:text-3xl">45</h4>
+          <p className="text-sm">Templates</p>
+        </div>
+        
+        <div className="flex flex-col items-center justify-center lg:border-r lg:border-solid lg:border-r-[#c3c0c04d]">
+          <h4 className="mb-4 text-2xl font-bold md:text-3xl">1500+</h4>
+          <p className="text-sm">Customers</p>
+        </div>
+        
+        <div className="flex flex-col items-center justify-center ">
+          <h4 className="mb-4 text-2xl font-bold md:text-3xl">890</h4>
+          <p className="text-sm">Support Tickets</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<header className="text-white">
+  
+  <div className="px-5 py-16 md:px-10 md:py-24 lg:py-32">
+    
+    <div className="mx-auto max-w-7xl rounded-[48px] bg-[url('https://assets.website-files.com/63904f663019b0d8edf8d57c/6391a6daa19785eb51dd3666_CTA%20(2).svg')] bg-cover bg-center bg-no-repeat py-20 text-center [box-shadow:rgb(106,_218,_255)_9px_9px] max-[479px]:px-2">
+      
+      <div className="mx-auto mb-6 max-w-[720px] md:mb-12">
+        <h2 className="mb-4 text-3xl font-semibold md:text-5xl">
+          <span className="bg-[url('https://assets.website-files.com/63904f663019b0d8edf8d57c/6391a5b04f2836ad87dcc3bc_Rectangle%20773.svg')] bg-cover bg-center px-4 text-white">Lightning Fast</span> Webflow Dev Made Easy
+        </h2>
+        <div className="max-w-[630px]">
+          <p className="text-[#e0e0e0]">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna</p>
+        </div>
+      </div>
+      
+      <form name="email-form" method="" className="relative mx-auto flex w-full max-w-[80%] flex-col md:max-w-[560px]">
+        <input type="email" className="h-9 w-full rounded-xl bg-white px-3 py-8 text-sm text-[#333333] focus:border-[#3898ec] focus:outline-0" name="email" placeholder="Enter your email" />
+        <input type="submit" value="Subscribe" className="absolute bottom-auto left-auto right-2 top-1 inline-block cursor-pointer rounded-xl bg-black px-8 py-4 font-semibold text-white [box-shadow:rgb(19,_83,_254)_2px_2px]" />
+      </form>
+    </div>
+  </div>
+</header>
+
+<Faq />

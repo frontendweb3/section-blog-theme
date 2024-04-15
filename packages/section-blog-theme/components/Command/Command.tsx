@@ -1,13 +1,15 @@
 import * as React from "react";
-import { CommandIcon, TextIcon } from "lucide-react";
-import { CommandDialog, CommandEmpty, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command";
+import { CommandIcon, FileIcon } from "@/components/icons/icons";
+import { CommandDialog, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/router";
-import { useFetch } from "usehooks-ts";
 import Link from "next/link";
 import type { SearchData } from "@/src/types";
 import { useCommandState } from "cmdk";
+import useSWR from 'swr'
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 export function SearchCommandDialog() {
   const [open, setOpen] = React.useState(false);
@@ -25,10 +27,11 @@ export function SearchCommandDialog() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
+
   const fetchItem = `${basePath}/_next/static/chunks/nextra-data-${locale}.json`;
 
-  const { data, error } = useFetch<SearchData>(fetchItem);
-
+  const { data } = useSWR<SearchData>(fetchItem, fetcher)
+  
   const SubCommandItem = (props) => {
     const search = useCommandState((state) => state.search);
 
@@ -43,7 +46,7 @@ export function SearchCommandDialog() {
         <Tooltip>
           <TooltipTrigger asChild>
             <Button aria-label="Search article" variant={"ghost"} size={"icon"} onClick={() => setOpen(!open)}>
-              <CommandIcon className="nx-h-5 nx-w-5" />
+              <CommandIcon />
             </Button>
           </TooltipTrigger>
 
@@ -54,6 +57,7 @@ export function SearchCommandDialog() {
       </TooltipProvider>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
+
         <CommandInput placeholder={"Search here..."} />
 
         <CommandList className="mx-2">
@@ -71,7 +75,7 @@ export function SearchCommandDialog() {
                      value={value.title}
                   >
                     <div onClick={()=>setOpen(false)} className="nx-flex nx-w-fill nx-flex-row nx-items-center nx-justify-around">
-                      <TextIcon className="nx-h-5 nx-w-5 nx-mr-2" />
+                      <FileIcon />
                       <Link className="nx-block nx-text-sm" href={key}>
                         {value.title}
                       </Link>

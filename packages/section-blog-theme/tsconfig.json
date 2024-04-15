@@ -29,7 +29,7 @@
       {
         "name": "next"
       }
-    ],
+    ]
   },
   "include": [
     "src",
