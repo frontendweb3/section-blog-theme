@@ -22,9 +22,11 @@ export function CardSeccond({ title, description, date, url, author }: { title: 
           {title}
         </h1>
       </Link>
+
       <Link href={url}>
         <p>{description}</p>
       </Link> 
+
       </CardContent>
     </Card>
   );
