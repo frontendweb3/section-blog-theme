@@ -6,6 +6,7 @@ import {
   Posts,
   Read,
   Tag,
+  Raw
 } from "@/components/Layouts";
 import * as React from "react";
 import type { PageOpts } from "nextra";
@@ -13,6 +14,7 @@ import type { LayoutTypes, TypeSectionBlogTheme } from "@/src/types";
 
 const Layouts = {
   home: HomePage,
+  raw: Raw,
   posts: Posts,
   page: Page,
   post: Read,

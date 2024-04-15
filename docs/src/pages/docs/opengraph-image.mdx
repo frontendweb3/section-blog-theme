@@ -1,0 +1,70 @@
+---
+title : Opengraph image
+description: Generate an open graph image using the section blog theme.
+---
+
+To generate an [open graph image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) in the section theme blog, use the following code.
+
+```javascript filename="page/api/og-image.tsx"
+
+import { ImageResponse } from '@vercel/og'
+import { NextRequest } from 'next/server'
+export const config = {
+  runtime: 'edge',
+}
+
+export default async function handler(req: NextRequest) {
+  const { searchParams } = req.nextUrl
+  const title = searchParams.get('title')
+
+  if (!title) {
+    return new ImageResponse(<>{'Visit with "?title=what is markdown "'}</>, {
+      width: 1200,
+      height: 630,
+    })
+  }
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          fontSize: 60,
+          color: 'black',
+          background: '#f6f6f6',
+          width: '100%',
+          height: '100%',
+          paddingTop: 50,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          display: 'flex',
+        }}
+      >
+        <h1>{title}</h1>
+      </div>
+    ),
+    {
+      width: 1200,
+      height: 630,
+    }
+  )
+}
+
+```
+
+You can use it with the following syntax: `api/og-image?title=10 Things You Most Likely Didn't Know About Health`
+
+```mdx
+---
+type: post
+title: 10 Things You Most Likely Didn't Know About Health.
+description: Culpa laboris aliquip ea consectetur mollit ea ipsum sint qui culpa laboris dolor adipisicing proident. Et officia consequat do nulla tempor cupidatat elit.
+date: 2022-11-12T08:05:53.939Z
+
+
+image:  http://localhost:3000/api/og-image?title=10 Things You Most Likely Didn't Know About Health
+
+author: Curtis Lopez
+---
+```
+

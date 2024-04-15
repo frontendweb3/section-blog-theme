@@ -1,5 +1,8 @@
-// import type { TypeSectionBlogTheme } from "section-blog-theme";
 const themeConfig = {
+  CardType: {
+    post: "one",
+    tag: "two"
+  },
   settings: {
     title: "Start your blog or portfolio using MDX, Next.Js, and Nextra.",
     description: "Section blog theme is build with Nextjs and tailwind css.",
@@ -14,8 +17,7 @@ const themeConfig = {
       },
     },
   },
-  bannerMessage:
-    "Start your markdown portfolio blog with nextjs, nextra, tailwind CSS, and Shadcn UI using <a style='margin: 0px 4px;text-decoration:underline;' target='_blank' href='https://www.npmjs.com/package/section-blog-theme'>  the section blog theme. </a>",
+  bannerMessage: "Start your markdown portfolio blog with nextjs, nextra, tailwind CSS, and Shadcn UI using <a style='margin: 0px 4px;text-decoration:underline;' target='_blank' href='https://www.npmjs.com/package/section-blog-theme'>  the section blog theme. </a>",
   SocialLinks: [
     {
       name: "twitter",
@@ -29,6 +31,14 @@ const themeConfig = {
       name: "github",
       url: "https://github.com/frontendweb3/section-theme-blog",
     },
+    {
+      name: "facebook",
+      url: "https://github.com/frontendweb3/section-theme-blog",
+    },
+    {
+      name: "medium",
+      url: "https://github.com/frontendweb3/section-theme-blog",
+    }
   ],
   Logo: {
     logo: (
@@ -59,6 +69,43 @@ const themeConfig = {
     {
       href: "/posts",
       title: "Blog",
+    },
+    {
+      title: "Layout",
+      description : "Our description",
+      subNav: true,
+      subNavigation: [
+        {
+          title: "Home",
+          href: "http://localhost:3000/",
+          description: "Home Page Layout",
+        },
+        {
+          title: "Page",
+          href: "http://localhost:3000/about",
+          description: "Page Layout",
+        },
+        {
+          title: "Blog List",
+          href: "http://localhost:3000/posts",
+          description: "Reading Page Layout",
+        },
+        {
+          title: "Reading",
+          href: "http://localhost:3000/posts/cillum-cupidatat-proident-fugiat-aute",
+          description: "Reading Page Layout",
+        },
+        {
+          title: "Tag",
+          href: "http://localhost:3000/tags/cillum",
+          description: "Tag Page Layout",
+        },
+        {
+          title: "Raw",
+          href: "http://localhost:3000/raw",
+          description: "Raw Page Layout",
+        }
+      ],
     },
     {
       title: "Projects",
